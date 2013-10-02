@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .fig_wrapper {
+            position: relative;
+            float: left;
+            margin: 0;
+        }
+        .map_test {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+        .wall_path {
+            fill:none;
+            stroke:#000000;
+            stroke-width: 3px;
+            stroke-linecap:butt;
+            stroke-linejoin:miter;
+            stroke-opacity:1
+
+        }
+
+        .chapter-copy {
+            margin-left: 480px;
+        }
+
+        #marker {
+            display: none;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+
+<figure class="fig_wrapper">
+
+    <img src="image.gif" width="470" height="352">
+    <svg class="map_test" width="470" height="352">
+        <g
+                id="g3907">
+            <path
+                    id="wall_path1"
+                    class="wall_path"
+                    id="path3905"
+                    d="M 161.22824 232.3882 L 161.07553 236.35869 C 161.07553 236.35869 148.87741 241.44092 160.0041 248.85869 C 161.07553 249.57298 155.71839 280.28727 155.71839 280.28727 L 173.93267 301.35869 L 236.43267 296.71584 L 239.64696 286.35869 L 254.28981 289.93012 L 260.71839 288.14441 L 280.71839 306.71584 L 292.14696 310.28727 L 296.43267 302.43012 L 306.07553 307.07298 L 312.14696 301.71584 L 324.28982 307.07298 C 324.28982 307.07298 340.0041 300.64441 351.43267 279.93012 C 352.5041 279.93012 385.0041 308.14441 408.93267 319.57298 C 408.93267 320.64441 398.21839 334.93012 398.21839 334.93012 L 419.64696 352.43012 "
+                     />
+            <path
+                    id="wall_path2"
+                    class="wall_path"
+                    id="path3088"
+                    d="M 191.43267 1.00155 L 182.14696 17.43012 L 214.28981 56.35869 L 242.5041 106.35869 L 221.78981 118.14441 L 196.07553 142.43012 L 169.28981 103.50155 L 152.86124 121.35869 L 147.14696 117.78727 L 129.28981 129.57298 L 137.86124 142.78727 L 133.21839 146.71584 L 151.78981 175.64441 L 165.71839 167.43012 L 169.6532 197.22227 "
+                     />
+        </g>
+
+        <g id="marker">
+            <path
+                    d="m 185.25,198.61218 a 3.75,3.75 0 1 1 -7.5,0 3.75,3.75 0 1 1 7.5,0 z"
+                    sodipodi:ry="3.75"
+                    sodipodi:rx="3.75"
+                    sodipodi:cy="198.61218"
+                    sodipodi:cx="181.5"
+                    style="fill:#000000;fill-opacity:1;stroke:none;stroke-opacity:1"
+                    sodipodi:type="arc" />
+            <path
+                    inkscape:connector-curvature="0"
+                    id="path3115"
+                    d="m 182.58839,198.78074 69.75,0"
+                    style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+            <text
+         sodipodi:linespacing="125%"
+         id="text3117"
+         y="203.1824"
+         x="255.51859"
+         style="font-size:12px;font-style:normal;font-weight:bold;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans Bold"
+         xml:space="preserve"><tspan
+           y="203.1824"
+           x="255.51859"
+           id="tspan3119"
+           sodipodi:role="line">Test marker</tspan></text>
+        </g>
+    </svg>
+</figure>
+
+<div class="chapter" id="sample_chapter">
+    <h2 class="chapter-title"></h2>
+    <div class="chapter-copy"></div>
+</div>
+
+
+<script src="jquery-2.0.3.min.js"></script>
+<script src="tabletop.js"></script>
+<script src="tween.min.js"></script>
+<script src="scrollMonitor.js"></script>
+
+
+<script>
+
+    function init() {
+        Tabletop.init( {
+            key: '0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc',
+            callback: setupPage,
+            simpleSheet: true
+        });
+    }
+
+    function setupSVG() {
+        var path = document.querySelector('#wall_path1');
+        var path2 = document.querySelector('#wall_path2');
+        var length = path.getTotalLength();
+        var length2 = path2.getTotalLength();
+
+        path.style.transition = path.style.WebkitTransition = 'none';
+        path.style.strokeDasharray = length + ' ' + length;
+        path.style.strokeDashoffset = length;
+
+
+        path2.style.transition = path.style.WebkitTransition = 'none';
+        path2.style.strokeDasharray = length2 + ' ' + length2;
+        path2.style.strokeDashoffset = length2;
+
+
+        var myElement = document.querySelector('.map_test');
+        var elementWatcher = scrollMonitor.create( myElement );
+
+
+        var tween2 = new TWEEN.Tween( { x: length} )
+                .to( { x: 0 }, 2000 )
+                .onUpdate( function () {
+                    path.style.strokeDashoffset = this.x + 'px';
+                }).
+                onComplete(function(){
+                    cancelAnimationFrame(request);
+                })
+                .delay(500);
+
+        var tween1 = new TWEEN.Tween( { x: length2 } )
+                .to( { x: 0 }, 2000 )
+                .onUpdate( function () {
+                    path2.style.strokeDashoffset = this.x + 'px';
+                } )
+                .onComplete(function() {tween2.start();});
+
+        var request;
+
+        function animate() {
+            request = requestAnimationFrame( animate ); // js/RequestAnimationFrame.js needs to be included too.
+            TWEEN.update();
+        }
+
+        elementWatcher.fullyEnterViewport(function() {
+            tween1.start();
+            animate();
+
+        });
+    }
+
+
+    function setupPage(data, tabletop) {
+        console.log(data)
+        $.each(data, function(i, chapter) {
+            var newChapter = $('#sample_chapter').clone();
+            newChapter.attr('id',   chapter.chapterid);
+            $('.chapter-title', newChapter).text(chapter.title);
+            $('.chapter-copy', newChapter).html(chapter.copy);
+            $('body').append(newChapter);
+        });
+
+        $('#wall_02 .chapter-title').append($('.fig_wrapper'));
+
+
+        watcher.stateChange(function() {
+            $(element).toggleClass('fixed', this.isAboveViewport)
+        });
+
+        setupSVG();
+    }
+
+    init();
+
+
+
+
+
+</script>
+
+</body>
+</html>
