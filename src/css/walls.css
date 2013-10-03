@@ -1,0 +1,157 @@
+/*@import url("fonts.css");*/
+body, html {
+  margin: 0;
+  overflow: hidden;
+  -webkit-transition: opacity 400ms;
+  -moz-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+
+body, .onepage-wrapper, html {
+  display: block;
+  position: static;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.onepage-wrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  padding: 0;
+}
+
+.onepage-wrapper .section {
+  width: 100%;
+  height: 100%;
+}
+
+.onepage-pagination {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  z-index: 5;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.onepage-pagination li {
+  padding: 0;
+  text-align: center;
+}
+.onepage-pagination li a{
+  padding: 10px;
+  width: 4px;
+  height: 4px;
+  display: block;
+  
+}
+.onepage-pagination li a:before{
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.onepage-pagination li a.active:before{
+  width: 10px;
+  height: 10px;
+  background: none;
+  border: 1px solid white;
+  margin-top: -4px;
+  left: 8px;
+}
+
+
+header {
+    height: 60px;
+    background-color: #2e2e2e;
+    margin: 0 0 40px 0;
+    border-bottom: 1px solid #444;
+}
+
+body {
+    background-color: #363636;
+    margin: 0 0 100px;
+    padding: 0;
+    font-family: "Arial";
+    color: #eee;
+}
+
+aside {
+    font-family: "Georgia";
+    width: 940px;
+    color: rgb(200,200,200);
+}
+
+h1 {
+    font-family: "Georgia";
+    font-weight: normal;
+    color: white;
+    font-size: 38px;
+}
+
+h2 {
+    font-family: "Georgia";
+    font-weight: normal;
+}
+
+.map {
+    width: 940px;
+    height: 600px;
+    background-size: cover;
+    background-position: right top;
+}
+
+.walls-map {
+    margin: 20px 0 80px 0;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+.wall-base {
+    position: fixed;
+    z-index: -100;
+    top: 0;
+}
+
+.wall-body {
+    margin: 0 auto;
+    width: 940px;
+}
+
+.wall-text {
+    z-index: 100;
+    width: 480px;
+    line-height: 160%;
+}
+
+.wall-text p {
+    font-size: 13px;
+}
+
+.container {
+    width: 940px;
+    margin: 0 auto;
+}
+
+.wall-text {
+    color: white;
+    font-family: "Arial";
+    line-height: 160%;
+    width: 460px;
+}
+
+.wall-text p {
+    font-size: 16px;
+    color: rgb(240,240,240);
+    font-family: "WebEgyptian-Regular";
+}
