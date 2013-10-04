@@ -1,19 +1,101 @@
 /*@import url("fonts.css");*/
-body, html {
-  margin: 0;
-  overflow: hidden;
-  -webkit-transition: opacity 400ms;
-  -moz-transition: opacity 400ms;
-  transition: opacity 400ms;
+
+
+#wall_01 {
+  background: transparent url(../imgs/map_01.jpg) 0 0 no-repeat;
 }
 
-body, .onepage-wrapper, html {
-  display: block;
-  position: static;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+#wall_02 {
+  background: transparent url(../imgs/map_02.jpg) 0 0 no-repeat;
 }
+
+body {
+  padding: 3.2rem 0 0 0;
+  margin: 0;
+}
+
+.gi-header {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width:  100%;
+  height: 3.2rem;
+  background: #222;
+}
+
+.gi-header-title {
+  margin: 0;
+  font-size: 1.4rem;
+  display: inline-block;
+  float: left;
+}
+
+.gi-top {
+  color: #fff;
+  text-decoration: none;
+}
+
+.gi-nav {
+  float: right;
+}
+
+.gi-nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  display: inline-block;
+  font-size: 0.8rem;
+  float: left;
+  min-height: 2rem;
+}
+
+.gi-nav-link:hover {
+  background: #666;
+}
+
+.gi-nav-link strong {
+  display: block;
+}
+
+
+a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.chapter {
+  padding-left: 400px;
+}
+
+.chapter_title {
+  font-size: 3rem;
+  margin-bottom: 0.2rem;
+}
+
+.chapter_meta {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.chapter_meta dt,
+.chapter_meta dd {
+  display: inline-block;
+}
+
+.chapter_meta dt {
+  font-weight: bold;
+}
+
+.chapter_meta dd {
+  margin: 0 2.3rem 0 0.4rem;
+}
+
+.chapter_image {
+  width: 100%;
+}
+
+
+
 
 .onepage-wrapper {
   width: 100%;
@@ -46,7 +128,7 @@ body, .onepage-wrapper, html {
   width: 4px;
   height: 4px;
   display: block;
-  
+
 }
 .onepage-pagination li a:before{
   content: '';
@@ -68,18 +150,8 @@ body, .onepage-wrapper, html {
   left: 8px;
 }
 
-
-header {
-    height: 60px;
-    background-color: #2e2e2e;
-    margin: 0 0 40px 0;
-    border-bottom: 1px solid #444;
-}
-
 body {
     background-color: #363636;
-    margin: 0 0 100px;
-    padding: 0;
     font-family: "Arial";
     color: #eee;
 }
