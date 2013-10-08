@@ -3,7 +3,7 @@
 body {
   margin: 0;
   padding: 0;
-  background: #fff;
+  background: #ffffff;
 }
 
 .r2-wrapper {
@@ -34,14 +34,22 @@ body {
 .gi-header {
   overflow: hidden;
   height: 3.2rem;
-  background: #222;
+  background: #333;
+  box-shadow: 0 1px 2px rgba(0,0,0, 0.4);
+  position: relative;
+  z-index: 2;
 }
 
 .gi-header-title {
-  margin: 0;
-  font-size: 1.4rem;
+  margin: 18px 0 0 18px;
+  font-size: 1rem;
   display: inline-block;
   float: left;
+}
+
+.gi-header-title a{
+  font-size: 0.75rem;
+  font-weight: normal;
 }
 
 .gi-top {
@@ -51,26 +59,32 @@ body {
 
 .gi-nav {
   float: right;
+  width: 530px;
+  margin-right: 20px;
 }
 
 .gi-nav-link {
+  font-family: arial;
   color: #fff;
   text-decoration: none;
-  padding: 0.6rem 1rem;
+  padding: 13px 10px 9px;
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 12px;
   float: left;
   min-height: 2rem;
 }
 
 .gi-nav-link:hover {
-  background: #666;
+  background: #5c5c5c;
 }
 
 .gi-nav-link strong {
   display: block;
 }
 
+.gi-nav-link-meta{
+  font-weight: normal;
+}
 
 a {
   color: #fff;
@@ -80,16 +94,21 @@ a {
 .chapter {
   padding-left: 400px;
   position: relative;
+  padding-right: 40px;
+  padding-top: 200px;
+  font-family: Georgia;
 }
 
 .chapter_title {
-  font-size: 3rem;
-  margin-bottom: 0.2rem;
+  font-size: 2.8rem;
+  margin-bottom: 0.3rem;
+  font-weight: normal;
 }
 
 .chapter_meta {
-  margin: 0;
-  font-size: 0.9rem;
+  font-family: Arial;
+  margin: 0.2rem 0 1rem;
+  font-size: 0.8rem;
 }
 
 .chapter_meta dt,
@@ -105,9 +124,21 @@ a {
   margin: 0 2.3rem 0 0.4rem;
 }
 
+.chapter_copy .copy, .chapter_copy p{
+  font-size: 1rem;
+  line-height:1.5em;
+
+}
+
+.chapter_copy figure {
+  width: 496px;
+  margin: 0 0 1rem;
+}
+
 .chapter_image,
 .chapter_video {
   width: 100%;
+  border: 2px solid #fff;
 }
 
 .gi-chapter-map {
