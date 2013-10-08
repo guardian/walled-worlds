@@ -4,49 +4,55 @@ define(['mustache', 'svgs', 'templates', 'jquery', 'tween'], function(mustache, 
     var ID = data.chapterid;
     var distance = data.length;
     var paths = [];
-    var ANIM_LENGTH = 3*1000;
+    var tweens = [];
+    var tweenCount = 0;
+    var ANIM_LENGTH = 5*1000;
+
+    function _nextPathTween() {
+      tweenCount += 1;
+      if (tweenCount < paths.length) {
+        tweens[tweenCount].start();
+      }
+    }
 
     function animate() {
-      if (paths.length === 0) {
+      if (!$elm) {
         return;
       }
 
-      console.log();
+      paths = $elm.find('path').get();
 
+      tweens = [];
+      var pathTime = ANIM_LENGTH / paths.length;
       paths.forEach(function(path) {
-        var tween = _setupAnim(path);
-        tween.start();
+        tweens.push(_setupAnim(path, pathTime));
       });
 
+      tweens[0].start();
 
+      function anim() {
+        requestAnimationFrame(anim);
+        TWEEN.update();
+      }
 
-//
-//      var path = $elm.find('path')[0];;
-//      var length = path.getTotalLength();
-//      path.style.transition = path.style.WebkitTransition =
-//        'none';
-//      path.style.strokeDasharray = length + ' ' + length;
-//      path.style.strokeDashoffset = length;
-//      path.getBoundingClientRect();
-//      path.style.transition = path.style.WebkitTransition =
-//        'stroke-dashoffset 4s ease-in-out';
-//      path.style.strokeDashoffset = '0';
+      anim();
     }
 
-    function _setupAnim(path) {
+    function _setupAnim(path, pathTime) {
       var length = path.getTotalLength();
 
-      var tween = new TWEEN.Tween( { x: length} )
-        .to( { x: 0 }, ANIM_LENGTH )
-        .onUpdate( function () {
-          path.style.strokeDashoffset = this.x + 'px';
-        }).
-        onComplete(function(){
-          //cancelAnimationFrame(request);
-        })
-        .delay(500);
+      path.style.strokeDasharray = length + ' ' + length;
+      path.style.strokeDashoffset = length;
 
-        return tween;
+      var tween = new TWEEN.Tween( { x: length} )
+        .to( { x: 0 }, pathTime)
+        .onUpdate( function () {
+          var p = path;
+          p.style.strokeDashoffset = this.x + 'px';
+        }).
+        onComplete(_nextPathTween);
+
+      return tween;
     }
 
     function render() {
@@ -63,9 +69,18 @@ define(['mustache', 'svgs', 'templates', 'jquery', 'tween'], function(mustache, 
         svg: svgs[ID]
       };
 
-      paths = $(svgData.svg).find('path').get();
-
       $elm = $(mustache.render(templates['chapter-map'], svgData));
+
+      var $counter = $elm.find('.chapter-map-counter-count');
+
+      var tween = new TWEEN.Tween( { x: 0} )
+        .to( { x: distance }, ANIM_LENGTH)
+        .onUpdate( function () {
+          $counter.text(this.x.toFixed(2));
+        });
+      tween.start();
+
+
       return $elm;
     }
 

@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
 
-  var isDev = grunt.option('dev') || false;
+  var isProd = grunt.option('prod') || false;
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
           name: "main",
           namespace: '<%= pkg.namespace %>',
           include: ['requireLib', 'templates', 'svgs'],
-          optimize: (isDev) ? 'none': 'uglify'
+          optimize: (isProd) ? 'uglify' : 'none'
         }
       }
     },
