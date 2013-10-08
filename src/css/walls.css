@@ -118,9 +118,18 @@ a {
 
 .gi-chapter-map svg path {
   stroke: red;
-  stroke-width: 30px;
+  stroke-width: 3px;
   fill: none;
 
+}
+
+.chapter-map-counter {
+  position: absolute;
+  right: 0;
+  top: 200px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: right;
 }
 
 
