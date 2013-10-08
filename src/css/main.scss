@@ -1,18 +1,26 @@
-@import "fonts";
-@import "testing";
-@import "embed";
-@import "interactive";
-@import "header";
-@import "nav";
-@import "chapter";
-@import "map";
+// Namespace CSS
+.gi-interactive {
+  @import "fonts";
+  @import "embed";
+  @import "header";
+  @import "nav";
+  @import "chapter";
+  @import "map";
+
+  /* Usually interactive container is a <figure> so we need to remove margin and padding. */
+  
+  padding: 0;
+  margin: 0;
+  background: #333;
+  color: #efefef;
 
 
-// Hack background images
-#belfast {
-  background: transparent url(../imgs/map_01.jpg) 0 0 no-repeat;
-}
+  // Hack background images
+  #belfast {
+    background: transparent url(../imgs/map_01.jpg) 0 0 no-repeat;
+  }
 
-#westbank {
-  background: transparent url(../imgs/map_02.jpg) 0 0 no-repeat;
+  #westbank {
+    background: transparent url(../imgs/map_02.jpg) 0 0 no-repeat;
+  }
 }
