@@ -138,7 +138,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-mustache');
-  grunt.loadNpmTasks('grunt-contrib-jst');
 
   grunt.registerTask("rebuild", ["copy", "mustache", "requirejs", "watch"]);
   grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs", "connect", "watch"]);
