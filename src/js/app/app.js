@@ -1,13 +1,14 @@
-define(['mustache', 'templates', 'tabletop', 'app/models/config'], function(mustache, templates, Tabletop, config) {
+define(['mustache', 'templates', 'tabletop', 'app/models/config', 'app/views/map', 'jquery'], function(mustache, templates, Tabletop, config, MapView, $) {
 
   var tabletop;
+  // TODO: Store elm passed by boot.js
+  var $el = $('.gi-interactive');
+  var $chaptersWrapper;
 
   function setupPage(data) {
-//    var view = { 'header': 'Hello world' };
-//    var output = mustache.render(templates.structure, view);
-//    var elm = document.createElement('div');
-//    elm.innerHTML = output;
-//    document.querySelector('.test').appendChild(elm);
+    $chaptersWrapper = $(templates.structure);
+    $el.append($chaptersWrapper);
+
     buildNavigation(tabletop.sheets('chapters').all());
     buildChapters(tabletop.sheets('chapters').all());
   }
@@ -18,17 +19,18 @@ define(['mustache', 'templates', 'tabletop', 'app/models/config'], function(must
 
   function buildChapter(chapterData) {
     chapterData.compiledAssets = buildAssets(chapterData.assets);
-    var chapterHtml = mustache.render(templates.chapter, chapterData);
-    var elm = document.createElement('div');
-    elm.innerHTML = chapterHtml;
-    document.querySelector('.test').appendChild(elm);
+    var $chapter = $(mustache.render(templates.chapter, chapterData));
+
+    var mapView = new MapView(chapterData);
+    $chapter.prepend(mapView.render());
+    $chaptersWrapper.append($chapter);
+
+    setTimeout(function() { mapView.animate(); }, 300);
   }
 
   function buildNavigation(chapterData) {
-    var chapterHtml = mustache.render(templates.navigation, {links: chapterData});
-    var elm = document.createElement('div');
-    elm.innerHTML = chapterHtml;
-    document.querySelector('.test').appendChild(elm);
+    var html = mustache.render(templates.navigation, {links: chapterData});
+    $el.prepend($(html));
   }
 
   function getAssetData(id, data) {
@@ -49,7 +51,6 @@ define(['mustache', 'templates', 'tabletop', 'app/models/config'], function(must
 
   function buildVideoAsset(id) {
     var data = getAssetData(id, tabletop.sheets('video').all());
-    console.log(data);
     return mustache.render(templates.chapter_asset_video, data);
   }
 
@@ -80,7 +81,6 @@ define(['mustache', 'templates', 'tabletop', 'app/models/config'], function(must
   }
 
   function init() {
-
     tabletop = Tabletop.init( {
       key: config.google_spreadsheet_key,
       callback: setupPage,

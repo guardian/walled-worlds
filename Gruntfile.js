@@ -14,19 +14,25 @@ module.exports = function(grunt) {
           paths: {
             'mustache': 'lib/mustache',
             'requireLib': 'lib/require',
+            'jquery': 'lib/jquery-1.10.2',
             'templates': '../../tmp/templates',
-            'tabletop': 'lib/tabletop'
+            'svgs': '../../tmp/svgs',
+            'tabletop': 'lib/tabletop',
+            'tween': 'lib/tween.min'
           },
 
           shim: {
             'tabletop': {
               'exports': 'Tabletop'
+            },
+            'tween': {
+              'exports': 'TWEEN'
             }
           },
 
           name: "main",
           namespace: '<%= pkg.namespace %>',
-          include: ['requireLib', 'templates'],
+          include: ['requireLib', 'templates', 'svgs'],
           optimize: (isDev) ? 'none': 'uglify'
         }
       }
@@ -48,6 +54,10 @@ module.exports = function(grunt) {
       images: {
         files: ["src/imgs/**"],
         tasks: ["copy:images"]
+      },
+      svg: {
+        files: ["src/svg/**"],
+        tasks: ["copy:svg"]
       }
 
     },
@@ -76,6 +86,14 @@ module.exports = function(grunt) {
           src: ["imgs/**"],
           dest: "dest/"
         }]
+      },
+      svg: {
+        files: [{
+          expand: true,
+          cwd: "src/",
+          src: ["svg/**"],
+          dest: "dest/"
+        }]
       }
     },
 
@@ -94,15 +112,24 @@ module.exports = function(grunt) {
     },
 
     mustache: {
-      files : {
+      templates: {
         src: 'src/templates/',
         dest: 'tmp/templates.js',
         options: {
           prefix: 'define(',
           verbose: true
         }
+      },
+      svgs: {
+        src: 'src/svg/',
+        dest: 'tmp/svgs.js',
+        options: {
+          prefix: 'define(',
+          verbose: true
+        }
       }
     }
+
   });
 
   grunt.loadNpmTasks("grunt-contrib-watch");
@@ -111,6 +138,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-mustache');
+  grunt.loadNpmTasks('grunt-contrib-jst');
 
   grunt.registerTask("rebuild", ["copy", "mustache", "requirejs", "watch"]);
   grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs", "connect", "watch"]);
