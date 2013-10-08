@@ -7,6 +7,7 @@ define(['mustache', 'svgs', 'templates', 'jquery', 'tween'], function(mustache, 
     var tweens = [];
     var tweenCount = 0;
     var ANIM_LENGTH = 5*1000;
+    var totalLength = 0;
 
     function _nextPathTween() {
       tweenCount += 1;
@@ -20,10 +21,20 @@ define(['mustache', 'svgs', 'templates', 'jquery', 'tween'], function(mustache, 
         return;
       }
 
-      paths = $elm.find('path').get();
+      paths = $elm.find('#wall path').get();
+      if (paths.length < 1) {
+        return false;
+      }
+
+      console.log(paths.length);
+      paths.forEach(function(path) {
+        totalLength += path.getTotalLength();
+      });
+      console.log(totalLength);
 
       tweens = [];
       var pathTime = ANIM_LENGTH / paths.length;
+      console.log(pathTime);
       paths.forEach(function(path) {
         path.setAttribute('style', '');
         tweens.push(_setupAnim(path, pathTime));
@@ -45,8 +56,12 @@ define(['mustache', 'svgs', 'templates', 'jquery', 'tween'], function(mustache, 
       path.style.strokeDasharray = length + ' ' + length;
       path.style.strokeDashoffset = length;
 
+      var time = Math.round((length / totalLength) * ANIM_LENGTH);
+      console.log(length , totalLength);
+
+
       var tween = new TWEEN.Tween( { x: length} )
-        .to( { x: 0 }, pathTime)
+        .to( { x: 0 }, time)
         .onUpdate( function () {
           var p = path;
           p.style.strokeDashoffset = this.x + 'px';
