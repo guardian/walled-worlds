@@ -45,7 +45,7 @@ module.exports = function(grunt) {
       },
       css: {
         files: ["src/css/*"],
-        tasks: ["copy:css"]
+        tasks: ["sass"]
       },
       html: {
         files: ["src/index.html"],
@@ -63,14 +63,6 @@ module.exports = function(grunt) {
     },
 
     copy: {
-      css: {
-        files: [{
-          expand: true,
-          cwd: "src/",
-          src: ["css/**"],
-          dest: "dest/"
-        }]
-      },
       html: {
         files: [{
           expand: true,
@@ -128,6 +120,18 @@ module.exports = function(grunt) {
           verbose: true
         }
       }
+    },
+
+    sass: {
+      dist: {
+        options: {
+          includePaths: ['src/css/'],
+          outputStyle: 'nested'
+        },
+        files: {
+          'dest/css/main.css': 'src/css/main.scss'
+        }
+      }
     }
 
   });
@@ -138,7 +142,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-mustache');
+  grunt.loadNpmTasks('grunt-sass');
 
   grunt.registerTask("rebuild", ["copy", "mustache", "requirejs", "watch"]);
-  grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs", "connect", "watch"]);
+  grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs", "sass", "connect", "watch"]);
 };

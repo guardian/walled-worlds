@@ -1,0 +1,18 @@
+@import "fonts";
+@import "testing";
+@import "embed";
+@import "interactive";
+@import "header";
+@import "nav";
+@import "chapter";
+@import "map";
+
+
+// Hack background images
+#belfast {
+  background: transparent url(../imgs/map_01.jpg) 0 0 no-repeat;
+}
+
+#westbank {
+  background: transparent url(../imgs/map_02.jpg) 0 0 no-repeat;
+}

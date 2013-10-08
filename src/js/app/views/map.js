@@ -25,6 +25,7 @@ define(['mustache', 'svgs', 'templates', 'jquery', 'tween'], function(mustache, 
       tweens = [];
       var pathTime = ANIM_LENGTH / paths.length;
       paths.forEach(function(path) {
+        path.setAttribute('style', '');
         tweens.push(_setupAnim(path, pathTime));
       });
 

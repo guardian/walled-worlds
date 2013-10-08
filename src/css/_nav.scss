@@ -1,0 +1,28 @@
+.gi-nav {
+  float: right;
+  width: 530px;
+  margin-right: 20px;
+}
+
+.gi-nav-link {
+  font-family: arial;
+  color: #fff;
+  text-decoration: none;
+  padding: 13px 10px 9px;
+  display: inline-block;
+  font-size: 12px;
+  float: left;
+  min-height: 2rem;
+}
+
+.gi-nav-link:hover {
+  background: #5c5c5c;
+}
+
+.gi-nav-link strong {
+  display: block;
+}
+
+.gi-nav-link-meta{
+  font-weight: normal;
+}
