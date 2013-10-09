@@ -4,12 +4,13 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
     'use strict';
 
     // TODO: Store elm passed by boot.js
-    //var $el = $('.gi-interactive');
     var el = document.querySelector('.gi-interactive');
     var chaptersWrapper;
     var chaptersViews = [];
 
     function setupPage() {
+      addStyles();
+
       var tmpElm = document.createElement('div');
       tmpElm.innerHTML = templates.structure;
       chaptersWrapper = tmpElm.firstChild;
@@ -17,6 +18,14 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
 
       buildNavigation();
       buildChapters();
+    }
+
+    function addStyles() {
+      var styleElm = document.createElement('link');
+      styleElm.setAttribute('rel', 'stylesheet');
+      styleElm.setAttribute('type', 'text/css');
+      styleElm.setAttribute('href', 'main.css');
+      document.querySelector('body').appendChild(styleElm);
     }
 
     function buildChapters() {

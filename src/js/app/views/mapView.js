@@ -1,4 +1,4 @@
-define(['mustache', 'svgs', 'templates', 'tween'], function(mustache, svgs, templates, Tween) {
+define(['mustache', 'app/models/svgs', 'templates', 'tween'], function(mustache, svgs, templates, Tween) {
   return function(data) {
     var elm;
     var ID = data.chapterid;
@@ -7,9 +7,10 @@ define(['mustache', 'svgs', 'templates', 'tween'], function(mustache, svgs, temp
     var tweens = [];
     var tweenCount = 0;
     var ANIM_LENGTH = 5*1000;
-    var totalLength = 0;
     var hasAnimated = false;
+    var ANIM_DELAY = 250;
     var counterTween;
+    var svgsss = svgs;
 
     function _nextPathTween() {
       tweenCount += 1;
@@ -23,7 +24,7 @@ define(['mustache', 'svgs', 'templates', 'tween'], function(mustache, svgs, temp
         return;
       }
 
-      tweens[0].start();
+      tweens[0].delay(ANIM_DELAY).start();
       counterTween.start();
 
       function anim() {
@@ -42,13 +43,12 @@ define(['mustache', 'svgs', 'templates', 'tween'], function(mustache, svgs, temp
 
       var pathTime = Math.round((length / totalLength) * ANIM_LENGTH);
 
-      var tween = new TWEEN.Tween( { x: length} )
+      return new TWEEN.Tween( { x: length} )
         .to( { x: 0 }, pathTime)
         .onUpdate( function () {
           path.style.strokeDashoffset = this.x + 'px';
-        }).
-        onComplete(_nextPathTween);
-      return tween;
+        })
+        .onComplete(_nextPathTween);
     }
 
     function _setupPaths() {
@@ -63,7 +63,6 @@ define(['mustache', 'svgs', 'templates', 'tween'], function(mustache, svgs, temp
         paths[i].setAttribute('style', '');
         tweens.push(_setupAnim(paths[i], totalLength));
       }
-
     }
 
     function _setupCounter() {
@@ -73,7 +72,8 @@ define(['mustache', 'svgs', 'templates', 'tween'], function(mustache, svgs, temp
         .to( { x: distance }, ANIM_LENGTH)
         .onUpdate( function () {
           counterElm.innerText = this.x.toFixed(2);
-        });
+        })
+        .delay(ANIM_DELAY);
     }
 
     function render() {

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -28,14 +27,7 @@
   </metadata>
   <g
      transform="translate(0,-652.36218)"
-     id="layer1">
-    <image
-       xlink:href="file:///home/andrew/work/interactive/walled-worlds/src/imgs/map_01.jpg"
-       x="0.55343753"
-       y="651.87231"
-       width="1104"
-       height="803"
-       id="image5351" />
+     id="wall">
     <path
        d="m 55.053314,264.63956 -2.525382,-15.65737 3.535534,-6.06091"
        transform="translate(0,652.36218)"

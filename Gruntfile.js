@@ -9,16 +9,17 @@ module.exports = function(grunt) {
       compile: {
         options: {
           baseUrl: "src/js/",
-          out: "dest/walled-worlds.js",
+          out: "dest/main.js",
 
           paths: {
             'mustache': 'lib/mustache',
             'requireLib': 'lib/require',
             'templates': '../../tmp/templates',
-            'svgs': '../../tmp/svgs',
             'tabletop': 'lib/tabletop',
             'tween': 'lib/tween.min',
-            'classlist': 'lib/classList'
+            'classlist': 'lib/classList',
+            'text': 'lib/text',
+            'svgDir': '../svg/'
           },
 
           shim: {
@@ -35,7 +36,9 @@ module.exports = function(grunt) {
 
           name: "main",
           namespace: '<%= pkg.namespace %>',
-          include: ['requireLib', 'templates', 'svgs', 'classlist'],
+          include: ['requireLib', 'templates', 'classlist'],
+          inlineText: true,
+          stubModules: ['text'],
           optimize: (isProd) ? 'uglify' : 'none'
         }
       }
@@ -43,7 +46,11 @@ module.exports = function(grunt) {
 
     watch: {
       js: {
-        files: ["src/js/**/*.js", "src/templates/**"],
+        files: ["src/js/**/*.js"],
+        tasks: ["requirejs"]
+      },
+      templates: {
+        files: ["src/templates/*.mustache"],
         tasks: ["mustache", "requirejs"]
       },
       css: {
@@ -51,7 +58,7 @@ module.exports = function(grunt) {
         tasks: ["sass"]
       },
       html: {
-        files: ["src/index.html"],
+        files: ["src/*.html"],
         tasks: ["copy:html"]
       },
       images: {
@@ -60,9 +67,8 @@ module.exports = function(grunt) {
       },
       svg: {
         files: ["src/svg/**"],
-        tasks: ["copy:svg"]
+        tasks: ["mustache", "requirejs"]
       }
-
     },
 
     copy: {
@@ -70,7 +76,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: "src/",
-          src: ["index.html"],
+          src: ["*.html"],
           dest: "dest/"
         }]
       },
@@ -79,14 +85,6 @@ module.exports = function(grunt) {
           expand: true,
           cwd: "src/",
           src: ["imgs/**"],
-          dest: "dest/"
-        }]
-      },
-      svg: {
-        files: [{
-          expand: true,
-          cwd: "src/",
-          src: ["svg/**"],
           dest: "dest/"
         }]
       }
@@ -114,14 +112,6 @@ module.exports = function(grunt) {
           prefix: 'define(',
           verbose: true
         }
-      },
-      svgs: {
-        src: 'src/svg/',
-        dest: 'tmp/svgs.js',
-        options: {
-          prefix: 'define(',
-          verbose: true
-        }
       }
     },
 
@@ -132,7 +122,7 @@ module.exports = function(grunt) {
           outputStyle: 'nested'
         },
         files: {
-          'dest/css/main.css': 'src/css/main.scss'
+          'dest/main.css': 'src/css/main.scss'
         }
       }
     }
@@ -147,6 +137,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-mustache');
   grunt.loadNpmTasks('grunt-sass');
 
-  grunt.registerTask("rebuild", ["copy", "mustache", "requirejs", "watch"]);
   grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs", "sass", "connect", "watch"]);
 };
