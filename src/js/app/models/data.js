@@ -11,20 +11,20 @@ define(['tabletop', 'app/models/config'], function(Tabletop, Config) {
       callback: _successFetch.bind(this),
       simpleSheet: false
     });
-
-    console.log(tabletop);
   }
 
   function _successFetch(response) {
-    console.log(this.tabletop);
     this.data = response;
     callback();
+  }
+
+  function get(attribute) {
+    return this.tabletop.sheets(attribute).all();
   }
 
   return {
     fetch: fetch,
     data: data,
-    tabletop: this.tabletop
+    get: get
   };
-
 });

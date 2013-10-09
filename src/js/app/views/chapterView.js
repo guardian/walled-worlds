@@ -1,24 +1,24 @@
-define(['mustache', 'app/views/map', 'jquery', 'app/models/data', 'templates', 'app/utils/utils'], function(mustache, MapView, $, DataModel, templates, Utils) {
-  return function(data) {
+define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/models/data'],
+  function(mustache, MapView, templates, Utils, DataModel)
+{
+  return function(chapterData) {
 
-    this.$el;
-    var el;
-    var model = data;
+    var el = document.createElement('div');
+    var model = chapterData;
     var mapView = new MapView(model);
-    var tabletop = DataModel.tabletop;
 
     function _buildCopyAsset(id) {
-      var data = _getAssetData(id, tabletop.sheets('copy').all());
-      return mustache.render('<div class="copy">{{{ content }}}</div>', data);
+      var data = _getAssetData(id, DataModel.get('copy'));
+      return mustache.render(templates.chapter_asset_copy, data);
     }
 
     function _buildImageAsset(id) {
-      var data = _getAssetData(id, tabletop.sheets('images').all());
-      return mustache.render(templates.chapter_image, data);
+      var data = _getAssetData(id, DataModel.get('images'));
+      return mustache.render(templates.chapter_asset_image, data);
     }
 
     function _buildVideoAsset(id) {
-      var data = _getAssetData(id, tabletop.sheets('video').all());
+      var data = _getAssetData(id, DataModel.get('video'));
       return mustache.render(templates.chapter_asset_video, data);
     }
 
@@ -56,20 +56,24 @@ define(['mustache', 'app/views/map', 'jquery', 'app/models/data', 'templates', '
 
     function render() {
       model.compiledAssets = _buildAssets(model.assets);
-      this.$el = $(mustache.render(templates.chapter, model));
-      //console.log($el);
+      el.innerHTML = mustache.render(templates.chapter, model);
+      el = el.firstChild;
+      var mapElm = mapView.render();
+      if (mapElm) {
+        el.appendChild(mapElm);
+      }
 
-      this.$el.prepend(mapView.render());
-
-      //var target = this.$el.find('.chapter_title').get()[0];
       mapView.animate();
       return this;
     }
 
-    return {
-      $el: this.$el,
-      render: render
+    function getEl() {
+      return el;
     }
-  }
 
+    return {
+      getEl: getEl,
+      render: render
+    };
+  };
 });

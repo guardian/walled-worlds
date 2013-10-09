@@ -14,7 +14,6 @@ module.exports = function(grunt) {
           paths: {
             'mustache': 'lib/mustache',
             'requireLib': 'lib/require',
-            'jquery': 'lib/jquery-1.10.2',
             'templates': '../../tmp/templates',
             'svgs': '../../tmp/svgs',
             'tabletop': 'lib/tabletop',

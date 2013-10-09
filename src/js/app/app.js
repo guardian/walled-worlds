@@ -1,33 +1,40 @@
-define(['mustache', 'templates', 'tabletop', 'app/models/config', 'app/views/map', 'jquery', 'app/utils/utils', 'app/views/chapter', 'app/models/data'],
-  function(mustache, templates, Tabletop, config, MapView, $, Utils, ChapterView, DataModel)
+define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'app/models/data'],
+  function(mustache, templates, Utils, ChapterView, DataModel)
   {
+    'use strict';
 
-    var tabletop;
     // TODO: Store elm passed by boot.js
-    var $el = $('.gi-interactive');
-    var $chaptersWrapper;
+    //var $el = $('.gi-interactive');
+    var el = document.querySelector('.gi-interactive');
+    var chaptersWrapper;
     var chaptersViews = [];
 
-    function setupPage(data) {
-      $chaptersWrapper = $(templates.structure);
-      $el.append($chaptersWrapper);
+    function setupPage() {
+      var tmpElm = document.createElement('div');
+      tmpElm.innerHTML = templates.structure;
+      chaptersWrapper = tmpElm.firstChild;
+      el.appendChild(chaptersWrapper);
 
-      buildNavigation(DataModel.tabletop.sheets('chapters').all());
-      buildChapters(DataModel.tabletop.sheets('chapters').all());
+      buildNavigation();
+      buildChapters();
     }
 
-    function buildChapters(chapters) {
+    function buildChapters() {
+      var chapters = DataModel.get('chapters');
       chapters.forEach(function(chapterData) {
         var chapter = new ChapterView(chapterData);
         chaptersViews.push(chapter);
-        $chaptersWrapper.append(chapter.render().$el);
+        chapter.render();
+        chaptersWrapper.appendChild(chapter.getEl());
       });
     }
 
-
-    function buildNavigation(chapterData) {
+    function buildNavigation() {
+      var chapterData = DataModel.get('chapters');
       var html = mustache.render(templates.navigation, {links: chapterData});
-      $el.prepend($(html));
+      var tempElm = document.createElement('div');
+      tempElm.innerHTML = html;
+      el.appendChild(tempElm.firstChild);
     }
 
     function init() {
