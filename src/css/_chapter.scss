@@ -5,6 +5,13 @@
   padding-right: 40px;
   padding-top: 200px;
   font-family: "WebEgyptian-Regular", Georgia;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-color: #222;
+
+  &.fixed-background {
+    background-attachment: fixed;
+  }
 
   .chapter_title {
     font-size: 2.8rem;

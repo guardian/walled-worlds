@@ -17,7 +17,8 @@ module.exports = function(grunt) {
             'templates': '../../tmp/templates',
             'svgs': '../../tmp/svgs',
             'tabletop': 'lib/tabletop',
-            'tween': 'lib/tween.min'
+            'tween': 'lib/tween.min',
+            'classlist': 'lib/classList'
           },
 
           shim: {
@@ -26,12 +27,15 @@ module.exports = function(grunt) {
             },
             'tween': {
               'exports': 'TWEEN'
+            },
+            'classlist': {
+              'exports:': 'classlist'
             }
           },
 
           name: "main",
           namespace: '<%= pkg.namespace %>',
-          include: ['requireLib', 'templates', 'svgs'],
+          include: ['requireLib', 'templates', 'svgs', 'classlist'],
           optimize: (isProd) ? 'uglify' : 'none'
         }
       }

@@ -8,6 +8,8 @@ define(['mustache', 'svgs', 'templates', 'tween'], function(mustache, svgs, temp
     var tweenCount = 0;
     var ANIM_LENGTH = 5*1000;
     var totalLength = 0;
+    var hasAnimated = false;
+    var counterTween;
 
     function _nextPathTween() {
       tweenCount += 1;
@@ -17,51 +19,61 @@ define(['mustache', 'svgs', 'templates', 'tween'], function(mustache, svgs, temp
     }
 
     function animate() {
-      if (!elm) {
+      if (!elm || hasAnimated || paths.length < 1) {
         return;
       }
 
-      paths = elm.querySelectorAll('#wall path');
-
-      if (paths.length < 1) {
-        return false;
-      }
-
-
-      for (var i = 0; i < paths.length; i++) {
-        totalLength += paths[i].getTotalLength();
-      }
-
-      tweens = [];
-      var pathTime = ANIM_LENGTH / paths.length;
-      for (var i = 0; i < paths.length; i++) {;
-        paths[i].setAttribute('style', '');
-        tweens.push(_setupAnim(paths[i], pathTime));
-      }
-
       tweens[0].start();
+      counterTween.start();
 
       function anim() {
         requestAnimationFrame(anim);
         TWEEN.update();
       }
-
       anim();
+
+      hasAnimated = true;
     }
 
-    function _setupAnim(path, pathTime) {
+    function _setupAnim(path, totalLength) {
       var length = path.getTotalLength();
       path.style.strokeDasharray = length + ' ' + length;
       path.style.strokeDashoffset = length;
-      var time = Math.round((length / totalLength) * ANIM_LENGTH);
+
+      var pathTime = Math.round((length / totalLength) * ANIM_LENGTH);
 
       var tween = new TWEEN.Tween( { x: length} )
-        .to( { x: 0 }, time)
+        .to( { x: 0 }, pathTime)
         .onUpdate( function () {
           path.style.strokeDashoffset = this.x + 'px';
         }).
         onComplete(_nextPathTween);
       return tween;
+    }
+
+    function _setupPaths() {
+      paths = elm.querySelectorAll('#wall path');
+
+      var totalLength = 0;
+      for (var i = 0; i < paths.length; i++) {
+        totalLength += paths[i].getTotalLength();
+      }
+
+      for (var i = 0; i < paths.length; i++) {;
+        paths[i].setAttribute('style', '');
+        tweens.push(_setupAnim(paths[i], totalLength));
+      }
+
+    }
+
+    function _setupCounter() {
+      var counterElm = elm.querySelector('.chapter-map-counter-count');
+
+      counterTween = new TWEEN.Tween( { x: 0} )
+        .to( { x: distance }, ANIM_LENGTH)
+        .onUpdate( function () {
+          counterElm.innerText = this.x.toFixed(2);
+        });
     }
 
     function render() {
@@ -83,14 +95,8 @@ define(['mustache', 'svgs', 'templates', 'tween'], function(mustache, svgs, temp
       tmpElm.innerHTML = html;
       elm = tmpElm.firstChild;
 
-      var counterElm = elm.querySelector('.chapter-map-counter-count');
-
-      var tween = new TWEEN.Tween( { x: 0} )
-        .to( { x: distance }, ANIM_LENGTH)
-        .onUpdate( function () {
-          counterElm.innerText = this.x.toFixed(2);
-        });
-      tween.start();
+      _setupCounter();
+      _setupPaths();
 
       return elm;
     }

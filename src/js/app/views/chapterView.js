@@ -6,6 +6,7 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
     var el = document.createElement('div');
     var model = chapterData;
     var mapView = new MapView(model);
+    var mapElm;
 
     function _buildCopyAsset(id) {
       var data = _getAssetData(id, DataModel.get('copy'));
@@ -49,27 +50,52 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
     }
 
     function _getAssetData(id, data) {
-        return data.filter(function(el) {
-          return el.assetid === id;
-        })[0];
+      return data.filter(function(el) {
+        return el.assetid === id;
+      })[0];
+    }
+
+    function isFixed() {
+      var boundingBox = el.getBoundingClientRect();
+
+      if (boundingBox.top < 0) {
+        el.classList.add('fixed-background');
+        el.style.backgroundPosition = boundingBox.left + 'px 0';
+        if (mapElm) {
+          mapElm.style.position = 'fixed';
+          mapElm.style.left = boundingBox.left + 'px';
+          mapView.animate();
+        }
+      } else {
+        el.classList.remove('fixed-background');
+        el.setAttribute('style', '');
+        if (mapElm) {
+          mapElm.setAttribute('style', '');
+        }
       }
+
+    }
 
     function render() {
       model.compiledAssets = _buildAssets(model.assets);
       el.innerHTML = mustache.render(templates.chapter, model);
       el = el.firstChild;
-      var mapElm = mapView.render();
+      mapElm = mapView.render();
       if (mapElm) {
         el.appendChild(mapElm);
       }
 
-      mapView.animate();
       return this;
     }
 
     function getEl() {
       return el;
     }
+
+
+
+    window.addEventListener('scroll', isFixed, false);
+    window.addEventListener('resize', isFixed, false);
 
     return {
       getEl: getEl,
