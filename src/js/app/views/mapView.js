@@ -1,4 +1,6 @@
-define(['mustache', 'app/models/svgs', 'templates', 'tween'], function(mustache, svgs, templates, Tween) {
+define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 'PubSub'],
+  function(mustache, svgs, Utils, templates, Tween, PubSub)
+{
   return function(data) {
     var elm;
     var ID = data.chapterid;
@@ -10,7 +12,9 @@ define(['mustache', 'app/models/svgs', 'templates', 'tween'], function(mustache,
     var hasAnimated = false;
     var ANIM_DELAY = 250;
     var counterTween;
-    var svgsss = svgs;
+    var markers;
+
+    var pubSubTokens = {};
 
     function _nextPathTween() {
       tweenCount += 1;
@@ -76,6 +80,27 @@ define(['mustache', 'app/models/svgs', 'templates', 'tween'], function(mustache,
         .delay(ANIM_DELAY);
     }
 
+    function _setupMarkers() {
+      markers = elm.querySelectorAll('.marker');
+      for (var i = 0; i < markers.length; i++) {
+        markers[i].style.opacity = 0.3;
+        var markerID = markers[i].id.replace('marker_', '');
+        pubSubTokens[markerID] = PubSub.subscribe(markerID, addThing(markers[i]));
+      }
+    }
+
+    function addThing(elm) {
+      return function(tiggerID) {
+
+        var el = elm;
+        console.log(el, tiggerID, pubSubTokens);
+
+        el.style.opacity = 1;
+        PubSub.unsubscribe(pubSubTokens[tiggerID]);
+
+      };
+    }
+
     function render() {
       if (elm) {
         return elm;
@@ -90,13 +115,11 @@ define(['mustache', 'app/models/svgs', 'templates', 'tween'], function(mustache,
         svg: svgs[ID]
       };
 
-      var html = mustache.render(templates.chapter_map, svgData);
-      var tmpElm = document.createElement('div');
-      tmpElm.innerHTML = html;
-      elm = tmpElm.firstChild;
+      elm = Utils.buildDOM(mustache.render(templates.chapter_map, svgData)).firstChild;
 
       _setupCounter();
       _setupPaths();
+      _setupMarkers();
 
       return elm;
     }

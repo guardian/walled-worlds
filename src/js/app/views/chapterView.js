@@ -1,5 +1,5 @@
-define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/models/data'],
-  function(mustache, MapView, templates, Utils, DataModel)
+define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/models/data', 'PubSub'],
+  function(mustache, MapView, templates, Utils, DataModel, PubSub)
 {
   return function(chapterData) {
 
@@ -10,28 +10,66 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
 
     function _buildCopyAsset(id) {
       var data = _getAssetData(id, DataModel.get('copy'));
-      return mustache.render(templates.chapter_asset_copy, data);
+      var html = mustache.render(templates.chapter_asset_copy, data);
+      return Utils.buildDOM(html);
     }
 
     function _buildImageAsset(id) {
       var data = _getAssetData(id, DataModel.get('images'));
-      return mustache.render(templates.chapter_asset_image, data);
+
+
+
+      var html = mustache.render(templates.chapter_asset_image, data);
+      var domFrag = Utils.buildDOM(html);
+
+      if (data.hasOwnProperty('marker') && data.marker === 'TRUE') {
+        var bob = domFrag.firstChild;
+        _addWaypoint(bob, id);
+
+      }
+
+      return domFrag;
+    }
+
+    function _addWaypoint(el,ID) {
+      window.addEventListener('scroll', function() {
+        if (el.getBoundingClientRect().top - (window.innerHeight/2) < 0) {
+          PubSub.publish(ID, ID);
+        }
+      });
+    }
+
+
+    function addMarker(markerID) {
+
+//      window.addEventListener('scroll', function() {
+//        var selector = '#' + markerID;
+//        var elm = document.querySelector(selector);
+//        if ((elm.getBoundingClientRect().top < 0)) {
+//
+//        }
+//      })
     }
 
     function _buildVideoAsset(id) {
       var data = _getAssetData(id, DataModel.get('video'));
-      return mustache.render(templates.chapter_asset_video, data);
+      var html = mustache.render(templates.chapter_asset_video, data);
+      return Utils.buildDOM(html);
     }
 
-    function _buildAssets(assetsIDs) {
-      var assetHTML = '';
-      var ids = assetsIDs.trim().split(',');
+    function _buildAssets() {
+      var ids = model.assets.trim().split(',');
+      var domFrag = document.createDocumentFragment();
 
       ids.forEach(function(id) {
-        assetHTML += _getAssetContent(id);
+        var assetElm = _getAssetContent(id);
+        if (assetElm) {
+          domFrag.appendChild(assetElm);
+        }
       });
 
-      return assetHTML;
+      var assetContainer = el.querySelector('.chapter_copy');
+      assetContainer.appendChild(domFrag);
     }
 
     function _getAssetContent(id) {
@@ -66,6 +104,7 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
           mapElm.style.left = boundingBox.left + 'px';
           mapView.animate();
         }
+
       } else {
         el.classList.remove('fixed-background');
         el.setAttribute('style', '');
@@ -73,26 +112,29 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
           mapElm.setAttribute('style', '');
         }
       }
-
     }
 
-    function render() {
-      model.compiledAssets = _buildAssets(model.assets);
-      el.innerHTML = mustache.render(templates.chapter, model);
-      el = el.firstChild;
+    function isInView(elm) {
+      return (elm.getBoundingClientRect().top < 0);
+    }
+
+    function _addMap() {
       mapElm = mapView.render();
       if (mapElm) {
         el.appendChild(mapElm);
       }
+    }
 
+    function render() {
+      el = Utils.buildDOM(mustache.render(templates.chapter, model)).firstChild;
+      _buildAssets();
+      _addMap();
       return this;
     }
 
     function getEl() {
       return el;
     }
-
-
 
     window.addEventListener('scroll', isFixed, false);
     window.addEventListener('resize', isFixed, false);

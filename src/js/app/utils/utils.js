@@ -37,8 +37,19 @@ define([], function() {
     }
   }
 
+  function buildDOM(htmlStr) {
+    var tmpElm = document.createElement('div');
+    tmpElm.innerHTML = htmlStr;
+    var domFrag = document.createDocumentFragment();
+    for (var i = 0; i < tmpElm.children.length; i++) {
+      domFrag.appendChild(tmpElm.children[i]);
+    }
+    return domFrag;
+  }
+
   return {
-    waypoint: waypoint
+    waypoint: waypoint,
+    buildDOM: buildDOM
   };
 
 });

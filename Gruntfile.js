@@ -19,7 +19,8 @@ module.exports = function(grunt) {
             'tween': 'lib/tween.min',
             'classlist': 'lib/classList',
             'text': 'lib/text',
-            'svgDir': '../svg/'
+            'svgDir': '../svg/',
+            'PubSub': 'lib/pubsub'
           },
 
           shim: {
