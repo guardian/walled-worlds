@@ -83,20 +83,25 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
     function _setupMarkers() {
       markers = elm.querySelectorAll('.marker');
       for (var i = 0; i < markers.length; i++) {
-        markers[i].style.opacity = 0.3;
         var markerID = markers[i].id.replace('marker_', '');
         pubSubTokens[markerID] = PubSub.subscribe(markerID, addThing(markers[i]));
       }
     }
 
     function addThing(elm) {
-      return function(tiggerID) {
-
+      return function(msg, data) {
         var el = elm;
-        console.log(el, tiggerID, pubSubTokens);
 
-        el.style.opacity = 1;
-        PubSub.unsubscribe(pubSubTokens[tiggerID]);
+        if (data.show) {
+          if (!el.classList.contains('show-marker')) {
+            el.classList.add('show-marker');
+          }
+        } else {
+          if (el.classList.contains('show-marker')) {
+            el.classList.remove('show-marker');
+          }
+        }
+        //PubSub.unsubscribe(pubSubTokens[tiggerID]);
 
       };
     }

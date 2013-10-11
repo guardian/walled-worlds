@@ -33,9 +33,20 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
 
     function _addWaypoint(el,ID) {
       window.addEventListener('scroll', function() {
-        if (el.getBoundingClientRect().top - (window.innerHeight/2) < 0) {
-          PubSub.publish(ID, ID);
+        var elPos = el.getBoundingClientRect();
+
+        if (elPos.bottom < 0 || elPos.top > window.innerHeight) {
+          return;
         }
+
+        if (elPos.top - (window.innerHeight/2) < 0) {
+          PubSub.publish(ID, { id: ID, show: true });
+        }
+
+        if (elPos.top - (window.innerHeight/2) > 0) {
+          PubSub.publish(ID, { id: ID, show: false });
+        }
+
       });
     }
 
