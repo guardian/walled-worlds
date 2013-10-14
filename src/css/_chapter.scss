@@ -1,16 +1,16 @@
 .chapter {
-  border-bottom: 4px dashed yellow;
-  padding-left: 400px;
+  //border-bottom: 4px dashed yellow;
+
   position: relative;
-  padding-right: 40px;
-  padding-top: 200px;
+
   font-family: "WebEgyptian-Regular", Georgia;
+  padding: 0 10px;
   background-position: 0 0;
   background-repeat: no-repeat;
   background-color: #222;
 
   &.fixed-background {
-    background-attachment: fixed;
+      background-attachment: fixed;
   }
 
   .chapter_title {
@@ -38,10 +38,8 @@
     margin: 0 2.3rem 0 0.4rem;
   }
 
-  .chapter_copy .copy, .chapter_copy p{
-    font-size: 1rem;
+  .chapter_copy .copy, .chapter_copy p {
     line-height:1.5em;
-
   }
 
   .chapter_copy figure {
@@ -54,5 +52,10 @@
     width: 100%;
     border: 2px solid #fff;
   }
+}
 
+&.wide .chapter {
+  padding-left: 400px;
+  padding-top: 200px;
+  padding-right: 40px
 }

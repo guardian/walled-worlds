@@ -17,27 +17,23 @@ module.exports = function(grunt) {
             'templates': '../../tmp/templates',
             'tabletop': 'lib/tabletop',
             'tween': 'lib/tween.min',
-            'classlist': 'lib/classList',
+            'requestAnimPolyfill': 'lib/requestAnimPolyfill',
             'text': 'lib/text',
             'svgDir': '../svg/',
-            'PubSub': 'lib/pubsub'
+            'PubSub': 'lib/pubsub',
+            'classlist': 'lib/classList'
           },
 
           shim: {
-            'tabletop': {
-              'exports': 'Tabletop'
-            },
-            'tween': {
-              'exports': 'TWEEN'
-            },
-            'classlist': {
-              'exports:': 'classlist'
-            }
+            'tabletop': { 'exports': 'Tabletop' },
+            'tween': { 'exports': 'TWEEN' },
+            'requestAnimPolyfill' : { 'exports': 'requestAnimPolyfill' },
+            'classlist': { 'exports:': 'classlist' }
           },
 
           name: "main",
           namespace: '<%= pkg.namespace %>',
-          include: ['requireLib', 'templates', 'classlist'],
+          include: ['requireLib', 'templates', 'classlist', 'requestAnimPolyfill'],
           inlineText: true,
           stubModules: ['text'],
           optimize: (isProd) ? 'uglify' : 'none'

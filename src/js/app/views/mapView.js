@@ -93,16 +93,15 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
         var el = elm;
 
         if (data.show) {
-          if (!el.classList.contains('show-marker')) {
-            el.classList.add('show-marker');
+          if (-1 === el.getAttribute('class').indexOf('show-marker')) {
+            el.setAttribute('class', el.getAttribute('class') + ' show-marker');
           }
         } else {
-          if (el.classList.contains('show-marker')) {
-            el.classList.remove('show-marker');
+          if (-1 !== el.getAttribute('class').indexOf('show-marker')) {
+            el.setAttribute('class', el.getAttribute('class').replace(' show-marker', ''));
           }
         }
         //PubSub.unsubscribe(pubSubTokens[tiggerID]);
-
       };
     }
 

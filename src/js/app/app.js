@@ -7,9 +7,18 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
     var el = document.querySelector('.gi-interactive');
     var chaptersWrapper;
     var chaptersViews = [];
+    var MIN_WIDTH = 940;
 
     function setupPage() {
       addStyles();
+
+      // Are we on a wide page?
+
+      el.style.margin = 0;
+      console.log(el.clientWidth);
+      if (el.offsetWidth >= MIN_WIDTH) {
+        el.classList.add('wide');
+      }
 
       var tmpElm = document.createElement('div');
       tmpElm.innerHTML = templates.structure;
