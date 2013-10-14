@@ -16,28 +16,18 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
 
     function _buildImageAsset(id) {
       var data = _getAssetData(id, DataModel.get('images'));
-
-
-
       var html = mustache.render(templates.chapter_asset_image, data);
       var domFrag = Utils.buildDOM(html);
 
       if (data.hasOwnProperty('marker') && data.marker === 'TRUE') {
-        var bob = domFrag.firstChild;
-        _addWaypoint(bob, id);
-
+        _addWaypoint(domFrag.firstChild, id);
       }
 
       return domFrag;
     }
 
     function _addWaypoint(el,ID) {
-
-      if (window.addEventListener) {
-        window.addEventListener('scroll', checkScroll, false);
-      } else {
-        window.attachEvent('onscroll', checkScroll);
-      }
+      Utils.on(window, 'scroll', checkScroll);
 
       function checkScroll() {
         var elPos = el.getBoundingClientRect();
@@ -54,18 +44,6 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
           PubSub.publish(ID, { id: ID, show: false });
         }
       }
-    }
-
-
-    function addMarker(markerID) {
-
-//      window.addEventListener('scroll', function() {
-//        var selector = '#' + markerID;
-//        var elm = document.querySelector(selector);
-//        if ((elm.getBoundingClientRect().top < 0)) {
-//
-//        }
-//      })
     }
 
     function _buildVideoAsset(id) {
@@ -131,10 +109,6 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
       }
     }
 
-    function isInView(elm) {
-      return (elm.getBoundingClientRect().top < 0);
-    }
-
     function _addMap() {
       mapElm = mapView.render();
       if (mapElm) {
@@ -153,13 +127,8 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
       return el;
     }
 
-    if(window.addEventListener) {
-      window.addEventListener('scroll', isFixed, false);
-      window.addEventListener('resize', isFixed, false);
-    } else {
-      window.attachEvent('onscroll', isFixed);
-      window.attachEvent('onresize', isFixed);
-    }
+    Utils.on(window, 'scroll', isFixed);
+    Utils.on(window, 'resize', isFixed);
 
     return {
       getEl: getEl,

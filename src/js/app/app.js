@@ -10,22 +10,16 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
     var MIN_WIDTH = 940;
 
     function setupPage() {
-      console.log(el);
       addStyles();
 
       // Are we on a wide page?
-
+      // <figure> elm has lots of margin which causes issues when calc width.
       el.style.margin = 0;
-
       if (el.offsetWidth >= MIN_WIDTH) {
         el.classList.add('wide');
       }
 
-      // TODO: Replace with Util
-      var tmpElm = document.createElement('div');
-      tmpElm.innerHTML = templates.structure;
-      chaptersWrapper = tmpElm.firstChild;
-
+      chaptersWrapper = Utils.buildDOM(templates.structure).firstChild;
       el.appendChild(chaptersWrapper);
 
       buildNavigation();

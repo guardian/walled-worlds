@@ -47,9 +47,18 @@ define([], function() {
     return domFrag;
   }
 
+  function on(elm, event, callback) {
+    if (elm.addEventListener) {
+      elm.addEventListener(event, callback, false);
+    } else {
+      elm.attachEvent('on' + event, callback);
+    }
+  }
+
   return {
     waypoint: waypoint,
-    buildDOM: buildDOM
+    buildDOM: buildDOM,
+    on: on
   };
 
 });

@@ -1,5 +1,5 @@
 define(['tabletop', 'app/models/config'], function(Tabletop, Config) {
-  var data = 'bob';
+  var data = '';
   var callback;
   this.tabletop = null;
 
