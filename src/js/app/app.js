@@ -1,4 +1,4 @@
-define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'app/models/data'],
+define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'app/models/data', 'es5-shim'],
   function(mustache, templates, Utils, ChapterView, DataModel)
   {
     'use strict';
@@ -10,19 +10,22 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
     var MIN_WIDTH = 940;
 
     function setupPage() {
+      console.log(el);
       addStyles();
 
       // Are we on a wide page?
 
       el.style.margin = 0;
-      console.log(el.clientWidth);
+
       if (el.offsetWidth >= MIN_WIDTH) {
         el.classList.add('wide');
       }
 
+      // TODO: Replace with Util
       var tmpElm = document.createElement('div');
       tmpElm.innerHTML = templates.structure;
       chaptersWrapper = tmpElm.firstChild;
+
       el.appendChild(chaptersWrapper);
 
       buildNavigation();

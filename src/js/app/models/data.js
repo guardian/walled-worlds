@@ -8,7 +8,7 @@ define(['tabletop', 'app/models/config'], function(Tabletop, Config) {
 
     this.tabletop = Tabletop.init( {
       key: Config.google_spreadsheet_key,
-      callback: _successFetch.bind(this),
+      callback: _successFetch,
       simpleSheet: false
     });
   }

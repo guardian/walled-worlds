@@ -32,7 +32,14 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
     }
 
     function _addWaypoint(el,ID) {
-      window.addEventListener('scroll', function() {
+
+      if (window.addEventListener) {
+        window.addEventListener('scroll', checkScroll, false);
+      } else {
+        window.attachEvent('onscroll', checkScroll);
+      }
+
+      function checkScroll() {
         var elPos = el.getBoundingClientRect();
 
         if (elPos.bottom < 0 || elPos.top > window.innerHeight) {
@@ -46,8 +53,7 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
         if (elPos.top - (window.innerHeight/2) > 0) {
           PubSub.publish(ID, { id: ID, show: false });
         }
-
-      });
+      }
     }
 
 
@@ -147,8 +153,13 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
       return el;
     }
 
-    window.addEventListener('scroll', isFixed, false);
-    window.addEventListener('resize', isFixed, false);
+    if(window.addEventListener) {
+      window.addEventListener('scroll', isFixed, false);
+      window.addEventListener('resize', isFixed, false);
+    } else {
+      window.attachEvent('onscroll', isFixed);
+      window.attachEvent('onresize', isFixed);
+    }
 
     return {
       getEl: getEl,

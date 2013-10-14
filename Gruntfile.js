@@ -21,19 +21,21 @@ module.exports = function(grunt) {
             'text': 'lib/text',
             'svgDir': '../svg/',
             'PubSub': 'lib/pubsub',
-            'classlist': 'lib/classList'
+            'classlist': 'lib/classList',
+            'es5-shim': 'lib/es5-shim'
           },
 
           shim: {
             'tabletop': { 'exports': 'Tabletop' },
             'tween': { 'exports': 'TWEEN' },
             'requestAnimPolyfill' : { 'exports': 'requestAnimPolyfill' },
-            'classlist': { 'exports:': 'classlist' }
+            'classlist': { 'exports:': 'classlist' },
+            'es5-shim': { 'exports:': 'es5-shim' }
           },
 
           name: "main",
           namespace: '<%= pkg.namespace %>',
-          include: ['requireLib', 'templates', 'classlist', 'requestAnimPolyfill'],
+          include: ['requireLib', 'templates', 'classlist', 'es5-shim', 'requestAnimPolyfill'],
           inlineText: true,
           stubModules: ['text'],
           optimize: (isProd) ? 'uglify' : 'none'
