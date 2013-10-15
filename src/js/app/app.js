@@ -1,5 +1,5 @@
-define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'app/models/data', 'es5-shim'],
-  function(mustache, templates, Utils, ChapterView, DataModel)
+define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'app/views/navigationView', 'app/models/data'],
+  function(mustache, templates, Utils, ChapterView, NavigationView, DataModel)
   {
     'use strict';
 
@@ -19,10 +19,11 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
         el.classList.add('wide');
       }
 
+      el.appendChild(NavigationView.render());
+
       chaptersWrapper = Utils.buildDOM(templates.structure).firstChild;
       el.appendChild(chaptersWrapper);
 
-      buildNavigation();
       buildChapters();
     }
 
@@ -42,14 +43,6 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
         chapter.render();
         chaptersWrapper.appendChild(chapter.getEl());
       });
-    }
-
-    function buildNavigation() {
-      var chapterData = DataModel.get('chapters');
-      var html = mustache.render(templates.navigation, {links: chapterData});
-      var tempElm = document.createElement('div');
-      tempElm.innerHTML = html;
-      el.appendChild(tempElm.firstChild);
     }
 
     function init() {
