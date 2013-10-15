@@ -13,6 +13,7 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
     var ANIM_DELAY = 250;
     var counterTween;
     var markers;
+    var tickerID;
 
     var pubSubTokens = {};
 
@@ -20,6 +21,8 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
       tweenCount += 1;
       if (tweenCount < paths.length) {
         tweens[tweenCount].start();
+      } else {
+        window.cancelAnimationFrame(tickerID);
       }
     }
 
@@ -32,7 +35,7 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
       counterTween.start();
 
       function anim() {
-        requestAnimationFrame(anim);
+        tickerID = window.requestAnimationFrame(anim);
         TWEEN.update();
       }
       anim();
