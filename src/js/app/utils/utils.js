@@ -47,18 +47,55 @@ define([], function() {
     return domFrag;
   }
 
-  function on(elm, event, callback) {
-    if (elm.addEventListener) {
-      elm.addEventListener(event, callback, false);
-    } else {
-      elm.attachEvent('on' + event, callback);
-    }
+  function on(elm, events, callback) {
+    events.split(',').forEach(function(event) {
+      if (elm.addEventListener) {
+        elm.addEventListener(event.trim(), callback, false);
+      } else {
+        elm.attachEvent('on' + event.trim(), callback);
+      }
+    });
   }
+
+  function getGradientImg(width, colour, startPos, opacity) {
+    var rgbRegex = /^.+\((.+)\)/;
+    var gradWidth = width || 100;
+    var gradStartPos =  startPos || 1;
+    var gradOpacity = opacity || 1;
+    var gradColor = '0, 0, 0,';
+    if (colour && typeof colour === 'string' && colour.match(rgbRegex)[1]) {
+      gradColor = colour.match(rgbRegex)[1] + ',';
+    }
+
+    var canvas = document.createElement('canvas');
+    canvas.width = gradWidth;
+    canvas.height = gradWidth;
+
+    var ctx = canvas.getContext('2d');
+
+    var linGrad = ctx.createLinearGradient(0, 0, gradWidth, 0);
+    linGrad.addColorStop(0, 'rgba(' + gradColor + ' 0)');
+    linGrad.addColorStop(gradStartPos, 'rgba(' + gradColor + gradOpacity +')');
+    ctx.fillStyle = linGrad;
+    ctx.fillRect(0, 0, gradWidth, gradWidth);
+
+    var dataURL = canvas.toDataURL('image/png');
+
+    var img = document.createElement('img');
+    img.setAttribute('src', dataURL);
+    img.setAttribute('width', gradWidth);
+    img.setAttribute('height', gradWidth);
+    img.setAttribute('class', 'gradient-image');
+
+    return img;
+  }
+
 
   return {
     waypoint: waypoint,
     buildDOM: buildDOM,
-    on: on
+    on: on,
+    getGradientImg: getGradientImg
   };
 
 });

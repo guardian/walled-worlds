@@ -17,12 +17,14 @@
     font-size: 2.8rem;
     margin-bottom: 0.3rem;
     font-weight: normal;
+    position: relative;
   }
 
   .chapter_meta {
     font-family: Arial;
     margin: 0.2rem 0 1rem;
     font-size: 0.8rem;
+    position: relative;
   }
 
   .chapter_meta dt,
@@ -40,17 +42,29 @@
 
   .chapter_copy .copy, .chapter_copy p {
     line-height:1.5em;
+    position: relative;
   }
 
   .chapter_copy figure {
-    width: 496px;
+    max-width: 500px;
     margin: 0 0 1rem;
+    position: relative;
   }
 
   .chapter_image,
   .chapter_video {
     width: 100%;
+    max-width: 496px;
     border: 2px solid #fff;
+  }
+
+  .gradient-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
   }
 }
 

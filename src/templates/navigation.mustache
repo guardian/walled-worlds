@@ -1,13 +1,7 @@
 <header class="gi-header">
-    <h1 class="gi-header-title">Walled World <a href="#gi-top" class="gi-top">back to top</a></h1>
+    <h1 class="gi-header-title">Walled World <a href="#gi-nav" class="gi-top">back to top</a></h1>
 
     <nav class="gi-nav">
-        {{ #links }}
-          <a href="#{{ chapterid }}" class="gi-nav-link">
-            <strong>{{ country }}</strong>
-            <span class="gi-nav-link-meta">{{ length }} miles</span>
-          </a>
-        {{ /links }}
-        <a href="#all_walls"  class="gi-nav-link active">All the <br /> walls</a>
+        <a href="#all_walls"  class="gi-nav-link gi-nav-link-all">All the <br /> walls</a>
     </nav>
 </header>

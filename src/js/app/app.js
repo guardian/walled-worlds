@@ -32,7 +32,7 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
       styleElm.setAttribute('rel', 'stylesheet');
       styleElm.setAttribute('type', 'text/css');
       styleElm.setAttribute('href', 'main.css');
-      document.querySelector('body').appendChild(styleElm);
+      document.querySelector('head').appendChild(styleElm);
     }
 
     function buildChapters() {

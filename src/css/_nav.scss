@@ -1,7 +1,5 @@
 .gi-nav {
   float: right;
-  width: 530px;
-  margin-right: 20px;
 }
 
 .gi-nav-link {
@@ -13,6 +11,24 @@
   font-size: 12px;
   float: left;
   min-height: 2rem;
+  display: none;
+
+  &.active {
+    background: rgb(109, 109, 109);
+    display: block;
+  }
+}
+
+&.wide {
+  .gi-nav {
+    width: 530px;
+    margin-right: 20px;
+  }
+
+  .gi-nav-link {
+    display: block;
+  }
+
 }
 
 .gi-nav-link:hover {
