@@ -1,5 +1,5 @@
-define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/models/data', 'PubSub'],
-  function(mustache, MapView, templates, Utils, DataModel, PubSub)
+define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/models/data', 'PubSub', 'marked'],
+  function(mustache, MapView, templates, Utils, DataModel, PubSub, marked)
 {
   return function(chapterData) {
 
@@ -9,9 +9,15 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
     var mapElm;
     var _isHidden = false;
 
+    marked.setOptions({ smartypants: true });
+
     function _buildCopyAsset(id) {
       var data = _getAssetData(id, DataModel.get('copy'));
-      var html = mustache.render(templates.chapter_asset_copy, data);
+      var templateData = {
+        assetid: data.assetid,
+        content: marked(data.content)
+      };
+      var html = mustache.render(templates.chapter_asset_copy, templateData);
       return Utils.buildDOM(html);
     }
 

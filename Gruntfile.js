@@ -16,6 +16,7 @@ module.exports = function(grunt) {
             'requireLib': 'lib/require',
             'templates': '../../tmp/templates',
             'tabletop': 'lib/tabletop',
+            'marked': 'lib/marked',
             'tween': 'lib/tween.min',
             'requestAnimPolyfill': 'lib/requestAnimPolyfill',
             'text': 'lib/text',

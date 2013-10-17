@@ -6,7 +6,7 @@
   font-family: arial;
   color: #fff;
   text-decoration: none;
-  padding: 13px 10px 9px;
+  padding: 13px 6px 9px;
   display: inline-block;
   font-size: 12px;
   float: left;
@@ -21,14 +21,11 @@
 
 &.wide {
   .gi-nav {
-    width: 530px;
-    margin-right: 20px;
   }
 
   .gi-nav-link {
     display: block;
   }
-
 }
 
 .gi-nav-link:hover {
