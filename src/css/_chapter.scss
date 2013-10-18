@@ -49,6 +49,12 @@
     max-width: 500px;
     margin: 0 0 1rem;
     position: relative;
+
+    figcaption {
+      font-family: arial, sans-serif;
+      font-size: 13px;
+      color: #CCC;
+    }
   }
 
   .chapter_image,

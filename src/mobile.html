@@ -529,7 +529,16 @@
                 <p>David Cameron has endorsed a speech by Andrew Parker in which the new head of MI5 suggested that the leaks by the US whistleblower Edward Snowden had undermined the fight against terrorism.</p>
 
                 <figure class="gi-interactive"></figure>
-                <script src="main.js"></script>
+
+                <!-- Expects requirejs to be present in the R2 page -->
+                <script>
+                    window.onload = function() {
+                        require([document.location.origin+'//boot.js']).then(function(app) {
+                            var el = document.querySelector('.gi-interactive');
+                            app.boot(el, window, {}, {});
+                        });
+                    }
+                </script>
 
             </div>
         </div>

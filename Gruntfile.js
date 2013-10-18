@@ -9,7 +9,7 @@ module.exports = function(grunt) {
       compile: {
         options: {
           baseUrl: "src/js/",
-          out: "dest/main.js",
+          out: "dest/boot.js",
 
           paths: {
             'mustache': 'lib/mustache',
