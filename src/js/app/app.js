@@ -3,15 +3,14 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
   {
     'use strict';
 
-    // TODO: Store elm passed by boot.js
-    var el = document.querySelector('.gi-interactive');
+    var el;
     var chaptersWrapper;
     var chaptersViews = [];
     var MIN_WIDTH = 940;
 
     function setupPage() {
-      addStyles();
 
+      addStyles();
       // Are we on a wide page?
       // <figure> elm has lots of margin which causes issues when calc width.
       el.style.margin = 0;
@@ -45,12 +44,13 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
       });
     }
 
-    function init() {
+    function boot(element) {
+      el = element;
       DataModel.fetch(setupPage);
     }
 
     return {
-      init: init
+      init: boot
     };
   });
 

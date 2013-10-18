@@ -152,15 +152,16 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
       _buildAssets();
       _addMap();
       _addGradient();
+
+      Utils.on(window, 'scroll', _handleScroll);
+      Utils.on(window, 'resize', _correctBackgroundPosition);
+
       return this;
     }
 
     function getEl() {
       return el;
     }
-
-    Utils.on(window, 'scroll', _handleScroll);
-    Utils.on(window, 'resize', _correctBackgroundPosition);
 
 
     return {

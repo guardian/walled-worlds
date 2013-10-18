@@ -3,12 +3,7 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
 {
   var el;
   var chapterNavElms = {};
-  PubSub.subscribe('chapterActive', _activateNavigation);
-  PubSub.subscribe('chapterDeactivate', _deactivateNavigation);
 
-
-  Utils.on(window, 'scroll', _isFixed);
-  Utils.on(window, 'resize', _setNavWidth);
 
   function _isFixed() {
     var bounds = el.parentNode.getBoundingClientRect();
@@ -57,6 +52,13 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
       _buildChapterLinks(chapterData),
       el.querySelector('.gi-nav-link-all')
     );
+
+    PubSub.subscribe('chapterActive', _activateNavigation);
+    PubSub.subscribe('chapterDeactivate', _deactivateNavigation);
+
+
+    Utils.on(window, 'scroll', _isFixed);
+    Utils.on(window, 'resize', _setNavWidth);
 
     return el;
   }

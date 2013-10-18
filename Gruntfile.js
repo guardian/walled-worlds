@@ -13,7 +13,7 @@ module.exports = function(grunt) {
 
           paths: {
             'mustache': 'lib/mustache',
-            'requireLib': 'lib/require',
+            'almond': 'lib/almond',
             'templates': '../../tmp/templates',
             'tabletop': 'lib/tabletop',
             'marked': 'lib/marked',
@@ -34,12 +34,18 @@ module.exports = function(grunt) {
             'es5-shim': { 'exports:': 'es5-shim' }
           },
 
-          name: "main",
-          namespace: '<%= pkg.namespace %>',
-          include: ['requireLib', 'templates', 'classlist', 'es5-shim', 'requestAnimPolyfill'],
+          name: "app/app",
+
+          //namespace: '<%= pkg.namespace %>',
+          include: ['almond', 'templates', 'classlist', 'es5-shim', 'requestAnimPolyfill'],
+          findNestedDependencies: true,
           inlineText: true,
           stubModules: ['text'],
-          optimize: (isProd) ? 'uglify' : 'none'
+          optimize: (isProd) ? 'uglify' : 'none',
+          wrap: {
+            start: "define([], function() {",
+            endFile: "src/require_end.frag"
+          }
         }
       }
     },
@@ -80,7 +86,7 @@ module.exports = function(grunt) {
           dest: "dest/"
         }]
       },
-      imgs: {
+      images: {
         files: [{
           expand: true,
           cwd: "src/",
