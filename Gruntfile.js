@@ -2,6 +2,21 @@ module.exports = function(grunt) {
 
   var isProd = grunt.option('prod') || false;
 
+  grunt.task.registerTask('fetch', 'Fetch data from Google spreadsheet.', function() {
+    var done = this.async();
+    var Tabletop = require('tabletop');
+    Tabletop.init( {
+      key: '0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc',
+      callback: _handleData,
+      simpleSheet: false
+    });
+
+    function _handleData(data) {
+      grunt.file.write('tmp/data.js', 'define([],function() { return ' + JSON.stringify(data, null, "  ") + '; });');
+      done();
+    }
+  });
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -23,7 +38,8 @@ module.exports = function(grunt) {
             'svgDir': '../svg/',
             'PubSub': 'lib/pubsub',
             'classlist': 'lib/classList',
-            'es5-shim': 'lib/es5-shim'
+            'es5-shim': 'lib/es5-shim',
+            'data': (isProd) ? '../../tmp/data' : 'app/models/contentData'
           },
 
           shim: {
