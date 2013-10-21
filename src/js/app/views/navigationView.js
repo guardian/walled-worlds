@@ -9,12 +9,12 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
     var bounds = el.parentNode.getBoundingClientRect();
 
     if (bounds.top < 0) {
-      if (!el.classList.contains('fixed')) {
+      if (!el.parentNode.classList.contains('fixed')) {
         _setNavWidth();
-        el.classList.add('fixed');
+        el.parentNode.classList.add('fixed');
       }
     } else {
-      el.classList.remove('fixed');
+      el.parentNode.classList.remove('fixed');
       el.removeAttribute('style');
     }
   }
@@ -63,7 +63,12 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
     return el;
   }
 
+  function getHeight() {
+    return el.clientHeight;
+  }
+
   return {
+    getHeight: getHeight,
     render: render
   };
 });

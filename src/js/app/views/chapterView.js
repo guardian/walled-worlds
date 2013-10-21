@@ -1,5 +1,5 @@
-define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/models/data', 'PubSub', 'marked'],
-  function(mustache, MapView, templates, Utils, DataModel, PubSub, marked)
+define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates', 'app/utils/utils', 'app/models/data', 'PubSub', 'marked'],
+  function(mustache, MapView, NavigationView, templates, Utils, DataModel, PubSub, marked)
 {
   return function(chapterData) {
 
@@ -54,7 +54,7 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
     }
 
     function _buildVideoAsset(id) {
-      var data = _getAssetData(id, DataModel.get('video'));
+      var data = _getAssetData(id, DataModel.get('videos'));
       var html = mustache.render(templates.chapter_asset_video, data);
       return Utils.buildDOM(html);
     }
@@ -91,14 +91,14 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
 
     function _getAssetData(id, data) {
       return data.filter(function(el) {
-        return el.assetid === id;
+        return el.assetid.trim() === id;
       })[0];
     }
 
     function _handleScroll() {
       var boundingBox = el.getBoundingClientRect();
 
-      if (boundingBox.top < 0 && boundingBox.bottom > 0) {
+      if (boundingBox.top - NavigationView.getHeight() < 0 && boundingBox.bottom > 0) {
         if (!el.classList.contains('fixed-background')) {
           _isHidden = false;
           el.classList.add('fixed-background');
@@ -116,7 +116,7 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
         if (!_isHidden) {
           PubSub.publish('chapterDeactivate', { id: model.chapterid });
           el.classList.remove('fixed-background');
-          el.setAttribute('style', '');
+          el.style.backgroundPosition = '0 0';
           if (mapElm) {
             mapElm.setAttribute('style', '');
           }
@@ -128,7 +128,7 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
     function _correctBackgroundPosition() {
       var boundingBox = el.getBoundingClientRect();
       if (!_isHidden) {
-        el.style.backgroundPosition = boundingBox.left + 'px 0';
+        el.style.backgroundPosition = boundingBox.left + 'px 3.4rem';
         if (mapElm) {
           mapElm.style.left = boundingBox.left + 'px';
         }
@@ -143,12 +143,33 @@ define(['mustache', 'app/views/mapView', 'templates', 'app/utils/utils', 'app/mo
     }
 
     function _addGradient() {
-      var gradImg = Utils.getGradientImg(500, 'rgb(0, 0, 0)', 0.6, 0.6);
+      var backgroundData = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
+      if (backgroundData) {
+        var gradImg = Utils.getGradientImg(
+          backgroundData.gradientwidth,
+          backgroundData.gradientcolour,
+          backgroundData.gradientstart,
+          backgroundData.gradientopacity
+        );
+      } else {
+        var gradImg = Utils.getGradientImg();
+      }
+
       el.insertBefore(gradImg, el.firstChild);
+    }
+
+    function _setBackgroundImage() {
+      if (model.background && model.background.length > 0) {
+        var data = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
+        if (data.src) {
+          el.style.backgroundImage = 'url('+ data.src + ')';
+        }
+      }
     }
 
     function render() {
       el = Utils.buildDOM(mustache.render(templates.chapter, model)).firstChild;
+      _setBackgroundImage();
       _buildAssets();
       _addMap();
       _addGradient();

@@ -1,6 +1,6 @@
 .chapter {
   //border-bottom: 4px dashed yellow;
-
+  overflow: hidden;
   position: relative;
 
   font-family: "WebEgyptian-Regular", Georgia;
@@ -11,6 +11,7 @@
 
   &.fixed-background {
       background-attachment: fixed;
+      background-position: 0 3.4rem;
   }
 
   .chapter_title {
@@ -72,6 +73,10 @@
     width: 100%;
     z-index: 0;
   }
+}
+
+&.fixed .chapters {
+  margin-top: 3.4rem;
 }
 
 &.wide .chapter {

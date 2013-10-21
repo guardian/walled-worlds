@@ -81,7 +81,7 @@ define([], function() {
 
     var dataURL = canvas.toDataURL('image/png');
 
-    var img = document.createElement('img');
+        var img = document.createElement('img');
     img.setAttribute('src', dataURL);
     img.setAttribute('width', gradWidth);
     img.setAttribute('height', gradWidth);

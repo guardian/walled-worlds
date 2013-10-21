@@ -1,14 +1,14 @@
 .gi-header {
   overflow: hidden;
-
   background: #333;
   position: static;
   z-index: 2;
+  height: 3.4rem;
+}
 
-  &.fixed {
-    position: fixed;
-    top: 0;
-  }
+&.fixed .gi-header {
+  position: fixed;
+  top: 0;
 }
 
 &.wide .gi-header {
@@ -24,10 +24,17 @@
 }
 
 .gi-top {
-  color: #fff;
+  color: rgb(136, 136, 136);
   text-decoration: none;
-  display: inline-block;
+  display: block;
+  float: right;
   margin-left: 10px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: normal;
+  clear: left;
+}
+
+
+.gi-header-text {
+  float: left;
 }

@@ -2,13 +2,19 @@
   position: absolute;
   left: 0;
   top: 0;
+
+
+}
+
+.fixed-background .gi-chapter-map {
+  top: 3.4rem;
 }
 
 .gi-chapter-map svg path {
-  stroke: red;
+  stroke: rgb(255, 255, 255);
   stroke-width: 3px;
+  stroke-linejoin: round;
   fill: none;
-
 }
 
 .chapter-map-counter {
