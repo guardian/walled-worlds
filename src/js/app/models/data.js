@@ -1,4 +1,4 @@
-define(['tabletop', 'app/models/config', 'data'], function(Tabletop, Config, Data) {
+define(['tabletop', 'app/models/config', 'data', 'PubSub'], function(Tabletop, Config, Data, PubSub) {
   var dataStore = '';
   var callback;
   this.tabletop = null;
@@ -18,6 +18,7 @@ define(['tabletop', 'app/models/config', 'data'], function(Tabletop, Config, Dat
   }
 
   function _successFetch(response) {
+    PubSub.publish('loadSuccess');
     dataStore = response;
     callback();
   }

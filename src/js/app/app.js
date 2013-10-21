@@ -1,5 +1,5 @@
-define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'app/views/navigationView', 'app/models/data'],
-  function(mustache, templates, Utils, ChapterView, NavigationView, DataModel)
+define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'app/views/navigationView', 'app/views/loadingView', 'app/models/data'],
+  function(mustache, templates, Utils, ChapterView, NavigationView, LoadingView, DataModel)
   {
     'use strict';
 
@@ -9,8 +9,6 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
     var MIN_WIDTH = 940;
 
     function setupPage() {
-
-      addStyles();
       // Are we on a wide page?
       // <figure> elm has lots of margin which causes issues when calc width.
       el.style.margin = 0;
@@ -46,6 +44,8 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
 
     function boot(element) {
       el = element;
+      el.appendChild(LoadingView.render());
+      addStyles();
       DataModel.fetch(setupPage);
     }
 
