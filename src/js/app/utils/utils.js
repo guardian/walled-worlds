@@ -57,15 +57,39 @@ define([], function() {
     });
   }
 
+  // http://stackoverflow.com/a/11508164
+  function _hexToRgb(hex) {
+    var bigint = parseInt(hex, 16);
+    var r = (bigint >> 16) & 255;
+    var g = (bigint >> 8) & 255;
+    var b = bigint & 255;
+
+    return r + "," + g + "," + b + ",";
+  }
+
   function getGradientImg(width, colour, startPos, opacity) {
+
+    var hexColourRegex = /#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?/g;
     var rgbRegex = /^.+\((.+)\)/;
     var gradWidth = width || 100;
     var gradStartPos =  startPos || 1;
     var gradOpacity = opacity || 1;
     var gradColor = '0, 0, 0,';
-    if (colour && typeof colour === 'string' && colour.match(rgbRegex)[1]) {
-      gradColor = colour.match(rgbRegex)[1] + ',';
+
+    if (colour !== undefined && typeof colour === 'string') {
+
+      if (colour.match(rgbRegex) !== null) {
+        gradColor = colour.match(rgbRegex)[1] + ',';
+      }
+
+
+      if (colour.match(hexColourRegex) !== null) {
+        var hexCode = colour.match(hexColourRegex)[0].substr(1);
+        gradColor = _hexToRgb(hexCode);
+      }
+
     }
+
 
     var canvas = document.createElement('canvas');
     canvas.width = gradWidth;

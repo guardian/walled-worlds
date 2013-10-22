@@ -158,18 +158,22 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates'
       el.insertBefore(gradImg, el.firstChild);
     }
 
-    function _setBackgroundImage() {
+    function _setBackground() {
       if (model.background && model.background.length > 0) {
         var data = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
         if (data.src) {
           el.style.backgroundImage = 'url('+ data.src + ')';
+        }
+
+        if (data.backgroundcolour !== undefined && data.backgroundcolour.trim().length > 0) {
+          el.style.backgroundColor = data.backgroundcolour;
         }
       }
     }
 
     function render() {
       el = Utils.buildDOM(mustache.render(templates.chapter, model)).firstChild;
-      _setBackgroundImage();
+      _setBackground();
       _buildAssets();
       _addMap();
       _addGradient();
