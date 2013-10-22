@@ -113,6 +113,9 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
         return elm;
       }
 
+//      var svg = svgView.render();
+//      console.log(svg);
+
       if (!svgs.hasOwnProperty(ID)) {
         return false;
       }

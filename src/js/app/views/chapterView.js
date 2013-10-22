@@ -1,5 +1,5 @@
-define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates', 'app/utils/utils', 'app/models/data', 'PubSub', 'marked'],
-  function(mustache, MapView, NavigationView, templates, Utils, DataModel, PubSub, marked)
+define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/views/svgView', 'templates', 'app/utils/utils', 'app/models/data', 'PubSub', 'marked'],
+  function(mustache, MapView, NavigationView, SvgView, templates, Utils, DataModel, PubSub, marked)
 {
   return function(chapterData) {
 
@@ -8,6 +8,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates'
     var mapView = new MapView(model);
     var mapElm;
     var _isHidden = false;
+    var svg;
 
     marked.setOptions({ smartypants: true });
 
@@ -136,6 +137,25 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates'
     }
 
     function _addMap() {
+
+      if (model.map && model.map.length > 0) {
+        var data = _getAssetData(model.map.trim(), DataModel.get('maps'));
+        console.log(data);
+        if (data) {
+          svg = SvgView;
+          svg.init(model.map.trim(), data);
+          PubSub.subscribe('mapRendered', function(msg, data) {
+            if (data.id === model.map.trim()) {
+              var svgel = svg.render();
+              console.log(svgel);
+              el.appendChild(svgel);
+            }
+          });
+
+          //el.append(svg.render());
+        }
+      }
+
       mapElm = mapView.render();
       if (mapElm) {
         el.appendChild(mapElm);

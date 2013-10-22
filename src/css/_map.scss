@@ -2,7 +2,7 @@
   position: absolute;
   left: 0;
   top: 0;
-
+  display: none;
 
 }
 
@@ -12,7 +12,6 @@
 
 .gi-chapter-map svg path {
   stroke: rgb(255, 255, 255);
-  stroke-width: 3px;
   stroke-linejoin: round;
   fill: none;
 }
@@ -32,4 +31,37 @@
 
 .show-marker {
   opacity: 1;
+}
+
+.svg_test {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  path {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1px;
+  }
+
+  .country {
+    fill: rgba(255, 0, 0, 0.3);
+    stroke: rgba(255, 0, 0, 0.6);;
+  }
+
+  .marker_path {
+    fill: #0bff0a;
+    stroke: #69fff3;
+  }
+
+  .wall_path {
+    stroke: #ffffff;
+    stroke-width: 3px;
+  }
+
+  .marker_text {
+    font-family: arial;
+    fill: #fff;
+    font-size: 12px;
+  }
 }
