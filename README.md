@@ -12,7 +12,7 @@ Images come from LandSat. Band 4 is red, band 3 is green and band 2 is blue. Ban
 ## Map data areas
 West Bank improved imagery: LC81740382013249LGN00 06 Sep 2013
 Western Sahara: LC82020412013253LGN00 10 Sep 2013
-
+Greece: LC81810312013122LGN01
 Sao Paulo: LC82190762013132LGN01
 
 Tarball of these images are on the shared drive at:
