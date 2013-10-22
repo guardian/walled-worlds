@@ -143,16 +143,17 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates'
     }
 
     function _addGradient() {
+      var gradImg;
       var backgroundData = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
       if (backgroundData) {
-        var gradImg = Utils.getGradientImg(
+        gradImg = Utils.getGradientImg(
           backgroundData.gradientwidth,
           backgroundData.gradientcolour,
           backgroundData.gradientstart,
           backgroundData.gradientopacity
         );
       } else {
-        var gradImg = Utils.getGradientImg();
+        gradImg = Utils.getGradientImg();
       }
 
       el.insertBefore(gradImg, el.firstChild);
@@ -187,7 +188,6 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates'
     function getEl() {
       return el;
     }
-
 
     return {
       getEl: getEl,

@@ -13,6 +13,8 @@ Images come from LandSat. Band 4 is red, band 3 is green and band 2 is blue. Ban
 West Bank improved imagery: LC81740382013249LGN00 06 Sep 2013
 Western Sahara: LC82020412013253LGN00 10 Sep 2013
 
+Sao Paulo: LC82190762013132LGN01
+
 Tarball of these images are on the shared drive at:
 afp://afs3.dmz.gnl/Editorial (afs3)/GNM Interactive Team/Users Interactive Team/Daan Louter/Daan Louter, Public/walled-worlds
 
