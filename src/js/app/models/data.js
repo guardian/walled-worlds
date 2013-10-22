@@ -33,3 +33,4 @@ define(['tabletop', 'app/models/config', 'data', 'PubSub'], function(Tabletop, C
     get: get
   };
 });
+
