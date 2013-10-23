@@ -1,6 +1,5 @@
-define(['text!svgDir/belfast.svg', 'text!svgDir/westbank.svg'], function(belfast, westbank) {
+define(['text!svgDir/us_mexico.svg'], function(us_mexico) {
   return {
-    'belfast': belfast,
-    'westbank': westbank
+    'map_us_mexico': us_mexico
   };
 });

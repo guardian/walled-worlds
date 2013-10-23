@@ -1,4 +1,4 @@
-define(['app/models/worldMap', 'PubSub', 'd3', 'togeojson'], function(WorldMapData, PubSub) {
+define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], function(WorldMapData, Svgs, PubSub) {
   return function(animLength, animDelay) {
     var el;
     var mapData;
@@ -191,8 +191,9 @@ define(['app/models/worldMap', 'PubSub', 'd3', 'togeojson'], function(WorldMapDa
 
 
     function render() {
+      console.log(Svgs);
       _setupPaths();
-      _setupMarkers();
+      //_setupMarkers();
       return el;
     }
 
@@ -200,10 +201,22 @@ define(['app/models/worldMap', 'PubSub', 'd3', 'togeojson'], function(WorldMapDa
       tweens[0].delay(animDeley).start();
     }
 
+    function _simpleSVG() {
+      if ( Svgs.hasOwnProperty(mapid)) {
+        el = document.createElement('div');
+        el.classList.add('svg_wall');
+        el.innerHTML = Svgs[mapid];
+        console.log(el, mapid);
+      }
+    }
+
     function init(mapID, data) {
+      console.log('setting up svg map');
       mapData = data;
       mapid = mapID;
-      _fetchKML();
+      _simpleSVG();
+      //_fetchKML();
+
     }
 
     return {
