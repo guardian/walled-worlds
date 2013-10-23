@@ -39,6 +39,8 @@ module.exports = function(grunt) {
             'PubSub': 'lib/pubsub',
             'classlist': 'lib/classList',
             'es5-shim': 'lib/es5-shim',
+            'd3': 'lib/d3.v3.min',
+            'togeojson': 'lib/togeojson',
             'data': (isProd) ? '../../tmp/data' : 'app/models/contentData'
           },
 
@@ -47,7 +49,9 @@ module.exports = function(grunt) {
             'tween': { 'exports': 'TWEEN' },
             'requestAnimPolyfill' : { 'exports': 'requestAnimPolyfill' },
             'classlist': { 'exports:': 'classlist' },
-            'es5-shim': { 'exports:': 'es5-shim' }
+            'es5-shim': { 'exports:': 'es5-shim' },
+            'd3': { 'exports:': 'DD3' },
+            'togeojson': { 'exports:': 'toGeoJSON' }
           },
 
           name: "app/app",

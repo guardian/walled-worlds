@@ -32,7 +32,6 @@
 
 <div id="test" style="width: 500px; height: 500px; background: #2b3f88;"></div>
 
-<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://mapbox.github.io/togeojson/togeojson.js"></script>
 
@@ -42,7 +41,7 @@
     var proxyPath = 'http://localhost:1337/?src=';
     var proxyUrl = proxyPath + KMLPath.replace(/http(s)?:\/\//, '');
 
-    $.ajax(proxyUrl).done( function(xml) {
+    d3.xml(proxyUrl, function(xml) {
         var geoJson = toGeoJSON.kml(xml);
         drawMap(geoJson);
     });
