@@ -7,7 +7,7 @@ define(['app/models/worldMap', 'PubSub', 'd3', 'togeojson'], function(WorldMapDa
 
     // Example: https://mapsengine.google.com/map/edit?mid=zTpKh93u3nmI.kn5ClQNz9iAk
     var KMLPath = 'mapsengine.google.com/map/kml?mid=';
-    var proxyPath = 'http://localhost:1337/?src=';
+    var proxyPath = 'http://gnm41146.int.gnl:1337/?src=';
 
     function _fetchKML() {
       var proxyUrl = proxyPath + KMLPath + mapData.mapurl.split('mid=')[1];

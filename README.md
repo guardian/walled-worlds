@@ -14,6 +14,7 @@ West Bank improved imagery: LC81740382013249LGN00 06 Sep 2013
 Western Sahara: LC82020412013253LGN00 10 Sep 2013
 Greece: LC81810312013122LGN01
 Sao Paulo: LC82190762013132LGN01
+Spain: LC82000352013143LGN01
 
 Tarball of these images are on the shared drive at:
 afp://afs3.dmz.gnl/Editorial (afs3)/GNM Interactive Team/Users Interactive Team/Daan Louter/Daan Louter, Public/walled-worlds
