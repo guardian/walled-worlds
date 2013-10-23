@@ -2,8 +2,6 @@
   position: absolute;
   left: 0;
   top: 0;
-  display: none;
-
 }
 
 .fixed-background .gi-chapter-map {
@@ -33,11 +31,7 @@
   opacity: 1;
 }
 
-.svg_test {
-  position: absolute;
-  top: 0;
-  left: 0;
-
+.svg_wall {
   path {
     fill: none;
     stroke: #fff;
@@ -47,6 +41,14 @@
   .country {
     fill: rgba(255, 0, 0, 0.3);
     stroke: rgba(255, 0, 0, 0.6);;
+  }
+
+  .marker_group {
+    opacity: 0.3;
+  }
+
+  .show-marker {
+    opacity: 1;
   }
 
   .marker_path {

@@ -1,8 +1,9 @@
-define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 'PubSub'],
-  function(mustache, svgs, Utils, templates, Tween, PubSub)
+define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', 'app/utils/utils', 'templates', 'tween', 'PubSub'],
+  function(mustache, svgs, SvgView, DataModel, Utils, templates, Tween, PubSub)
 {
   return function(data) {
     var elm;
+    var model = data;
     var ID = data.chapterid;
     var distance = data.length;
     var paths = [];
@@ -14,6 +15,7 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
     var counterTween;
     var markers;
     var tickerID;
+    var svg;
 
     var pubSubTokens = {};
 
@@ -59,7 +61,7 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
     }
 
     function _setupPaths() {
-      paths = elm.querySelectorAll('#wall path');
+      paths = elm.querySelectorAll('.svg_wall .wall_path');
 
       var totalLength = 0;
       for (var i = 0; i < paths.length; i++) {
@@ -84,8 +86,9 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
     }
 
     function _setupMarkers() {
-      markers = elm.querySelectorAll('.marker');
+      markers = elm.querySelectorAll('.svg_wall .marker_group');
       for (var i = 0; i < markers.length; i++) {
+
         var markerID = markers[i].id.replace('marker_', '');
         pubSubTokens[markerID] = PubSub.subscribe(markerID, addThing(markers[i]));
       }
@@ -108,6 +111,50 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
       };
     }
 
+    function _setupSVG() {
+
+      var targetEl = elm.querySelector('.chapter-svg-map');
+
+      // TODO: Clean this up
+      if (model.map && model.map.length > 0) {
+        var data = _getAssetData(model.map.trim(), DataModel.get('maps'));
+        if (data) {
+          svg = new SvgView();
+          svg.init(model.map.trim(), data);
+
+
+          PubSub.subscribe('mapRendered', function(msg, data) {
+
+            if (data.id === model.map.trim()) {
+              var svgel = svg.render();
+              elm.querySelector('.chapter-svg-map').appendChild(svgel);
+              _setupPaths();
+              _setupMarkers();
+
+            }
+
+          });
+
+
+
+          //el.append(svg.render());
+        }
+      }
+
+
+      function whenDone() {
+        _setupPaths();
+        _setupMarkers();
+      }
+    }
+
+
+    function _getAssetData(id, data) {
+      return data.filter(function(el) {
+        return el.assetid.trim() === id;
+      })[0];
+    }
+
     function render() {
       if (elm) {
         return elm;
@@ -120,16 +167,15 @@ define(['mustache', 'app/models/svgs', 'app/utils/utils', 'templates', 'tween', 
         return false;
       }
 
-      var svgData = {
-        distance: distance,
-        svg: svgs[ID]
-      };
+//      var svgData = {
+//        distance: distance,
+//        svg: svgs[ID]
+//      };
 
-      elm = Utils.buildDOM(mustache.render(templates.chapter_map, svgData)).firstChild;
+      elm = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
 
+      _setupSVG();
       _setupCounter();
-      _setupPaths();
-      _setupMarkers();
 
       return elm;
     }
