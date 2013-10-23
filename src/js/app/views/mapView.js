@@ -41,7 +41,12 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
 
     function _setupSVG() {
       // TODO: Clean this up
+      console.log(model.map);
       if (model.map && model.map.length > 0) {
+        svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
+        svgView.init(model.map);
+        el.querySelector('.chapter-svg-map').appendChild(svgView.render());
+        console.log(svgView);
         var data = _getAssetData(model.map.trim(), DataModel.get('maps'));
         if (data) {
           svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
@@ -87,7 +92,7 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
 //      var svg = svgView.render();
 //      console.log(svg);
 
-      if (!svgs.hasOwnProperty(ID)) {
+      if (!svgs.hasOwnProperty(model.map)) {
         return false;
       }
 
@@ -97,7 +102,6 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
 //      };
 
       el = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
-
       _setupSVG();
       _setupCounter();
 
