@@ -1,13 +1,89 @@
 define(['app/models/worldMap', 'PubSub', 'd3', 'togeojson'], function(WorldMapData, PubSub) {
-  return function() {
+  return function(animLength, animDelay) {
     var el;
     var mapData;
     var mapid;
+    var markers;
+    var tweenCount = 0;
+    var paths = [];
+    var tweens = [];
+    var pubSubTokens = {};
     var debug = true;
+    var animDuration = animLength || 500;
+    var animDeley = animDelay || 250;
+
+    function _nextPathTween() {
+      tweenCount += 1;
+      if (tweenCount < paths.length) {
+        tweens[tweenCount].start();
+      } else {
+        PubSub.publish('animFinished');
+      }
+    }
+
+    function _setupAnim(path, totalLength) {
+      var length = path.getTotalLength();
+      path.style.strokeDasharray = length + ' ' + length;
+      path.style.strokeDashoffset = length;
+
+      var pathTime = Math.round((length / totalLength) * animDuration);
+
+      return new TWEEN.Tween( { x: length} )
+        .to( { x: 0 }, pathTime)
+        .onUpdate( function () {
+          path.style.strokeDashoffset = this.x + 'px';
+        })
+        .onComplete(_nextPathTween);
+    }
+
+    function _setupPaths() {
+      paths = el.querySelectorAll('.svg_wall .wall_path');
+
+      var totalLength = 0;
+      for (var i = 0; i < paths.length; i++) {
+        totalLength += paths[i].getTotalLength();
+      }
+
+      for (var i = 0; i < paths.length; i++) {;
+        paths[i].setAttribute('style', '');
+        tweens.push(_setupAnim(paths[i], totalLength));
+      }
+    }
+
+
+
+    function _setupMarkers() {
+      markers = el.querySelectorAll('.svg_wall .marker_group');
+      for (var i = 0; i < markers.length; i++) {
+
+        var markerID = markers[i].id.replace('marker_', '');
+        pubSubTokens[markerID] = PubSub.subscribe(markerID, _triggerMarker(markers[i]));
+      }
+    }
+
+
+    function _triggerMarker(elm) {
+      return function(msg, data) {
+        var el = elm;
+
+        if (data.show) {
+          if (-1 === el.getAttribute('class').indexOf('show-marker')) {
+            el.setAttribute('class', el.getAttribute('class') + ' show-marker');
+          }
+        } else {
+          if (-1 !== el.getAttribute('class').indexOf('show-marker')) {
+            el.setAttribute('class', el.getAttribute('class').replace(' show-marker', ''));
+          }
+        }
+        //PubSub.unsubscribe(pubSubTokens[tiggerID]);
+      };
+    }
+
+
 
     // Example: https://mapsengine.google.com/map/edit?mid=zTpKh93u3nmI.kn5ClQNz9iAk
     var KMLPath = 'mapsengine.google.com/map/kml?mid=';
-    var proxyPath = 'http://gnm41146.int.gnl:1337/?src=';
+    var proxyPath = 'http://ec2-54-228-9-201.eu-west-1.compute.amazonaws.com:1337/?src=';
 
     function _fetchKML() {
       var proxyUrl = proxyPath + KMLPath + mapData.mapurl.split('mid=')[1];
@@ -115,7 +191,13 @@ define(['app/models/worldMap', 'PubSub', 'd3', 'togeojson'], function(WorldMapDa
 
 
     function render() {
+      _setupPaths();
+      _setupMarkers();
       return el;
+    }
+
+    function anim() {
+      tweens[0].delay(animDeley).start();
     }
 
     function init(mapID, data) {
@@ -126,7 +208,8 @@ define(['app/models/worldMap', 'PubSub', 'd3', 'togeojson'], function(WorldMapDa
 
     return {
       render: render,
-      init: init
+      init: init,
+      anim: anim
     };
   };
 });
