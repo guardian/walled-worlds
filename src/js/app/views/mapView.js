@@ -2,38 +2,26 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
   function(mustache, svgs, SvgView, DataModel, Utils, templates, Tween, PubSub)
 {
   return function(data) {
-    var elm;
+    var el;
     var model = data;
     var ID = data.chapterid;
     var distance = data.length;
-    var paths = [];
-    var tweens = [];
-    var tweenCount = 0;
+
+
     var ANIM_LENGTH = 5*1000;
     var hasAnimated = false;
     var ANIM_DELAY = 250;
     var counterTween;
-    var markers;
+
     var tickerID;
-    var svg;
-
-    var pubSubTokens = {};
-
-    function _nextPathTween() {
-      tweenCount += 1;
-      if (tweenCount < paths.length) {
-        tweens[tweenCount].start();
-      } else {
-        window.cancelAnimationFrame(tickerID);
-      }
-    }
+    var svgView;
 
     function animate() {
-      if (!elm || hasAnimated || paths.length < 1) {
+      if (!el || hasAnimated) {
         return;
       }
 
-      tweens[0].delay(ANIM_DELAY).start();
+      svgView.anim(ANIM_LENGTH);
       counterTween.start();
 
       function anim() {
@@ -42,40 +30,39 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
       }
       anim();
 
+      PubSub.subscribe('animFinished', _clearAnimation);
       hasAnimated = true;
     }
 
-    function _setupAnim(path, totalLength) {
-      var length = path.getTotalLength();
-      path.style.strokeDasharray = length + ' ' + length;
-      path.style.strokeDashoffset = length;
-
-      var pathTime = Math.round((length / totalLength) * ANIM_LENGTH);
-
-      return new TWEEN.Tween( { x: length} )
-        .to( { x: 0 }, pathTime)
-        .onUpdate( function () {
-          path.style.strokeDashoffset = this.x + 'px';
-        })
-        .onComplete(_nextPathTween);
+    function _clearAnimation() {
+      window.cancelAnimationFrame(tickerID);
     }
 
-    function _setupPaths() {
-      paths = elm.querySelectorAll('.svg_wall .wall_path');
 
-      var totalLength = 0;
-      for (var i = 0; i < paths.length; i++) {
-        totalLength += paths[i].getTotalLength();
-      }
+    function _setupSVG() {
+      // TODO: Clean this up
+      if (model.map && model.map.length > 0) {
+        var data = _getAssetData(model.map.trim(), DataModel.get('maps'));
+        if (data) {
+          svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
+          svgView.init(model.map.trim(), data);
 
-      for (var i = 0; i < paths.length; i++) {;
-        paths[i].setAttribute('style', '');
-        tweens.push(_setupAnim(paths[i], totalLength));
+
+          PubSub.subscribe('mapRendered', function(msg, data) {
+
+            if (data.id === model.map.trim()) {
+              el.querySelector('.chapter-svg-map').appendChild(svgView.render());
+            }
+
+          });
+
+          //el.append(svg.render());
+        }
       }
     }
 
     function _setupCounter() {
-      var counterElm = elm.querySelector('.chapter-map-counter-count');
+      var counterElm = el.querySelector('.chapter-map-counter-count');
 
       counterTween = new TWEEN.Tween( { x: 0} )
         .to( { x: distance }, ANIM_LENGTH)
@@ -83,69 +70,6 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
           counterElm.innerText = this.x.toFixed(2);
         })
         .delay(ANIM_DELAY);
-    }
-
-    function _setupMarkers() {
-      markers = elm.querySelectorAll('.svg_wall .marker_group');
-      for (var i = 0; i < markers.length; i++) {
-
-        var markerID = markers[i].id.replace('marker_', '');
-        pubSubTokens[markerID] = PubSub.subscribe(markerID, addThing(markers[i]));
-      }
-    }
-
-    function addThing(elm) {
-      return function(msg, data) {
-        var el = elm;
-
-        if (data.show) {
-          if (-1 === el.getAttribute('class').indexOf('show-marker')) {
-            el.setAttribute('class', el.getAttribute('class') + ' show-marker');
-          }
-        } else {
-          if (-1 !== el.getAttribute('class').indexOf('show-marker')) {
-            el.setAttribute('class', el.getAttribute('class').replace(' show-marker', ''));
-          }
-        }
-        //PubSub.unsubscribe(pubSubTokens[tiggerID]);
-      };
-    }
-
-    function _setupSVG() {
-
-      var targetEl = elm.querySelector('.chapter-svg-map');
-
-      // TODO: Clean this up
-      if (model.map && model.map.length > 0) {
-        var data = _getAssetData(model.map.trim(), DataModel.get('maps'));
-        if (data) {
-          svg = new SvgView();
-          svg.init(model.map.trim(), data);
-
-
-          PubSub.subscribe('mapRendered', function(msg, data) {
-
-            if (data.id === model.map.trim()) {
-              var svgel = svg.render();
-              elm.querySelector('.chapter-svg-map').appendChild(svgel);
-              _setupPaths();
-              _setupMarkers();
-
-            }
-
-          });
-
-
-
-          //el.append(svg.render());
-        }
-      }
-
-
-      function whenDone() {
-        _setupPaths();
-        _setupMarkers();
-      }
     }
 
 
@@ -156,8 +80,8 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
     }
 
     function render() {
-      if (elm) {
-        return elm;
+      if (el) {
+        return el;
       }
 
 //      var svg = svgView.render();
@@ -172,12 +96,12 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
 //        svg: svgs[ID]
 //      };
 
-      elm = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
+      el = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
 
       _setupSVG();
       _setupCounter();
 
-      return elm;
+      return el;
     }
 
     return {
