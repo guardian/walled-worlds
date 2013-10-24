@@ -26,6 +26,7 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
 
   function _activateNavigation(msg, data) {
     chapterNavElms[data.id].classList.add('active');
+    window.location.hash = data.id;
   }
 
   function _deactivateNavigation(msg, data) {
@@ -55,7 +56,6 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
 
     PubSub.subscribe('chapterActive', _activateNavigation);
     PubSub.subscribe('chapterDeactivate', _deactivateNavigation);
-
 
     Utils.on(window, 'scroll', _isFixed);
     Utils.on(window, 'resize', _setNavWidth);
