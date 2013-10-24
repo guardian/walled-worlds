@@ -2,10 +2,17 @@
   "name": "walled-worlds",
   "namespace": "giWalledWorlds",
   "version": "1.0.0",
+
+  "s3Bucket": "gdn-stage",
+  "s3Region": "eu-west-1",
+  "s3Folder": "world-walls/",
+  "remoteUrl": "http://s3-eu-west-1.amazonaws.com/",
+
   "repository": {
     "type": "git",
     "url": "git@github.com:GuardianInteractive/walled-worlds.git"
   },
+
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",
@@ -15,6 +22,7 @@
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-requirejs": "~0.4.1",
     "grunt-mustache": "~0.1.4",
-    "grunt-sass": "~0.6.1"
+    "grunt-sass": "~0.6.1",
+    "grunt-s3": "~0.2.0-alpha.3"
   }
 }

@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
-
-  var isProd = grunt.option('prod') || false;
+  var pkg = grunt.file.readJSON('package.json');
+  var isDev = grunt.option('dev') || false;
+  var assetUrl = (isDev) ? '/' : pkg.remoteUrl + pkg.s3Bucket + '/' + pkg.s3Folder;
 
   grunt.task.registerTask('fetch', 'Fetch data from Google spreadsheet.', function() {
     var done = this.async();
@@ -41,7 +42,9 @@ module.exports = function(grunt) {
             'es5-shim': 'lib/es5-shim',
             'd3': 'lib/d3.v3.min',
             'togeojson': 'lib/togeojson',
-            'data': (isProd) ? '../../tmp/data' : 'app/models/contentData'
+
+            // Dev gets data directly from Google spreadsheet, prod bakes it in
+            'data': (isDev) ? 'app/models/contentData' : '../../tmp/data'
           },
 
           shim: {
@@ -61,10 +64,15 @@ module.exports = function(grunt) {
           findNestedDependencies: true,
           inlineText: true,
           stubModules: ['text'],
-          optimize: (isProd) ? 'uglify' : 'none',
+          optimize: (isDev) ? 'none': 'uglify',
           wrap: {
             start: "define([], function() {",
             endFile: "src/require_end.frag"
+          },
+
+          // Set asset path based on environment
+          onBuildWrite: function (moduleName, path, contents) {
+            return contents.replace(/\{\{ assetUrl }}/g, assetUrl);
           }
         }
       }
@@ -151,7 +159,48 @@ module.exports = function(grunt) {
           'dest/main.css': 'src/css/main.scss'
         }
       }
+    },
+
+
+    s3: {
+      options: {
+//        key: '2', //'<%= aws.key %>',
+//        secret: '2', //'<%= aws.secret %>',
+        region: '<%= pkg.s3Region %>',
+        bucket: 'gdn-stage', //'s3://gdn-cdn/dev/world_walls/', //'<%= aws.bucket %>',
+        access: 'public-read',
+        headers: {
+          // Two Year cache policy (1000 * 60 * 60 * 24 * 730)
+          "Cache-Control": "max-age=10, public",
+          "Expires": new Date(Date.now() + 10).toUTCString()
+        },
+        gzip: true,
+        gzipExclude: ['.jpg', '.jpeg', '.png']
+      },
+
+      production: {
+        upload: [
+          {
+            src: 'dest/**/*',
+            dest: '<%= pkg.s3Folder %>'
+          }
+        ]
+      },
+
+      test: {
+        options: {
+          debug: true
+        },
+        upload: [
+          {
+            src: 'dest/**/*',
+            dest: '<%= pkg.s3Folder %>'
+          }
+        ]
+      }
+
     }
+
 
   });
 
@@ -162,6 +211,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-mustache');
   grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-s3');
 
   grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs", "sass", "connect", "watch"]);
+  grunt.registerTask("deploy", ["clean", "copy", "mustache", "requirejs", "sass", "s3:production"]);
+  grunt.registerTask("test-deploy", ["clean", "copy", "mustache", "requirejs", "sass", "s3:test"]);
 };
