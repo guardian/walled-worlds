@@ -26,7 +26,7 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
 
   function _activateNavigation(msg, data) {
     chapterNavElms[data.id].classList.add('active');
-    window.location.hash = data.id;
+    history.pushState(null, null, data.id);
   }
 
   function _deactivateNavigation(msg, data) {
@@ -39,9 +39,17 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
     chapters.forEach(function(chapter) {
       var el = Utils.buildDOM(mustache.render(templates.navigation_link, chapter)).firstChild;
       wrapperElm.appendChild(el);
+      el.onclick = _navigationClickHandler;
       chapterNavElms[chapter.chapterid] = el;
     });
     return wrapperElm;
+  }
+
+  function _navigationClickHandler(e) {
+    e.preventDefault();
+    var target;
+    target = (e.srcElement.className === "gi-nav-link") ? target = e.srcElement.hash : e.srcElement.parentElement.hash;
+    window.scrollTo(0, parseInt(document.querySelector(target).offsetTop, 10) + 10);
   }
 
   function render() {
