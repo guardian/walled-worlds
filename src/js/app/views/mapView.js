@@ -41,14 +41,16 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
 
     function _setupSVG() {
       // TODO: Clean this up
-      console.log(model.map);
+
       if (model.map && model.map.length > 0) {
-        svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
-        svgView.init(model.map);
-        el.querySelector('.chapter-svg-map').appendChild(svgView.render());
-        console.log(svgView);
+//        svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
+//        svgView.init(model.map);
+//        el.querySelector('.chapter-svg-map').appendChild(svgView.render());
+//        console.log(svgView);
         var data = _getAssetData(model.map.trim(), DataModel.get('maps'));
+        console.log(model.map, data);
         if (data) {
+          console.log(data);
           svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
           svgView.init(model.map.trim(), data);
 
@@ -61,7 +63,7 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
 
           });
 
-          //el.append(svg.render());
+          //el.append(svgView.render());
         }
       }
     }
@@ -92,9 +94,9 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
 //      var svg = svgView.render();
 //      console.log(svg);
 
-      if (!svgs.hasOwnProperty(model.map)) {
-        return false;
-      }
+//      if (!svgs.hasOwnProperty(model.map)) {
+//        return false;
+//      }
 
 //      var svgData = {
 //        distance: distance,
