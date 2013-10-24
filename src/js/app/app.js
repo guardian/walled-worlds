@@ -4,6 +4,7 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
     'use strict';
 
     var el;
+    var assetUrl = '{{ assetUrl }}';
     var chaptersWrapper;
     var chaptersViews = [];
     var MIN_WIDTH = 940;
@@ -28,7 +29,7 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
       var styleElm = document.createElement('link');
       styleElm.setAttribute('rel', 'stylesheet');
       styleElm.setAttribute('type', 'text/css');
-      styleElm.setAttribute('href', 'main.css');
+      styleElm.setAttribute('href', assetUrl + 'main.css');
       document.querySelector('head').appendChild(styleElm);
     }
 
