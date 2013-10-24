@@ -86,8 +86,6 @@ define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], 
     var proxyPath = 'http://ec2-54-228-9-201.eu-west-1.compute.amazonaws.com:1337/?src=';
 
     function _fetchKML() {
-      console.log(mapData);
-
       var proxyUrl = proxyPath + KMLPath + mapData.mapurl.split('mid=')[1];
 
       d3.xml(proxyUrl, function(xml) {
@@ -100,7 +98,7 @@ define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], 
 
     function _drawMap(json) {
       var WIDTH = 380;
-      var HEIGHT = 400;
+      var HEIGHT = 800;
       el = document.createElement('div');
       el.classList.add('svg_wall');
 
@@ -193,7 +191,6 @@ define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], 
 
 
     function render() {
-      console.log(Svgs);
       _setupPaths();
       _setupMarkers();
       return el;
@@ -208,16 +205,13 @@ define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], 
         el = document.createElement('div');
         el.classList.add('svg_wall');
         el.innerHTML = Svgs[mapid];
-        console.log(el, mapid);
       }
     }
 
     function init(mapID, data) {
-      //console.log('setting up svg map');
       mapData = data;
       mapid = mapID;
       //_simpleSVG();
-      console.log(data);
       _fetchKML();
 
     }

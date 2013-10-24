@@ -17,7 +17,7 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
     var svgView;
 
     function animate() {
-      if (!el || hasAnimated) {
+      if (!el || hasAnimated || !svgView) {
         return;
       }
 
@@ -48,19 +48,14 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
 //        el.querySelector('.chapter-svg-map').appendChild(svgView.render());
 //        console.log(svgView);
         var data = _getAssetData(model.map.trim(), DataModel.get('maps'));
-        console.log(model.map, data);
+
         if (data) {
-          console.log(data);
           svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
           svgView.init(model.map.trim(), data);
-
-
           PubSub.subscribe('mapRendered', function(msg, data) {
-
             if (data.id === model.map.trim()) {
               el.querySelector('.chapter-svg-map').appendChild(svgView.render());
             }
-
           });
 
           //el.append(svgView.render());

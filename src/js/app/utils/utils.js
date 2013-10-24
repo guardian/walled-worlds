@@ -3,7 +3,6 @@ define([], function() {
   function waypoint(el, callback) {
     function givenElementInViewport (el) {
       return function () {
-        console.log(_isElementInViewport(el));
         if ( _isElementInViewport(el) ) {
 
           callback();
