@@ -18,6 +18,7 @@
     font-size: 2.8rem;
     margin-bottom: 0.6rem;
     font-weight: normal;
+    line-height: 3.6rem;
     position: relative;
   }
 
@@ -41,10 +42,26 @@
     margin: 0 2.3rem 0 0.4rem;
   }
 
+  .chapter_copy h2 {
+    line-height: 150%;
+    font-size: 0.8rem;
+    font-family: "Helvetica";
+  }
+
+  .chapter_copy blockquote {
+    border-left: 0.2rem solid gray;
+    margin: 0 0 0 0.2rem;
+    padding: 0 0 0 0.4rem;
+  }
+
   .chapter_copy .copy, .chapter_copy p {
-    line-height:1.6em;
-    font-size: 17px;
+    line-height:1.7em;
+    font-size: 1.05rem;
     position: relative;
+  }
+
+  .chapter_copy {
+    margin-bottom: 6rem;
   }
 
   .chapter_copy figure {
