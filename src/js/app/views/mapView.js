@@ -13,6 +13,7 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
     var ANIM_DELAY = 250;
     var counterTween;
 
+
     var tickerID;
     var svgView;
 

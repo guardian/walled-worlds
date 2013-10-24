@@ -1,7 +1,8 @@
 module.exports = function(grunt) {
   var pkg = grunt.file.readJSON('package.json');
   var isDev = grunt.option('dev') || false;
-  var assetUrl = (isDev) ? '/' : pkg.remoteUrl + pkg.s3Bucket + '/' + pkg.s3Folder;
+  var useGoogleSpreadsheet = true;
+
 
   grunt.task.registerTask('fetch', 'Fetch data from Google spreadsheet.', function() {
     var done = this.async();
@@ -22,56 +23,66 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     requirejs: {
-      compile: {
+      options: {
+        baseUrl: "src/js/",
+        out: "dest/boot.js",
+
+        paths: {
+          'mustache': 'lib/mustache',
+          'almond': 'lib/almond',
+          'templates': '../../tmp/templates',
+          'tabletop': 'lib/tabletop',
+          'marked': 'lib/marked',
+          'tween': 'lib/tween.min',
+          'requestAnimPolyfill': 'lib/requestAnimPolyfill',
+          'text': 'lib/text',
+          'svgDir': '../svg/',
+          'PubSub': 'lib/pubsub',
+          'classlist': 'lib/classList',
+          'es5-shim': 'lib/es5-shim',
+          'd3': 'lib/d3.v3.min',
+          'togeojson': 'lib/togeojson',
+
+          // Dev gets data directly from Google spreadsheet, prod bakes it in
+          'data': (useGoogleSpreadsheet) ? 'app/models/contentData' : '../../tmp/data'
+        },
+
+        shim: {
+          'tabletop': { 'exports': 'Tabletop' },
+          'tween': { 'exports': 'TWEEN' },
+          'requestAnimPolyfill' : { 'exports': 'requestAnimPolyfill' },
+          'classlist': { 'exports:': 'classlist' },
+          'es5-shim': { 'exports:': 'es5-shim' },
+          'd3': { 'exports:': 'DD3' },
+          'togeojson': { 'exports:': 'toGeoJSON' }
+        },
+
+        name: "app/app",
+
+        //namespace: '<%= pkg.namespace %>',
+        include: ['almond', 'templates', 'classlist', 'es5-shim', 'requestAnimPolyfill'],
+        findNestedDependencies: true,
+        inlineText: true,
+        stubModules: ['text'],
+        optimize: 'none',
+        wrap: {
+          start: "define([], function() {",
+          endFile: "src/require_end.frag"
+        },
+
+        // Set asset path based on environment
+        onBuildWrite: function (moduleName, path, contents) {
+          var assetUrl = '/';
+          return contents.replace(/\{\{ assetUrl }}/g, assetUrl);
+        }
+      },
+      dev: {},
+      prod: {
         options: {
-          baseUrl: "src/js/",
-          out: "dest/boot.js",
-
-          paths: {
-            'mustache': 'lib/mustache',
-            'almond': 'lib/almond',
-            'templates': '../../tmp/templates',
-            'tabletop': 'lib/tabletop',
-            'marked': 'lib/marked',
-            'tween': 'lib/tween.min',
-            'requestAnimPolyfill': 'lib/requestAnimPolyfill',
-            'text': 'lib/text',
-            'svgDir': '../svg/',
-            'PubSub': 'lib/pubsub',
-            'classlist': 'lib/classList',
-            'es5-shim': 'lib/es5-shim',
-            'd3': 'lib/d3.v3.min',
-            'togeojson': 'lib/togeojson',
-
-            // Dev gets data directly from Google spreadsheet, prod bakes it in
-            'data': (isDev) ? 'app/models/contentData' : '../../tmp/data'
-          },
-
-          shim: {
-            'tabletop': { 'exports': 'Tabletop' },
-            'tween': { 'exports': 'TWEEN' },
-            'requestAnimPolyfill' : { 'exports': 'requestAnimPolyfill' },
-            'classlist': { 'exports:': 'classlist' },
-            'es5-shim': { 'exports:': 'es5-shim' },
-            'd3': { 'exports:': 'DD3' },
-            'togeojson': { 'exports:': 'toGeoJSON' }
-          },
-
-          name: "app/app",
-
-          //namespace: '<%= pkg.namespace %>',
-          include: ['almond', 'templates', 'classlist', 'es5-shim', 'requestAnimPolyfill'],
-          findNestedDependencies: true,
-          inlineText: true,
-          stubModules: ['text'],
-          optimize: (isDev) ? 'none': 'uglify',
-          wrap: {
-            start: "define([], function() {",
-            endFile: "src/require_end.frag"
-          },
-
+          optimize: 'uglify',
           // Set asset path based on environment
           onBuildWrite: function (moduleName, path, contents) {
+            var assetUrl = pkg.remoteUrl + pkg.s3Bucket + '/' + pkg.s3Folder;
             return contents.replace(/\{\{ assetUrl }}/g, assetUrl);
           }
         }
@@ -81,11 +92,11 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ["src/js/**/*.js"],
-        tasks: ["requirejs"]
+        tasks: ["requirejs:dev"]
       },
       templates: {
         files: ["src/templates/*.mustache"],
-        tasks: ["mustache", "requirejs"]
+        tasks: ["mustache", "requirejs:dev"]
       },
       css: {
         files: ["src/css/*"],
@@ -101,7 +112,7 @@ module.exports = function(grunt) {
       },
       svg: {
         files: ["src/svg/**"],
-        tasks: ["mustache", "requirejs"]
+        tasks: ["mustache", "requirejs:dev"]
       }
     },
 
@@ -164,13 +175,10 @@ module.exports = function(grunt) {
 
     s3: {
       options: {
-//        key: '2', //'<%= aws.key %>',
-//        secret: '2', //'<%= aws.secret %>',
         region: '<%= pkg.s3Region %>',
-        bucket: 'gdn-stage', //'s3://gdn-cdn/dev/world_walls/', //'<%= aws.bucket %>',
+        bucket: 'gdn-stage',
         access: 'public-read',
         headers: {
-          // Two Year cache policy (1000 * 60 * 60 * 24 * 730)
           "Cache-Control": "max-age=10, public",
           "Expires": new Date(Date.now() + 10).toUTCString()
         },
@@ -198,7 +206,6 @@ module.exports = function(grunt) {
           }
         ]
       }
-
     }
 
 
@@ -213,7 +220,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-s3');
 
-  grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs", "sass", "connect", "watch"]);
-  grunt.registerTask("deploy", ["clean", "copy", "mustache", "requirejs", "sass", "s3:production"]);
-  grunt.registerTask("test-deploy", ["clean", "copy", "mustache", "requirejs", "sass", "s3:test"]);
+
+  grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs:dev", "sass", "connect", "watch"]);
+
+  grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:prod", "sass"]);
+  grunt.registerTask("deploy", ["build", "s3:production"]);
+  grunt.registerTask("test-deploy", ["build", "s3:test"]);
 };
