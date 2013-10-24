@@ -1,6 +1,7 @@
 @import "fonts";
 // Namespace CSS
 .gi-interactive {
+  @import "normalize";
   @import "embed";
   @import "loading";
   @import "header";
@@ -12,11 +13,7 @@
   @media (min-width: 61.25em) {  }
   @media (min-width: 41.25em) {  }
 
-
-
-
-    /* Usually interactive container is a <figure> so we need to remove margin and padding. */
-
+  /* Usually interactive container is a <figure> so we need to remove margin and padding. */
   padding: 0;
   margin: 0;
   background: #333;
