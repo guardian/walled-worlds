@@ -26,7 +26,7 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
 
   function _activateNavigation(msg, data) {
     chapterNavElms[data.id].classList.add('active');
-    history.pushState(null, null, data.id);
+    history.pushState(null, null, "#" + data.id);
   }
 
   function _deactivateNavigation(msg, data) {
