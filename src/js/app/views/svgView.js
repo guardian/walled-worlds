@@ -130,8 +130,20 @@ define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], 
         translate[1] += parseInt(mapData.offsety, 10);
       }
 
+      // Ref: https://github.com/mbostock/d3/wiki/Geo-Projections
+      var projectionType = 'equirectangular';
+      if (typeof mapData.projection === 'string') {
+        if (mapData.projection.trim().toLocaleLowerCase() === 'mercator') {
+          projectionType = 'mercator';
+        }
 
-      var projection = d3.geo.mercator()
+        if (mapData.projection.trim().toLocaleLowerCase() === 'orthographic') {
+          projectionType = 'orthographic';
+        }
+      }
+
+
+      var projection = d3.geo[projectionType]()
         .scale(zoom)
         .translate(translate)
         .center(center);
