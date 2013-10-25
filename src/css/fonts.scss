@@ -12,6 +12,18 @@
 
 
 @font-face {
+  font-family: 'TextWebEgyptian-Regular';
+  src: url('https://s3.amazonaws.com/gdn-pub/fonts/ascii/Guardian Text Egyp Web-Reg.eot');
+  src: url('https://s3.amazonaws.com/gdn-pub/fonts/ascii/Guardian Text Egyp Web-Reg.eot?#iefix') format('embedded-opentype'),
+  url('https://s3.amazonaws.com/gdn-pub/fonts/ascii/Guardian Text Egyp Web-Reg.woff') format('woff'),
+  url('https://s3.amazonaws.com/gdn-pub/fonts/ascii/Guardian Text Egyp Web-Reg.ttf') format('truetype'),
+  url('https://s3.amazonaws.com/gdn-pub/fonts/ascii/Guardian Text Egyp Web-Reg.svg#Guardian Egyptian Web') format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
   font-family: 'WebEgyptian-Regular';
   src: url('https://s3.amazonaws.com/gdn-pub/fonts/ascii/Guardian Egyp Web-Regular.eot');
   src: url('https://s3.amazonaws.com/gdn-pub/fonts/ascii/Guardian Egyp Web-Regular.eot?#iefix') format('embedded-opentype'),

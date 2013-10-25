@@ -1,9 +1,6 @@
 .chapter {
-  //border-bottom: 4px dashed yellow;
   overflow: hidden;
   position: relative;
-
-  font-family: "WebEgyptian-Regular", Georgia;
   padding: 0 10px;
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -16,10 +13,12 @@
 
   .chapter_title {
     font-size: 2.8rem;
+    font-family: "WebEgyptian-Regular";
     margin-bottom: 2rem;
     font-weight: normal;
     line-height: 3.6rem;
     position: relative;
+    -webkit-font-smoothing: antialiased;
   }
 
   .chapter_meta {
@@ -27,6 +26,10 @@
     margin: 0.2rem 0 1rem;
     font-size: 0.8rem;
     position: relative;
+  }
+
+  .chapter_figure {
+
   }
 
   .chapter_meta dt,
@@ -58,6 +61,8 @@
     line-height:1.7em;
     font-size: 1.05rem;
     position: relative;
+    font-family: "TextWebEgyptian-Regular", Georgia;
+    -webkit-font-smoothing: antialiased;
   }
 
   .chapter_copy {
@@ -66,13 +71,15 @@
 
   .chapter_copy figure {
     max-width: 500px;
-    margin: 0 0 1rem;
+    margin: 1rem 0 1rem;
     position: relative;
 
     figcaption {
       font-family: arial, sans-serif;
       font-size: 13px;
       color: #CCC;
+      margin: 0.6rem 0 0 0;
+      line-height: 140%;
     }
   }
 
