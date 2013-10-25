@@ -47,9 +47,12 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
 
   function _navigationClickHandler(e) {
     e.preventDefault();
-    var target;
-    target = (e.srcElement.className === "gi-nav-link") ? target = e.srcElement.hash : e.srcElement.parentElement.hash;
-    window.scrollTo(0, parseInt(document.querySelector(target).offsetTop, 10) + 10);
+    var chapter = (e.srcElement.className === "gi-nav-link") ? chapter = e.srcElement.hash : e.srcElement.parentElement.hash;
+    scrollToChapter(chapter);
+  }
+
+  function scrollToChapter(chapter) {
+    window.scrollTo(0, parseInt(document.querySelector(chapter).offsetTop, 10) + 10);
   }
 
   function render() {
@@ -76,6 +79,7 @@ define(['templates', 'mustache', 'app/utils/utils', 'app/models/data', 'PubSub']
   }
 
   return {
+    scrollToChapter: scrollToChapter,
     getHeight: getHeight,
     render: render
   };

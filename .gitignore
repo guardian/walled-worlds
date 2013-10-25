@@ -3,7 +3,5 @@ dest/
 bower_components/
 node_modules/
 mapping/
-
-
 .idea/
 tmp/
