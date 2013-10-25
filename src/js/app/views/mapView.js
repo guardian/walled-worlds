@@ -13,8 +13,6 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
     var ANIM_DELAY = 250;
     var counterTween;
 
-
-    var tickerID;
     var svgView;
 
     function animate() {
@@ -25,20 +23,9 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
       svgView.anim(ANIM_LENGTH);
       counterTween.start();
 
-      function anim() {
-        tickerID = window.requestAnimationFrame(anim);
-        TWEEN.update();
-      }
-      anim();
 
-      PubSub.subscribe('animFinished', _clearAnimation);
       hasAnimated = true;
     }
-
-    function _clearAnimation() {
-      window.cancelAnimationFrame(tickerID);
-    }
-
 
     function _setupSVG() {
       // TODO: Clean this up
@@ -58,8 +45,6 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
               el.querySelector('.chapter-svg-map').appendChild(svgView.render());
             }
           });
-
-          //el.append(svgView.render());
         }
       }
     }

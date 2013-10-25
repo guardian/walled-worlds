@@ -123,6 +123,8 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates'
           _isHidden = true;
         }
       }
+
+      requestAnimationFrame(_handleScroll);
     }
 
     function _correctBackgroundPosition() {
@@ -179,7 +181,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates'
       _addMap();
       _addGradient();
 
-      Utils.on(window, 'scroll', _handleScroll);
+      requestAnimationFrame(_handleScroll);
       Utils.on(window, 'resize', _correctBackgroundPosition);
 
       return this;

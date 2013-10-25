@@ -38,13 +38,17 @@ define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], 
 
     function _setupPaths() {
       paths = el.querySelectorAll('.svg_wall .wall_path');
+      if (paths.length === 0) {
+        return;
+      }
 
       var totalLength = 0;
       for (var i = 0; i < paths.length; i++) {
         totalLength += paths[i].getTotalLength();
       }
 
-      for (var i = 0; i < paths.length; i++) {;
+
+      for (var i = 0; i < paths.length; i++) {
         paths[i].setAttribute('style', '');
         tweens.push(_setupAnim(paths[i], totalLength));
       }
@@ -197,7 +201,9 @@ define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], 
     }
 
     function anim() {
-      tweens[0].delay(animDeley).start();
+      if (tweens[0]) {
+        tweens[0].delay(animDeley).start();
+      }
     }
 
     function _simpleSVG() {
