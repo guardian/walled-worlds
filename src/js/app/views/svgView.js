@@ -8,7 +8,7 @@ define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], 
     var paths = [];
     var tweens = [];
     var pubSubTokens = {};
-    var debug = true;
+    var debug = false;
     var animDuration = animLength || 500;
     var animDeley = animDelay || 250;
 
