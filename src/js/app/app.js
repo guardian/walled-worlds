@@ -24,15 +24,15 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
 
       buildChapters();
       requestAnimationFrame(_anim);
+      
+      if (window.location.hash) {
+        NavigationView.scrollToChapter(window.location.hash);
+      }
     }
 
     function _anim() {
       TWEEN.update();
       requestAnimationFrame(_anim);
-
-      if (window.location.hash) {
-        NavigationView.scrollToChapter(window.location.hash);
-      }
     }
 
     function addStyles() {
