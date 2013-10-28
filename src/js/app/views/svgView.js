@@ -104,6 +104,8 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
     function _drawMap(json) {
       var WIDTH = 380;
       var HEIGHT = 800;
+      var markerPath = "M77 208 C -10 130 -30 0 77 1 C 184 0 164 130 77 208 Z M 77 30 a 40 40 0 1 0 0.00001 0 Z";
+
       el = document.createElement('div');
       el.classList.add('svg_wall');
 
@@ -201,7 +203,8 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
         .data(markerData)
         .append("path")
         .attr('class', 'marker_path')
-        .attr("d", path);
+        .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 16; var y = projection(d.geometry.coordinates)[1] - 33; return "translate(" + x + "," + y + ") scale(0.15)";})
+        .attr("d", markerPath);
 
       PubSub.publish('mapRendered', { id: mapid });
     }
