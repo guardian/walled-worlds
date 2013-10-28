@@ -1,5 +1,5 @@
-define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'app/views/navigationView', 'app/views/loadingView', 'app/models/data'],
-  function(mustache, templates, Utils, ChapterView, NavigationView, LoadingView, DataModel)
+define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/views/chapterView', 'app/views/navigationView', 'app/views/loadingView', 'app/models/data'],
+  function(mustache, templates, Config, Utils, ChapterView, NavigationView, LoadingView, DataModel)
   {
     'use strict';
 
@@ -13,10 +13,16 @@ define(['mustache', 'templates', 'app/utils/utils', 'app/views/chapterView', 'ap
       // Are we on a wide page?
       // <figure> elm has lots of margin which causes issues when calc width.
       el.style.margin = 0;
+
       if (el.offsetWidth >= MIN_WIDTH) {
         el.classList.add('wide');
+        Config.wide = true;
+      } else {
+        el.classList.add('responsive');
+        Config.wide = false;
       }
 
+      el.removeAttribute('style');
       el.appendChild(NavigationView.render());
 
       chaptersWrapper = Utils.buildDOM(templates.structure).firstChild;

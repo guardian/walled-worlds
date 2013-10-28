@@ -17,13 +17,19 @@
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-&.wide .gi-header {
-
+&.responsive {
+  .gi-header {
+    height: 43px;
+  }
+  .gi-header-title {
+    margin: 10px 0 0 11px;
+  }
 }
 
 .gi-header-title {
   margin: 18px 0 0 18px;
   font-size: 23px;
+  color: #fff;
   display: inline-block;
   float: left;
   font-family: "WebEgyptian-Regular", Georgia;

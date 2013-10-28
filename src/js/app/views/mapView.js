@@ -1,5 +1,5 @@
-define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', 'app/utils/utils', 'templates', 'tween', 'PubSub'],
-  function(mustache, svgs, SvgView, DataModel, Utils, templates, Tween, PubSub)
+define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config', 'app/models/data', 'app/utils/utils', 'templates', 'tween', 'PubSub'],
+  function(mustache, svgs, SvgView, Config, DataModel, Utils, templates, Tween, PubSub)
 {
   return function(data) {
     var el;
@@ -85,8 +85,11 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/data', '
 //      };
 
       el = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
-      _setupSVG();
-      _setupCounter();
+      console.log(Config);
+      if (Config.wide) {
+        _setupSVG();
+        _setupCounter();
+      }
 
       return el;
     }

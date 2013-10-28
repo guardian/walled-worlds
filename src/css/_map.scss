@@ -4,6 +4,12 @@
   top: 0;
 }
 
+&.responsive {
+  .gi-chapter-map {
+    display: none;
+  }
+}
+
 .fixed-background .gi-chapter-map {
   top: 3.4rem;
 }

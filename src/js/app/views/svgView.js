@@ -227,6 +227,7 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
       }
     }
 
+
     function init(mapID, data) {
       mapData = data;
       mapid = mapID;
