@@ -12,9 +12,9 @@
   }
 
   .chapter_title {
-    font-size: 2.8em;
+    font-size: 4.4em;
     font-family: "WebEgyptian-Regular";
-    margin-bottom: 2em;
+    margin-bottom: 0;
     font-weight: normal;
     line-height: 1em;
     position: relative;
@@ -26,45 +26,49 @@
   .chapter_meta {
     font-family: Arial;
     margin: 0.2rem 0 1rem;
-    font-size: 0.73em;
+    font-size: 1.4em;
     position: relative;
   }
 
   .chapter_meta dt,
   .chapter_meta dd {
     display: inline-block;
-    margin: 0 0 0.6rem 0;
   }
 
   .chapter_meta dt {
     font-weight: bold;
+    margin: 0 0.4rem 0 0;
   }
 
   .chapter_meta dd {
-    margin: 0 2.3rem 0.6rem 0.4rem;
+    margin: 0 1.8rem 0.2rem 0;
   }
 
   .chapter_copy h2 {
     line-height: 150%;
-    font-size: 0.8rem;
+    font-size: 1.6em;
     font-family: "Helvetica";
     border: none;
+    position:relative;
+    margin: 1.5rem 0 0;
   }
 
   .chapter_copy blockquote {
     color: #fff;
-    border-left: 0.2rem solid rgba(255, 255, 255, 0.3);
-    margin: 2rem 1rem 1rem;
-    padding: 0 0 0 0.4rem;
+    margin: 1rem 0 1rem 40px;
   }
 
-  .chapter_copy .copy, .chapter_copy p {
-    line-height:1.7em;
-    font-size: 1em;
+  .chapter_copy p {
+    font-size: 1.6em;
+    line-height:1.5em;
     position: relative;
     font-family: "TextWebEgyptian-Regular", Georgia;
     -webkit-font-smoothing: antialiased;
     margin: 1rem 0;
+  }
+
+  .chapter_copy p.byline {
+    font-style:italic;
   }
 
   .chapter_copy {
@@ -73,22 +77,26 @@
 
   .chapter_copy figure {
     max-width: 500px;
-    margin: 2rem 0 1rem;
+    margin: 1rem 0 1rem;
     position: relative;
 
     figcaption {
       font-family: arial, sans-serif;
       font-size: 13px;
-      color: #CCC;
-      margin: 0.6rem 0 0 0;
+      color: #fff;
+      margin: -6px 0 0 0;
       line-height: 140%;
+      background: #333;
+      padding: 10px;
+      border-radius: 0 0 5px 5px;
     }
   }
 
   .chapter_image,
   .chapter_video {
     width: 100%;
-    border: 2px solid #fff;
+    max-width: 496px;
+    border: 2px solid #333;
   }
 
   .gradient-image {
