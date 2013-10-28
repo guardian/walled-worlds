@@ -140,7 +140,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     }
 
     function _addMap() {
-      if (mapElm !== false) {
+      if (mapElm !== false && model.map && typeof model.map === 'string' && model.map.trim().length > 0) {
         mapElm = mapView.render();
         el.appendChild(mapElm);
       }

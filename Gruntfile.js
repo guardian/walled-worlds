@@ -65,8 +65,6 @@ module.exports = function(grunt) {
         inlineText: true,
         stubModules: ['text'],
         optimize: 'none',
-        generateSourceMaps: true,
-        useSourceUrl: true,
         wrap: {
           start: "define([], function() {",
           endFile: "src/require_end.frag"
@@ -78,7 +76,12 @@ module.exports = function(grunt) {
           return contents.replace(/\{\{ assetUrl }}/g, assetUrl);
         }
       },
-      dev: {},
+      dev: {
+        options: {
+          generateSourceMaps: true,
+          useSourceUrl: true
+        }
+      },
       prod: {
         options: {
           optimize: 'uglify',
