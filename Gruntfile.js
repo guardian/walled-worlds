@@ -65,6 +65,8 @@ module.exports = function(grunt) {
         inlineText: true,
         stubModules: ['text'],
         optimize: 'none',
+        generateSourceMaps: true,
+        useSourceUrl: true,
         wrap: {
           start: "define([], function() {",
           endFile: "src/require_end.frag"
