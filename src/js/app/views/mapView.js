@@ -85,7 +85,6 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
 //      };
 
       el = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
-      console.log(Config);
       if (Config.wide) {
         _setupSVG();
         _setupCounter();

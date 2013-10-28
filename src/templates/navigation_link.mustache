@@ -1,6 +1,15 @@
-<a href="#{{ chapterid }}" class="gi-nav-link">
-    <strong>{{ country }}</strong>
-  {{#length}}
-    <span class="gi-nav-link-meta">{{ length }} miles</span>
-  {{/length}}
-</a>
+<div class="gi-nav-link">
+
+ <span class="nav_count">
+    {{ currentChapterNum }} / {{ totalChapters }}
+  </span>
+
+  <a href="#{{ chapterid }}" class="link_title">
+      <strong>{{ country }}</strong>
+    {{#length}}
+      <span class="gi-nav-link-meta">{{ length }} miles</span>
+    {{/length}}
+  </a>
+
+
+</div>
