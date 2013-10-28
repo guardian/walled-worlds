@@ -1,5 +1,5 @@
-define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates', 'app/utils/utils', 'app/models/data', 'PubSub', 'marked'],
-  function(mustache, MapView, NavigationView, templates, Utils, DataModel, PubSub, marked)
+define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models/config', 'templates', 'app/utils/utils', 'app/models/data', 'PubSub', 'marked'],
+  function(mustache, MapView, NavigationView, Config, templates, Utils, DataModel, PubSub, marked)
 {
   return function(chapterData) {
 
@@ -98,7 +98,9 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates'
     function _handleScroll() {
       var boundingBox = el.getBoundingClientRect();
 
-      if (boundingBox.top - NavigationView.getHeight() < 0 && boundingBox.bottom > 0) {
+      if (boundingBox.top - NavigationView.getHeight() < 0 &&
+        boundingBox.bottom > NavigationView.getHeight())
+      {
         if (!el.classList.contains('fixed-background')) {
           _isHidden = false;
           el.classList.add('fixed-background');
@@ -147,15 +149,25 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'templates'
     function _addGradient() {
       var gradImg;
       var backgroundData = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
-      if (backgroundData) {
-        gradImg = Utils.getGradientImg(
-          backgroundData.gradientwidth,
-          backgroundData.gradientcolour,
-          backgroundData.gradientstart,
-          backgroundData.gradientopacity
-        );
+
+      if (Config.wide) {
+        if (backgroundData) {
+          gradImg = Utils.getGradientImg(
+            backgroundData.gradientwidth,
+            backgroundData.gradientcolour,
+            backgroundData.gradientstart,
+            backgroundData.gradientopacity
+          );
+        } else {
+          gradImg = Utils.getGradientImg();
+        }
       } else {
-        gradImg = Utils.getGradientImg();
+        if (backgroundData) {
+          gradImg = Utils.generateOverlay(backgroundData.gradientopacity);
+          gradImg.style.backgroundColor = backgroundData.gradientcolour;
+        } else {
+          gradImg = Utils.generateOverlay();
+        }
       }
 
       el.insertBefore(gradImg, el.firstChild);

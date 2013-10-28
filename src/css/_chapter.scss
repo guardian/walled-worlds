@@ -12,20 +12,21 @@
   }
 
   .chapter_title {
-    font-size: 2.8rem;
+    font-size: 2.8em;
     font-family: "WebEgyptian-Regular";
     margin-bottom: 0;
     font-weight: normal;
-    line-height: 3rem;
+    line-height: 1em;
     position: relative;
     -webkit-font-smoothing: antialiased;
     border: none;
+    color: #fff;
   }
 
   .chapter_meta {
     font-family: Arial;
     margin: 0.2rem 0 1rem;
-    font-size: 0.9rem;
+    font-size: 0.73em;
     position: relative;
   }
 
@@ -59,7 +60,7 @@
 
   .chapter_copy .copy, .chapter_copy p {
     line-height:1.7em;
-    font-size: 1.05rem;
+    font-size: 1em;
     position: relative;
     font-family: "TextWebEgyptian-Regular", Georgia;
     -webkit-font-smoothing: antialiased;
@@ -90,7 +91,6 @@
   .chapter_image,
   .chapter_video {
     width: 100%;
-    max-width: 496px;
     border: 2px solid #333;
   }
 
@@ -109,6 +109,27 @@
     -ms-user-select: none;
     user-select: none;
     pointer-events: none;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    background-color: #000;
+    display: block;
+  }
+}
+
+&.responsive {
+  .chapter_title {
+    margin: 2em 0 0.3em 0;
+  }
+
+  .chapter_copy figure {
+    max-width: none;
+    margin-right: 5px;
   }
 }
 

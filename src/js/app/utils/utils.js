@@ -113,12 +113,20 @@ define([], function() {
     return img;
   }
 
+  function generateOverlay(opacity) {
+    var overlayEl = document.createElement('div');
+    overlayEl.classList.add('overlay');
+    overlayEl.style.opacity = (opacity) ? opacity * 0.8 :  0.8;
+    return overlayEl;
+  }
+
 
   return {
     waypoint: waypoint,
     buildDOM: buildDOM,
     on: on,
-    getGradientImg: getGradientImg
+    getGradientImg: getGradientImg,
+    generateOverlay: generateOverlay
   };
 
 });

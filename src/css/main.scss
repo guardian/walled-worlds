@@ -9,9 +9,12 @@
   @import "chapter";
   @import "map";
 
-  @media (min-width: 81.25em) {  }
-  @media (min-width: 61.25em) {  }
-  @media (min-width: 41.25em) {  }
+
+  @media (max-width: 41.25em) {
+    margin: 0 -20px 0 -20px;}
+  @media (max-width: 30em) {
+    margin: 0 -10px 0 -10px;
+  }
 
   /* Usually interactive container is a <figure> so we need to remove margin and padding. */
   padding: 0;
