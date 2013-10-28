@@ -98,7 +98,9 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function _handleScroll() {
       var boundingBox = el.getBoundingClientRect();
 
-      if (boundingBox.top - NavigationView.getHeight() < 0 && boundingBox.bottom > 0) {
+      if (boundingBox.top - NavigationView.getHeight() < 0 &&
+        boundingBox.bottom > NavigationView.getHeight())
+      {
         if (!el.classList.contains('fixed-background')) {
           _isHidden = false;
           el.classList.add('fixed-background');
