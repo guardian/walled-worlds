@@ -1,4 +1,5 @@
-define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], function(WorldMapData, Svgs, PubSub) {
+define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub', 'd3', 'togeojson'],
+  function(WorldMapData, Svgs, Config, PubSub) {
   return function(animLength, animDelay) {
     var el;
     var mapData;
@@ -8,7 +9,7 @@ define(['app/models/worldMap', 'app/models/svgs', 'PubSub', 'd3', 'togeojson'], 
     var paths = [];
     var tweens = [];
     var pubSubTokens = {};
-    var debug = false;
+    var debug = Config.debug;
     var animDuration = animLength || 500;
     var animDeley = animDelay || 250;
 
