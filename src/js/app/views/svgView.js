@@ -13,6 +13,8 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
     var animDuration = animLength || 500;
     var animDeley = animDelay || 250;
 
+    var shouldAnimate = false;
+
     function _nextPathTween() {
       tweenCount += 1;
       if (tweenCount < paths.length) {
@@ -26,7 +28,6 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
       var length = path.getTotalLength();
       path.style.strokeDasharray = length + ' ' + length;
       path.style.strokeDashoffset = length;
-
       var pathTime = Math.round((length / totalLength) * animDuration);
 
       return new TWEEN.Tween( { x: length} )
@@ -47,7 +48,6 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
       for (var i = 0; i < paths.length; i++) {
         totalLength += paths[i].getTotalLength();
       }
-
 
       for (var i = 0; i < paths.length; i++) {
         paths[i].setAttribute('style', '');
@@ -210,10 +210,16 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
     function render() {
       _setupPaths();
       _setupMarkers();
+
+      if (shouldAnimate) {
+        anim();
+      }
+
       return el;
     }
 
     function anim() {
+      shouldAnimate = true;
       if (tweens[0]) {
         tweens[0].delay(animDeley).start();
       }
@@ -233,7 +239,6 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
       mapid = mapID;
       //_simpleSVG();
       _fetchKML();
-
     }
 
     return {
