@@ -18,7 +18,13 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
         content: marked(data.content)
       };
       var html = mustache.render(templates.chapter_asset_copy, templateData);
-      return Utils.buildDOM(html);
+      var domFrag = Utils.buildDOM(html);
+
+      if (data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
+        _addWaypoint(domFrag.firstChild, id);
+      }
+
+      return domFrag;
     }
 
     function _buildImageAsset(id) {
@@ -26,7 +32,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       var html = mustache.render(templates.chapter_asset_image, data);
       var domFrag = Utils.buildDOM(html);
 
-      if (data.hasOwnProperty('marker') && data.marker === 'TRUE') {
+      if (data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
         _addWaypoint(domFrag.firstChild, id);
       }
 
@@ -56,7 +62,13 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function _buildVideoAsset(id) {
       var data = _getAssetData(id, DataModel.get('videos'));
       var html = mustache.render(templates.chapter_asset_video, data);
-      return Utils.buildDOM(html);
+      var domFrag = Utils.buildDOM(html);
+
+      if (data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
+        _addWaypoint(domFrag.firstChild, id);
+      }
+
+      return domFrag;
     }
 
     function _buildAssets() {

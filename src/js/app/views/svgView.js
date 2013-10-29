@@ -60,28 +60,23 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
     function _setupMarkers() {
       markers = el.querySelectorAll('.svg_wall .marker_group');
       for (var i = 0; i < markers.length; i++) {
-
         var markerID = markers[i].id.replace('marker_', '');
-        pubSubTokens[markerID] = PubSub.subscribe(markerID, _triggerMarker(markers[i]));
+        pubSubTokens[markerID] = PubSub.subscribe(markerID, _triggerMarker.bind(markers[i]));
       }
     }
 
 
-    function _triggerMarker(elm) {
-      return function(msg, data) {
-        var el = elm;
-
-        if (data.show) {
-          if (-1 === el.getAttribute('class').indexOf('show-marker')) {
-            el.setAttribute('class', el.getAttribute('class') + ' show-marker');
-          }
-        } else {
-          if (-1 !== el.getAttribute('class').indexOf('show-marker')) {
-            el.setAttribute('class', el.getAttribute('class').replace(' show-marker', ''));
-          }
+    function _triggerMarker(msg, data) {
+      // Can't use .classList on SVG elements
+      if (data.show) {
+        if (-1 === this.getAttribute('class').indexOf('show-marker')) {
+          this.setAttribute('class', this.getAttribute('class') + ' show-marker');
         }
-        //PubSub.unsubscribe(pubSubTokens[tiggerID]);
-      };
+      } else {
+        if (-1 !== this.getAttribute('class').indexOf('show-marker')) {
+          this.setAttribute('class', this.getAttribute('class').replace(' show-marker', ''));
+        }
+      }
     }
 
 
