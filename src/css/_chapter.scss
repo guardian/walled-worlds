@@ -52,11 +52,18 @@
     position:relative;
     margin: 1.5rem 0 0;
     -webkit-font-smoothing: antialiased;
+    color: #fff;
   }
 
   .chapter_copy blockquote {
     color: #fff;
-    margin: 1rem 0 1rem 40px;
+    margin: 1rem 0 1rem 0;
+    padding-left: 33px;
+    background-image: url(../imgs/blockquote.png);
+    background-position: 0 5px;
+    position:relative;
+    background-repeat: no-repeat;
+    background-size:21px 11px;
   }
 
   .chapter_copy p {
@@ -70,6 +77,9 @@
 
   .chapter_copy p.byline {
     font-style:italic;
+    padding: 8px;
+    border-top: 1px dotted #fff;
+    border-bottom: 1px dotted #fff;  
   }
 
   .chapter_copy {

@@ -27,7 +27,7 @@
 }
 
 .gi-header-title {
-  margin: 18px 0 0 18px;
+  margin: 15px 0 0 15px;
   font-size: 23px;
   color: #fff;
   display: inline-block;
@@ -50,4 +50,10 @@
 
 .gi-header-text {
   float: left;
+  color: #fff;
+  text-decoration: none;
+}
+
+.gi-header-text:hover{
+  text-decoration: none;
 }
