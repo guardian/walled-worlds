@@ -46,7 +46,9 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
       var el = Utils.buildDOM(mustache.render(templates.navigation_link, chapter)).firstChild;
       wrapperElm.appendChild(el);
       if (Config.wide) {
-        el.onclick = _navigationClickHandler;
+        el.addEventListener("click", function(e) {
+          _navigationClickHandler(e);
+        }, false);
       }
       chapterNavElms[chapter.chapterid] = el;
     });
@@ -56,13 +58,13 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
 
   function _navigationClickHandler(e) {
     e.preventDefault();
-    var chapter = (e.srcElement.className === "gi-nav-link") ? chapter = e.srcElement.hash : e.srcElement.parentElement.hash;
+    var chapter = "#" + e.currentTarget.id;
     scrollToChapter(chapter);
   }
 
   function scrollToChapter(chapter) {
     if (/^#[a-z][a-z0-9]+$/gi.test(chapter)) {
-      window.scrollTo(0, parseInt(document.querySelector(chapter).offsetTop, 10) + 10);
+      window.scrollTo(0, parseInt(document.querySelector(".chapter" + chapter).offsetTop, 10) + 10);
     }
   }
 
