@@ -104,13 +104,14 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
     function _drawMap(json) {
       var WIDTH = 380;
       var HEIGHT = 800;
+      var markerPath = "M77 208 C -10 130 -30 0 77 1 C 184 0 164 130 77 208 Z M 77 30 a 40 40 0 1 0 0.00001 0 Z";
+
       el = document.createElement('div');
       el.classList.add('svg_wall');
 
       var svg = d3.select(el).append("svg")
         .attr("width", WIDTH)
         .attr("height", HEIGHT);
-
 
       var center = [-1.4, 51];
       if (mapData.center !== undefined && mapData.center.split(',').length === 2) {
@@ -203,6 +204,8 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
         return feature.properties.folder.toLowerCase() === 'markers';
       });
 
+      console.log(markerData);
+
       var markers = svg.append("svg:g")
         .attr("class", "markers");
 
@@ -217,13 +220,14 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
         .attr("class", "marker_text")
         .attr("id", function(d) { return 'marker-' + d.properties.name; })
         .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
-        .text(function(d) { return d.properties.description; });
+        .text(function(d) {if (d.properties.name.substring(0,4) !== "copy") {return d.properties.name;} });
 
       markers.selectAll(".marker_group")
         .data(markerData)
         .append("path")
         .attr('class', 'marker_path')
-        .attr("d", path);
+        .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 16; var y = projection(d.geometry.coordinates)[1] - 33; return "translate(" + x + "," + y + ") scale(0.15)";})
+        .attr("d", function(d) {if (d.properties.name.substring(0,4) == "copy") {return markerPath;} });
 
       PubSub.publish('mapRendered', { id: mapid });
     }
