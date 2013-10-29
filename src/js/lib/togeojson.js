@@ -134,6 +134,7 @@ toGeoJSON = (function() {
                     extendedData = get1(root, 'ExtendedData');
 
                 if (!geoms.length) return [];
+
                 if (name) properties.name = name;
                 if (styleUrl && styleIndex[styleUrl]) {
                     properties.styleUrl = styleUrl;
@@ -150,6 +151,9 @@ toGeoJSON = (function() {
                     for (i = 0; i < simpleDatas.length; i++) {
                         properties[simpleDatas[i].getAttribute('name')] = nodeVal(simpleDatas[i]);
                     }
+                }
+                if (root.parentNode && root.parentNode.getElementsByTagName('name').length > 0) {
+                  properties.folder = root.parentNode.getElementsByTagName('name')[0].textContent;
                 }
                 return [{
                     type: 'Feature',
@@ -183,6 +187,7 @@ toGeoJSON = (function() {
                 for (j = 0; j < pts.length; j++) {
                     line.push(coordPair(pts[j]));
                 }
+              console.log(node);
                 return {
                     type: 'Feature',
                     properties: getProperties(node),
@@ -193,6 +198,7 @@ toGeoJSON = (function() {
                 };
             }
             function getPoint(node) {
+              console.log(node);
                 var prop = getProperties(node);
                 prop.ele = nodeVal(get1(node, 'ele'));
                 prop.sym = nodeVal(get1(node, 'sym'));

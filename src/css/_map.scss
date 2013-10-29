@@ -60,6 +60,32 @@
     stroke: rgba(255, 0, 0, 0.6);
   }
 
+  .label_text.major {
+    font-family: "TextWebEgyptian-Regular", Georgia;
+    font-size: 18px;
+    fill: white;
+    fill-opacity: 0.5;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px black;
+  }
+
+  .label_text.minor {
+    font-family: Arial;
+    fill: white;
+    fill-opacity: 0.9;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  .label_text.minor:before {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+  }
+
   .marker_group {
     opacity: 0.8;
   }

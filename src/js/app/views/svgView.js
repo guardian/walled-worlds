@@ -104,7 +104,9 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
     function _drawMap(json) {
       var WIDTH = 380;
       var HEIGHT = 800;
-      var markerPath = "M77 208 C -10 130 -30 0 77 1 C 184 0 164 130 77 208 Z M 77 30 a 40 40 0 1 0 0.00001 0 Z";
+      var markerPath = "M77 208 C -10 130 -30 0 77 1 C 184 0 164 130 77 208 Z";
+
+      // markerPath += "M 77 30 a 40 40 0 1 0 0.00001 0 Z"; // Circle cut out
 
       el = document.createElement('div');
       el.classList.add('svg_wall');
@@ -164,7 +166,7 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
 
       // Add walls
       var wallData = json.features.filter(function(feature) {
-        return feature.geometry.type.toLocaleLowerCase() === 'linestring';
+        return feature.properties.folder.toLowerCase() === 'walls';
       });
 
       var walls = svg.append("svg:g")
@@ -177,12 +179,32 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
         .attr("class", 'wall_path')
         .attr("d", path);
 
-      // Add markers
-      var markerData = json.features.filter(function(feature) {
-        return feature.geometry.type.toLocaleLowerCase() === 'point';
+
+      // Add Labels
+      var labelsData = json.features.filter(function(feature) {
+        return feature.properties.folder.toLowerCase() === 'labels';
       });
 
-      console.log(markerData);
+      var labels = svg.append("svg:g")
+        .attr("class", "labels");
+
+      labels.selectAll("path")
+        .data(labelsData)
+        .enter()
+        .append("g")
+        .attr("class", "label_group")
+        .attr('id', function(d) { return 'marker_' + d.properties.name; })
+        .append("svg:text")
+        .attr("text-anchor", "middle")
+        .attr("class", function(d) {if (d.properties.description === "1") {return "label_text major";} else {return "label_text minor";}})
+        .attr("id", function(d) { return 'label-' + d.properties.name; })
+        .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
+        .text(function(d) {if (d.properties.description === "1") {return d.properties.name;} else {return "◆ " + d.properties.name;}});
+
+      // Add markers
+      var markerData = json.features.filter(function(feature) {
+        return feature.properties.folder.toLowerCase() === 'markers';
+      });
 
       var markers = svg.append("svg:g")
         .attr("class", "markers");
@@ -197,15 +219,14 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
         .attr("text-anchor", "middle")
         .attr("class", "marker_text")
         .attr("id", function(d) { return 'marker-' + d.properties.name; })
-        .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
-        .text(function(d) {if (d.properties.name.substring(0,4) !== "copy") {return d.properties.name;} });
+        .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; });
 
       markers.selectAll(".marker_group")
         .data(markerData)
         .append("path")
         .attr('class', 'marker_path')
-        .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 16; var y = projection(d.geometry.coordinates)[1] - 33; return "translate(" + x + "," + y + ") scale(0.15)";})
-        .attr("d", function(d) {if (d.properties.name.substring(0,4) == "copy") {return markerPath;} });
+        .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 16; var y = projection(d.geometry.coordinates)[1] - 33; return "translate(" + x + "," + y + ") scale(0.10)";})
+        .attr("d", markerPath);
 
       PubSub.publish('mapRendered', { id: mapid });
     }
