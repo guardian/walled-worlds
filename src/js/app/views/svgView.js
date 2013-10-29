@@ -106,7 +106,7 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
       var HEIGHT = 800;
       var markerPath = "M77 208 C -10 130 -30 0 77 1 C 184 0 164 130 77 208 Z";
 
-      // markerPath += "M 77 30 a 40 40 0 1 0 0.00001 0 Z"; // Circle cut out
+      markerPath += "M 77 30 a 40 40 0 1 0 0.00001 0 Z"; // Circle cut out
 
       el = document.createElement('div');
       el.classList.add('svg_wall');
