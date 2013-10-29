@@ -204,8 +204,6 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
         return feature.properties.folder.toLowerCase() === 'markers';
       });
 
-      console.log(markerData);
-
       var markers = svg.append("svg:g")
         .attr("class", "markers");
 
@@ -226,8 +224,8 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
         .data(markerData)
         .append("path")
         .attr('class', 'marker_path')
-        .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 16; var y = projection(d.geometry.coordinates)[1] - 33; return "translate(" + x + "," + y + ") scale(0.15)";})
-        .attr("d", function(d) {if (d.properties.name.substring(0,4) == "copy") {return markerPath;} });
+        .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 16; var y = projection(d.geometry.coordinates)[1] - 33; return "translate(" + x + "," + y + ") scale(0.12)";})
+        .attr("d", function(d) {if (d.properties.name.substring(0,4) === "copy") {return markerPath;} });
 
       PubSub.publish('mapRendered', { id: mapid });
     }
