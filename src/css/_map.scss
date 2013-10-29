@@ -57,11 +57,11 @@
 
   .country {
     fill: rgba(255, 0, 0, 0.3);
-    stroke: rgba(255, 0, 0, 0.6);;
+    stroke: rgba(255, 0, 0, 0.6);
   }
 
   .marker_group {
-    opacity: 0.6;
+    opacity: 0.8;
   }
 
   .show-marker {
@@ -80,6 +80,14 @@
   .marker_text {
     font-family: arial;
     fill: #fff;
-    font-size: 12px;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    stroke: black;
+    stroke-width: 1px;
+    stroke-opacity: 0.8;
+    font-weight: 800;
+    -webkit-font-smoothing: antialiased;
   }
 }
