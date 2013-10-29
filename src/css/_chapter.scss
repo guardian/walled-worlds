@@ -33,6 +33,7 @@
   .chapter_meta dt,
   .chapter_meta dd {
     display: inline-block;
+    -webkit-font-smoothing: antialiased;
   }
 
   .chapter_meta dt {

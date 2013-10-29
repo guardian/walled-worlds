@@ -61,7 +61,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
 
   function scrollToChapter(chapter) {
     if (/^#[a-z][a-z0-9]+$/gi.test(chapter)) {
-      window.scrollTo(0, parseInt(document.querySelector(chapter).offsetTop, 10) + 10);
+      window.scrollTo(0, parseInt(document.querySelector(".chapter" + chapter).offsetTop, 10) + 10);
     }
   }
 
