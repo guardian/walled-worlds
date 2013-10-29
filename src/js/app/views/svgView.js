@@ -163,7 +163,7 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
 
       // Add walls
       var wallData = json.features.filter(function(feature) {
-        return feature.geometry.type.toLocaleLowerCase() === 'linestring';
+        return feature.properties.folder.toLowerCase() === 'walls';
       });
 
       var walls = svg.append("svg:g")
@@ -176,9 +176,31 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
         .attr("class", 'wall_path')
         .attr("d", path);
 
+
+      // Add Labels
+      var labelsData = json.features.filter(function(feature) {
+        return feature.properties.folder.toLowerCase() === 'labels';
+      });
+
+      var labels = svg.append("svg:g")
+        .attr("class", "labels");
+
+      labels.selectAll("path")
+        .data(labelsData)
+        .enter()
+        .append("g")
+        .attr("class", "label_group")
+        .attr('id', function(d) { return 'marker_' + d.properties.name; })
+        .append("svg:text")
+        .attr("text-anchor", "middle")
+        .attr("class", "label_text")
+        .attr("id", function(d) { return 'label-' + d.properties.name; })
+        .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
+        .text(function(d) { return d.properties.name; });
+
       // Add markers
       var markerData = json.features.filter(function(feature) {
-        return feature.geometry.type.toLocaleLowerCase() === 'point';
+        return feature.properties.folder.toLowerCase() === 'markers';
       });
 
       var markers = svg.append("svg:g")
