@@ -162,17 +162,16 @@
       .attr('id', function(d) { return 'marker_' + d.properties.name; })
       .append("svg:text")
       .attr("text-anchor", "middle")
-      .attr("class", "label_text")
+      .attr("class", function(d) {if (d.properties.description === "1") {return "label_text major";} else {return "label_text minor";}})
       .attr("id", function(d) { return 'label-' + d.properties.name; })
       .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
-      .text(function(d) { return d.properties.name; });
+      .text(function(d) {if (d.properties.description === "1") {return d.properties.name;} else {return "◆ " + d.properties.name;}});
 
 
     // Add markers
     var markerData = json.features.filter(function(feature) {
       return feature.properties.folder.toLowerCase() === 'markers';
     });
-
 
     var markers = svg.append("svg:g")
       .attr("class", "markers");
@@ -187,16 +186,14 @@
       .attr("text-anchor", "middle")
       .attr("class", "marker_text")
       .attr("id", function(d) { return 'marker-' + d.properties.name; })
-      .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
-      .text(function(d) {if (d.properties.name.substring(0,4) !== "copy") {return d.properties.name;} });
+      .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; });
 
     markers.selectAll(".marker_group")
       .data(markerData)
       .append("path")
       .attr('class', 'marker_path')
-      .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 16; var y = projection(d.geometry.coordinates)[1] - 33; return "translate(" + x + "," + y + ") scale(0.15)";})
-      .attr("d", function(d) {if (d.properties.name.substring(0,4) == "copy") {return markerPath;} });
-
+      .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 16; var y = projection(d.geometry.coordinates)[1] - 33; return "translate(" + x + "," + y + ") scale(0.10)";})
+      .attr("d", markerPath);
 
     //console.log(el.innerHTML);
 
