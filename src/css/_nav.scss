@@ -5,12 +5,14 @@
     color: #fff;
     line-height: 16px;
     padding-top: 6px;
-    margin-left: 10px;
+    display: inline-block;
     text-decoration: none;
+    margin-top: 6px;
   }
 
   .nav-links {
     float: left;
+    margin-right: 40px;
   }
 
   .previous,
@@ -29,12 +31,13 @@
   float: left;
   min-height: 60px;
   display: none;
-  padding: 0 5px;
+  padding: 0 8px;
   cursor: pointer;
   -webkit-font-smoothing: antialiased;
 
+
   &:first-child {
-    display: block;
+    display: none;
   }
 
   &.active {
@@ -121,6 +124,10 @@
 
   .gi-nav-link {
     display: block;
+
+    &:first-child{
+      display:none;
+    }
   }
 }
 
