@@ -220,7 +220,7 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
         .data(markerData)
         .append("path")
         .attr('class', 'marker_path')
-        .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 16; var y = projection(d.geometry.coordinates)[1] - 33; return "translate(" + x + "," + y + ") scale(0.10)";})
+        .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 11; var y = projection(d.geometry.coordinates)[1] - 22; return "translate(" + x + "," + y + ") scale(0.10)";})
         .attr("d", markerPath);
 
       PubSub.publish('mapRendered', { id: mapid });
