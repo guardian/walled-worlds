@@ -28,23 +28,22 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
     }
 
     function _setupSVG() {
-      // TODO: Clean this up
-
       if (model.map && model.map.length > 0) {
-//        svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
-//        svgView.init(model.map);
-//        el.querySelector('.chapter-svg-map').appendChild(svgView.render());
-//        console.log(svgView);
-        var data = _getAssetData(model.map.trim(), DataModel.get('maps'));
+        data = _getAssetData(model.map.trim(), DataModel.get('maps'));
 
         if (data) {
           svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
           svgView.init(model.map.trim(), data);
-          PubSub.subscribe('mapRendered', function(msg, data) {
-            if (data.id === model.map.trim()) {
-              el.querySelector('.chapter-svg-map').appendChild(svgView.render());
-            }
-          });
+
+          if (Config.useGoogleMaps) {
+            PubSub.subscribe('mapRendered', function(msg, data) {
+              if (data.id === model.map.trim()) {
+                el.querySelector('.chapter-svg-map').appendChild(svgView.render());
+              }
+            });
+          } else {
+            el.querySelector('.chapter-svg-map').appendChild(svgView.render());
+          }
         }
       }
     }
@@ -71,18 +70,6 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
       if (el) {
         return el;
       }
-
-//      var svg = svgView.render();
-//      console.log(svg);
-
-//      if (!svgs.hasOwnProperty(model.map)) {
-//        return false;
-//      }
-
-//      var svgData = {
-//        distance: distance,
-//        svg: svgs[ID]
-//      };
 
       el = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
       if (Config.wide) {

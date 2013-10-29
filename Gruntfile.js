@@ -44,7 +44,7 @@ module.exports = function(grunt) {
           'togeojson': 'lib/togeojson',
 
           // Dev gets data directly from Google spreadsheet, prod bakes it in
-          'data': (useGoogleSpreadsheet) ? 'app/models/contentData' : '../../tmp/data'
+          'data': (useGoogleSpreadsheet) ? 'app/models/contentData' : '../../tmp/svgs'
         },
 
         shim: {
@@ -231,4 +231,10 @@ module.exports = function(grunt) {
   grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:prod", "sass"]);
   grunt.registerTask("deploy", ["build", "s3:production"]);
   grunt.registerTask("test-deploy", ["build", "s3:test"]);
+
+  grunt.registerTask("fetch", [], function() {
+    var fetchSVG = require('./src/test_svg_baking');
+    var done = this.async();
+    fetchSVG.run();
+  });
 };

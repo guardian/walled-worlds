@@ -254,6 +254,7 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
         el = document.createElement('div');
         el.classList.add('svg_wall');
         el.innerHTML = Svgs[mapid];
+        PubSub.publish('mapRendered', { id: mapid });
       }
     }
 
@@ -261,8 +262,14 @@ define(['app/models/worldMap', 'app/models/svgs', 'app/models/config', 'PubSub',
     function init(mapID, data) {
       mapData = data;
       mapid = mapID;
-      //_simpleSVG();
-      _fetchKML();
+
+      if (Config.useGoogleMaps) {
+        _fetchKML();
+      } else {
+        _simpleSVG();
+      }
+
+
     }
 
     return {
