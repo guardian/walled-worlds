@@ -6,6 +6,15 @@
   background-repeat: no-repeat;
   background-color: #222;
 
+  .background_credit {
+    margin: 10px;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: arial, helvetica, sans-serif;
+    font-size: 10px;
+    position: relative;
+    text-align: right;
+  }
+
   &.fixed-background {
       background-attachment: fixed;
       background-position: 0 3.4rem;
@@ -159,5 +168,14 @@
 &.wide .chapter {
   padding-left: 400px;
   padding-top: 200px;
-  padding-right: 40px
+  padding-right: 40px;
+
+
+  &.fixed-background {
+    .background_credit {
+      bottom: 0;
+      left: 0;
+      position: fixed;
+    }
+  }
 }

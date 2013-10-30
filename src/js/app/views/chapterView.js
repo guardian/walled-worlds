@@ -7,6 +7,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     var model = chapterData;
     var mapView = new MapView(model);
     var mapElm;
+    var photoCreditElm;
     var _isHidden = false;
 
     marked.setOptions({ smartypants: true });
@@ -148,6 +149,10 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
         if (mapElm) {
           mapElm.style.left = boundingBox.left + 'px';
         }
+
+        if (photoCreditElm && Config.wide) {
+          photoCreditElm.style.left = boundingBox.left + 'px';
+        }
       }
     }
 
@@ -194,6 +199,11 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
 
         if (data !== undefined  && data.backgroundcolour !== undefined && data.backgroundcolour.trim().length > 0) {
           el.style.backgroundColor = data.backgroundcolour;
+        }
+
+        if (data !== undefined  && data.credit !== undefined && data.credit.trim().length > 0) {
+          photoCreditElm = el.querySelector('.background_credit');
+          photoCreditElm.innerHTML = 'Photography &copy; ' + data.credit;
         }
       }
     }
