@@ -1,17 +1,35 @@
 <div class="chapter" id="{{ chapterid }}">
   <h2 class="chapter_title">{{ title }}</h2>
+
+{{#country}}
   <dl class="chapter_meta">
+    {{#country}}
       <dt>Location</dt>
       <dd>{{ country }}</dd>
+    {{/country}}
+
+    {{#reason}}
       <dt>Reason</dt>
       <dd>{{ reason }}</dd>
+    {{/reason}}
+
+    {{#age}}
       <dt>Age</dt>
       <dd>{{ age }} years old</dd>
+    {{/age}}
+
+    {{#deaths}}
       <dt>Number of deaths around wall</dt>
       <dd>{{ deaths }}</dd>
+    {{/deaths}}
+
+    {{#material}}
       <dt>Made of</dt>
       <dd>{{ material }}</dd>
+    {{/material}}
   </dl>
+{{/country}}
+
   <div class="chapter_copy">
       {{{ compiledAssets }}}
   </div>
