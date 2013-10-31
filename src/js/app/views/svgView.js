@@ -84,11 +84,7 @@ define(['svgView', 'app/models/config', 'PubSub'],
     function render() {
       _setupPaths();
       _setupMarkers();
-
-      if (shouldAnimate) {
-        anim();
-      }
-
+      if (shouldAnimate) { anim(); }
       return el;
     }
 

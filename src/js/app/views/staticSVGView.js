@@ -4,6 +4,7 @@ define(['app/models/svgs'],function(svgData) {
     function render(ID, el, callback){
       el.classList.add('svg_wall');
       el.innerHTML = svgData[ID];
+
       callback();
     }
 

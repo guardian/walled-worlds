@@ -6,13 +6,10 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
     var model = data;
     var ID = data.chapterid;
     var distance = data.length;
-
-
     var ANIM_LENGTH = 5*1000;
     var hasAnimated = false;
     var ANIM_DELAY = 250;
     var counterTween;
-
     var svgView;
 
     function animate() {
@@ -22,8 +19,6 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
 
       svgView.anim(ANIM_LENGTH);
       counterTween.start();
-
-
       hasAnimated = true;
     }
 
@@ -33,17 +28,14 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
 
         if (data) {
           svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
-          svgView.init(model.map.trim(), data);
 
-          if (Config.useGoogleMaps) {
-            PubSub.subscribe('mapRendered', function(msg, data) {
-              if (data.id === model.map.trim()) {
-                el.querySelector('.chapter-svg-map').appendChild(svgView.render());
-              }
-            });
-          } else {
-            el.querySelector('.chapter-svg-map').appendChild(svgView.render());
-          }
+          PubSub.subscribe('mapRendered', function(msg, data) {
+            if (data.id === model.map.trim()) {
+              el.querySelector('.chapter-svg-map').appendChild(svgView.render());
+            }
+          });
+
+          svgView.init(model.map.trim(), data);
         }
       }
     }

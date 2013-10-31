@@ -151,7 +151,6 @@ define(['app/models/worldMap', 'app/models/config', 'PubSub', 'd3', 'togeojson']
         .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 11; var y = projection(d.geometry.coordinates)[1] - 22; return "translate(" + x + "," + y + ") scale(0.10)";})
         .attr("d", markerPath);
 
-      console.log(el);
       done();
     }
 
