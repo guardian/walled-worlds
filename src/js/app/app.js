@@ -1,4 +1,4 @@
-define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/views/chapterView', 'app/views/navigationView', 'app/views/loadingView', 'app/models/data'],
+define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/views/chapterView', 'app/views/navigationView', 'app/views/loadingView', 'app/models/data', 'es5-shim'],
   function(mustache, templates, Config, Utils, ChapterView, NavigationView, LoadingView, DataModel)
   {
     'use strict';

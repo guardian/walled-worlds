@@ -55,7 +55,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
   }
 
   function _navigationClickHandler(e) {
-    e.preventDefault();
+    event.preventDefault ? event.preventDefault() : event.returnValue = false;
     scrollToChapter('#' + this.chapterid);
   }
 
@@ -67,9 +67,9 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
 
   function render() {
     chapterData = DataModel.get('chapters');
+
     var html = mustache.render(templates.navigation, {links: chapterData});
     el = Utils.buildDOM(html).firstChild;
-
     el.querySelector('.nav-links').insertBefore(
       _buildChapterLinks(chapterData),
       el.querySelector('.gi-nav-link-all')

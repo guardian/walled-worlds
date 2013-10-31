@@ -145,7 +145,12 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function _correctBackgroundPosition() {
       var boundingBox = el.getBoundingClientRect();
       if (!_isHidden) {
-        el.style.backgroundPosition = boundingBox.left + 'px 3.4rem';
+        if ('backgroundPosition' in el.style) {
+          el.style.backgroundPosition = boundingBox.left + 'px 50px';
+        } else {
+          el.style.backgroundPositionX = boundingBox.left + 'px';
+          el.style.backgroundPositionY = '100px';
+        }
         if (mapElm) {
           mapElm.style.left = boundingBox.left + 'px';
         }

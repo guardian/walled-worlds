@@ -67,6 +67,10 @@ define([], function() {
   }
 
   function getGradientImg(width, colour, startPos, opacity) {
+    var canvas = document.createElement('canvas');
+    if (!canvas.getContext) {
+      return generateOverlay();
+    }
 
     var hexColourRegex = /#([a-f]|[A-F]|[0-9]){3}(([a-f]|[A-F]|[0-9]){3})?/g;
     var rgbRegex = /^.+\((.+)\)/;
@@ -89,11 +93,8 @@ define([], function() {
 
     }
 
-
-    var canvas = document.createElement('canvas');
     canvas.width = gradWidth;
     canvas.height = gradWidth;
-
     var ctx = canvas.getContext('2d');
 
     var linGrad = ctx.createLinearGradient(0, 0, gradWidth, 0);

@@ -1,6 +1,6 @@
   var d3 = require('d3');
   var Tabletop = require('tabletop');
-  var http = require('http');
+  var https = require('https');
   var DOMParser = require('xmldom').DOMParser;
   var jsdom = require("jsdom").jsdom;
   var fs = require('fs');
@@ -10,8 +10,10 @@
   var mapResults;
 
   var amdSVGS = {};
+  var callback;
 
-  function fetchMapData() {
+  function fetchMapData(done) {
+    callback = done;
     var tabletop = Tabletop.init( {
       key: '0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc',
       callback: _successFetch,
@@ -26,11 +28,11 @@
 
     var options = {
       host: 'mapsengine.google.com',
-      port: 80,
+      port: 443,
       path: path
     };
 
-    http.get(options, function(res) {
+    https.get(options, function(res) {
       res.on("data", function(chunk) {
         //console.log("BODY: " + chunk);
         xml += chunk.toString();
@@ -63,6 +65,7 @@
           console.log(err);
         } else {
           console.log("saved data JS");
+          callback();
         }
       });
     }

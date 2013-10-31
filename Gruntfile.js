@@ -1,23 +1,30 @@
 module.exports = function(grunt) {
   var pkg = grunt.file.readJSON('package.json');
   var isDev = grunt.option('dev') || false;
-  var useGoogleSpreadsheet = true;
+  var useGoogleSpreadsheet = false;
 
-
-  grunt.task.registerTask('fetch', 'Fetch data from Google spreadsheet.', function() {
-    var done = this.async();
-    var Tabletop = require('tabletop');
-    Tabletop.init( {
-      key: '0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc',
-      callback: _handleData,
-      simpleSheet: false
-    });
-
-    function _handleData(data) {
-      grunt.file.write('tmp/data.js', 'define([],function() { return ' + JSON.stringify(data, null, "  ") + '; });');
-      done();
-    }
-  });
+  function getRequirePaths(useLiveData) {
+    return {
+      'mustache': 'lib/mustache',
+      'almond': 'lib/almond',
+      'templates': '../../tmp/templates',
+      'tabletop': 'lib/tabletop',
+      'marked': 'lib/marked',
+      'tween': 'lib/tween',
+      'requestAnimPolyfill': 'lib/requestAnimPolyfill',
+      'text': 'lib/text',
+      'svgDir': '../svg/',
+      'PubSub': 'lib/pubsub',
+      'classlist': 'lib/classList',
+      'es5-shim': 'lib/es5-shim',
+      'd3': 'lib/d3',
+      'history': 'lib/history.iegte8',
+      'togeojson': 'lib/togeojson',
+      'svgView': (useLiveData) ? 'app/views/googleSVGView' : 'app/views/staticSVGView',
+      // Dev gets data directly from Google spreadsheet, prod bakes it in
+      'data': (useLiveData) ? 'app/models/contentData' : 'app/models/fetchedData'
+    };
+  }
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -26,41 +33,21 @@ module.exports = function(grunt) {
       options: {
         baseUrl: "src/js/",
         out: "dest/boot.js",
-
-        paths: {
-          'mustache': 'lib/mustache',
-          'almond': 'lib/almond',
-          'templates': '../../tmp/templates',
-          'tabletop': 'lib/tabletop',
-          'marked': 'lib/marked',
-          'tween': 'lib/tween.min',
-          'requestAnimPolyfill': 'lib/requestAnimPolyfill',
-          'text': 'lib/text',
-          'svgDir': '../svg/',
-          'PubSub': 'lib/pubsub',
-          'classlist': 'lib/classList',
-          'es5-shim': 'lib/es5-shim',
-          'd3': 'lib/d3.v3.min',
-          'togeojson': 'lib/togeojson',
-
-          // Dev gets data directly from Google spreadsheet, prod bakes it in
-          'data': (useGoogleSpreadsheet) ? 'app/models/contentData' : '../../tmp/svgs'
-        },
-
+        paths: getRequirePaths(false),
         shim: {
           'tabletop': { 'exports': 'Tabletop' },
           'tween': { 'exports': 'TWEEN' },
           'requestAnimPolyfill' : { 'exports': 'requestAnimPolyfill' },
           'classlist': { 'exports:': 'classlist' },
           'es5-shim': { 'exports:': 'es5-shim' },
-          'd3': { 'exports:': 'DD3' },
+          'd3': { 'exports:': 'DD3' , 'deps': [ 'es5-shim' ] },
           'togeojson': { 'exports:': 'toGeoJSON' }
         },
 
         name: "app/app",
 
         //namespace: '<%= pkg.namespace %>',
-        include: ['almond', 'templates', 'classlist', 'es5-shim', 'requestAnimPolyfill'],
+        include: ['almond', 'history', 'es5-shim', 'templates', 'classlist', 'requestAnimPolyfill'],
         findNestedDependencies: true,
         inlineText: true,
         stubModules: ['text'],
@@ -78,8 +65,10 @@ module.exports = function(grunt) {
       },
       dev: {
         options: {
-          generateSourceMaps: true,
-          useSourceUrl: true
+          paths: getRequirePaths(true),
+          //generateSourceMaps: true,
+          //useSourceUrl: true,
+          optimize: 'none'
         }
       },
       prod: {
@@ -227,14 +216,31 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs:dev", "sass", "connect", "watch"]);
-
   grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:prod", "sass"]);
   grunt.registerTask("deploy", ["build", "s3:production"]);
-  grunt.registerTask("test-deploy", ["build", "s3:test"]);
+  grunt.registerTask("test-deploy", ["fetch-data", "fetch-svg", "build", "s3:test"]);
 
-  grunt.registerTask("fetch", [], function() {
-    var fetchSVG = require('./src/test_svg_baking');
+
+  grunt.registerTask("fetch-svg", [], function() {
+    var fetchSVG = require('./src/fetch_and_bake_svgs');
     var done = this.async();
-    fetchSVG.run();
+    fetchSVG.run(done);
+  });
+
+  grunt.task.registerTask('fetch-data', 'Fetch data from Google spreadsheet.', function() {
+    var done = this.async();
+    console.log('Fetching Google Spreadsheet...');
+    var Tabletop = require('tabletop');
+    Tabletop.init( {
+      key: '0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc',
+      callback: _handleData,
+      simpleSheet: false
+    });
+
+    function _handleData(data) {
+      console.log('Saving Google Spreadsheet...');
+      grunt.file.write('src/js/app/models/fetchedData.js', 'define([],function() { return ' + JSON.stringify(data, null, "  ") + '; });');
+      done();
+    }
   });
 };

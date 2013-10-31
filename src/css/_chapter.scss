@@ -120,6 +120,7 @@
     max-width: 496px;
     border: 2px solid #333;
     outline: none;
+    position: relative;
   }
 
   .gradient-image {
@@ -147,6 +148,8 @@
     left: 0;
     background-color: #000;
     display: block;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+
   }
 }
 
