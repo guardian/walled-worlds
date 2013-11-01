@@ -69,7 +69,7 @@
     color: #fff;
     margin: 1rem 0 1rem 0;
     padding-left: 33px;
-    background-image: url(../imgs/blockquote.png);
+    background-image: url({{ versionedProjectPath }}/imgs/blockquote.png);
     background-position: 0 5px;
     position:relative;
     background-repeat: no-repeat;

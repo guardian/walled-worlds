@@ -4,7 +4,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
     'use strict';
 
     var el;
-    var assetUrl = '{{ assetUrl }}';
+    var assetUrl = '{{ versionedProjectPath }}';
     var chaptersWrapper;
     var chaptersViews = [];
     var MIN_WIDTH = 940;
@@ -45,7 +45,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       var styleElm = document.createElement('link');
       styleElm.setAttribute('rel', 'stylesheet');
       styleElm.setAttribute('type', 'text/css');
-      styleElm.setAttribute('href', assetUrl + 'main.css');
+      styleElm.setAttribute('href', assetUrl + '/main.css');
       document.querySelector('head').appendChild(styleElm);
     }
 
@@ -59,7 +59,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       });
     }
 
-    function boot(element) {
+    function setup(element) {
       el = element;
       el.appendChild(LoadingView.render());
       addStyles();
@@ -67,7 +67,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
     }
 
     return {
-      init: boot
+      setup: setup
     };
   });
 

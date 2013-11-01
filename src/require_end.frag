@@ -1,6 +1,6 @@
-  return { 'boot': function(el) {
+  return { 'setup': function(el) {
     require(['app/app'], function(App) {
-        App.init(el);
+        App.setup(el);
       });
     }
   };
