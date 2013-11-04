@@ -23,7 +23,6 @@ define([], function() {
       } else {
         // curl, i.e. next-gen
         require(cfg, ['main']).then(function(Main) {
-          console.log(Main);
           Main.setup(el);
         });
       }

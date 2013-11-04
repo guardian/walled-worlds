@@ -1,8 +1,8 @@
 module.exports = function(grunt) {
   var pkg = grunt.file.readJSON('package.json');
-  var isDev = grunt.option('dev') || false;
+  var isProd = grunt.option('prdo') || false;
   var useGoogleSpreadsheet = false;
-  var versionedUrl = (isDev) ? '/' + pkg.version :  pkg.remoteUrl + pkg.s3Bucket + '/' + pkg.s3Folder + '/' + pkg.version;
+  var versionedUrl = (isProd) ? pkg.remoteUrl + pkg.s3Bucket + '/' + pkg.s3Folder + '/' + pkg.version : '/' + pkg.version ;
 
   function getRequirePaths(useLiveData) {
     return {
