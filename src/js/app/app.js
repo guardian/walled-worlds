@@ -8,6 +8,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
     var chaptersWrapper;
     var chaptersViews = [];
     var MIN_WIDTH = 940;
+    var ticking = false;
 
     function setupPage() {
       // Are we on a wide page?
@@ -61,11 +62,33 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       });
     }
 
+    function onScroll() {
+      requestTick();
+    }
+
+    function requestTick() {
+      if(!ticking) {
+        requestAnimationFrame(updateChapters);
+        ticking = true;
+      }
+    }
+
+    function updateChapters() {
+
+      chaptersViews.forEach(function( chapter ){
+        chapter.checkIfActive();
+      });
+
+      ticking = false;
+    }
+
     function setup(element) {
       el = element;
       el.appendChild(LoadingView.render());
       addStyles();
       DataModel.fetch(setupPage);
+
+      window.addEventListener('scroll', onScroll, false);
     }
 
     return {

@@ -9,6 +9,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     var mapElm;
     var photoCreditElm;
     var _isHidden = false;
+    var waypoints = [];
 
     marked.setOptions({ smartypants: true });
 
@@ -41,7 +42,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     }
 
     function _addWaypoint(el,ID) {
-      Utils.on(window, 'scroll', checkScroll);
+      waypoints.push(checkScroll);
 
       function checkScroll() {
         var elPos = el.getBoundingClientRect();
@@ -68,6 +69,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       if (data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
         _addWaypoint(domFrag.firstChild, id);
       }
+
 
       domFrag.querySelector('video').addEventListener('play', function() {
         Utils.trackEvent('play', 'video');
@@ -113,8 +115,11 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     }
 
     function _handleScroll() {
-      var boundingBox = el.getBoundingClientRect();
+      // Check waypoints
+      waypoints.forEach(function(waypoint) { waypoint(); });
 
+      // Check chapter position
+      var boundingBox = el.getBoundingClientRect();
       if (boundingBox.top - NavigationView.getHeight() < 0 &&
         boundingBox.bottom > NavigationView.getHeight())
       {
@@ -143,8 +148,9 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
         }
       }
 
-      requestAnimationFrame(_handleScroll);
     }
+
+
 
     function _correctBackgroundPosition() {
       var boundingBox = el.getBoundingClientRect();
@@ -224,11 +230,10 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       _addMap();
       _addGradient();
 
-      requestAnimationFrame(_handleScroll);
       Utils.on(window, 'resize', _correctBackgroundPosition);
-
       return this;
     }
+
 
     function getEl() {
       return el;
@@ -236,7 +241,8 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
 
     return {
       getEl: getEl,
-      render: render
+      render: render,
+      checkIfActive: _handleScroll
     };
   };
 });

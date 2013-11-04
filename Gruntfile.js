@@ -87,15 +87,15 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ["src/js/**/*.js"],
-        tasks: ["requirejs:dev"]
+        tasks: ["requirejs:dev", "replace"]
       },
       templates: {
         files: ["src/templates/*.mustache"],
-        tasks: ["mustache", "requirejs:dev"]
+        tasks: ["mustache", "requirejs:dev", "replace"]
       },
       css: {
         files: ["src/css/*"],
-        tasks: ["sass"]
+        tasks: ["sass","replace"]
       },
       html: {
         files: ["src/*.html"],
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
       },
       svg: {
         files: ["src/svg/**"],
-        tasks: ["mustache", "requirejs:dev"]
+        tasks: ["mustache", "requirejs:dev", "replace"]
       }
     },
 
