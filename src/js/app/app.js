@@ -1,5 +1,5 @@
-define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/views/chapterView', 'app/views/navigationView', 'app/views/loadingView', 'app/models/data', 'es5-shim'],
-  function(mustache, templates, Config, Utils, ChapterView, NavigationView, LoadingView, DataModel)
+define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/views/chapterView', 'app/views/navigationView', 'app/views/loadingView', 'app/views/analyticsView', 'app/models/data', 'es5-shim'],
+  function(mustache, templates, Config, Utils, ChapterView, NavigationView, LoadingView, analyticsView, DataModel)
   {
     'use strict';
 
@@ -34,6 +34,8 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       if (window.location.hash) {
         NavigationView.scrollToChapter(window.location.hash);
       }
+
+      el.appendChild(analyticsView.render().el);
     }
 
     function _anim() {

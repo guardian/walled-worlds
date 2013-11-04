@@ -57,6 +57,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
   function _navigationClickHandler(e) {
     event.preventDefault ? event.preventDefault() : event.returnValue = false;
     scrollToChapter('#' + this.chapterid);
+    Utils.trackEvent('click', 'nav_link');
   }
 
   function scrollToChapter(chapter) {

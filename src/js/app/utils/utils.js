@@ -121,13 +121,19 @@ define([], function() {
     return overlayEl;
   }
 
+  function trackEvent(action, label, value) {
+    // ga('send', 'event', 'button', 'click', 'nav buttons', 4);
+    __analytics('send', 'event', action, label, value);
+  }
+
 
   return {
     waypoint: waypoint,
     buildDOM: buildDOM,
     on: on,
     getGradientImg: getGradientImg,
-    generateOverlay: generateOverlay
+    generateOverlay: generateOverlay,
+    trackEvent: trackEvent
   };
 
 });

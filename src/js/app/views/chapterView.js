@@ -69,6 +69,10 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
         _addWaypoint(domFrag.firstChild, id);
       }
 
+      domFrag.querySelector('video').addEventListener('play', function() {
+        Utils.trackEvent('play', 'video');
+      }.bind(this));
+
       return domFrag;
     }
 
