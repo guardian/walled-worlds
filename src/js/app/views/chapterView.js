@@ -71,7 +71,14 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       }
 
 
-      domFrag.querySelector('video').addEventListener('play', function() {
+      domFrag.querySelector('video').addEventListener('play', function(e) {
+        var videos = document.getElementsByTagName('video');
+        for (var i = 0; i < videos.length; i++) {
+          if (!videos[i].paused && videos[i] !== (e.target || e.srcElement)) {
+            videos[i].pause();
+          }
+        }
+
         Utils.trackEvent('play', 'video');
       }.bind(this));
 
