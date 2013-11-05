@@ -1,6 +1,6 @@
 module.exports = function(grunt) {
   var pkg = grunt.file.readJSON('package.json');
-  var isProd = grunt.option('prdo') || false;
+  var isProd = grunt.option('prod') || false;
   var useGoogleSpreadsheet = false;
   var versionedUrl = (isProd) ? pkg.remoteUrl + pkg.s3Bucket + '/' + pkg.s3Folder + '/' + pkg.version : '/' + pkg.version ;
 
@@ -195,8 +195,16 @@ module.exports = function(grunt) {
       production: {
         upload: [
           {
-            src: 'dest/**/*',
+            src: 'dest/*',
             dest: '<%= pkg.s3Folder %>'
+          },
+          {
+            src: 'dest/<%= pkg.version %>/*',
+            dest: '<%= pkg.s3Folder %>/<%= pkg.version %>'
+          },
+          {
+            src: 'dest/<%= pkg.version %>/imgs/*',
+            dest: '<%= pkg.s3Folder %>/<%= pkg.version %>/imgs'
           }
         ]
       },
@@ -207,8 +215,16 @@ module.exports = function(grunt) {
         },
         upload: [
           {
-            src: 'dest/**/*',
+            src: 'dest/*',
             dest: '<%= pkg.s3Folder %>'
+          },
+          {
+            src: 'dest/<%= pkg.version %>/*',
+            dest: '<%= pkg.s3Folder %>/<%= pkg.version %>'
+          },
+          {
+            src: 'dest/<%= pkg.version %>/imgs/*',
+            dest: '<%= pkg.s3Folder %>/<%= pkg.version %>/imgs'
           }
         ]
       }
@@ -240,7 +256,7 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace", "connect", "watch"]);
-  grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:prod", "sass", "replace"]);
+  grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace"]);
   grunt.registerTask("deploy", ["build", "s3:production"]);
   grunt.registerTask("test-deploy", ["fetch-data", "fetch-svg", "build", "s3:test"]);
 
