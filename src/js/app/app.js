@@ -74,7 +74,6 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
     }
 
     function updateChapters() {
-
       chaptersViews.forEach(function( chapter ){
         chapter.checkIfActive();
       });
@@ -88,7 +87,12 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       addStyles();
       DataModel.fetch(setupPage);
 
-      window.addEventListener('scroll', onScroll, false);
+      if (!window.addEventListener) {
+        window.attachEvent('onscroll', onScroll);
+      } else {
+        window.addEventListener('scroll', onScroll, false);
+      }
+
     }
 
     return {

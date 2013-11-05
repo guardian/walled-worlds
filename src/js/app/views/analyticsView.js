@@ -3,7 +3,6 @@ define(['app/models/config', 'mustache'], function(Config) {
  return {
 
   el: document.createDocumentFragment(),
-  gaNamespace: '__analytics',
 
   handleLoadEvent: function() {
     __analytics('create', Config.google_analytics_uid);
@@ -11,18 +10,23 @@ define(['app/models/config', 'mustache'], function(Config) {
   },
 
   setupGoogleAnalytics: function() {
-    window.GoogleAnalyticsObject = this.gaNamespace;
-    window[this.gaNamespace] = function() {
-      window[this.gaNamespace].q = [].push(arguments);
+    window.GoogleAnalyticsObject = '__analytics';
+    window.__analytics = function() {
+      window.__analytics.q = [].push(arguments);
     };
-    window[this.gaNamespace].l = 1 * new Date();
+    window.__analytics.l = 1 * new Date();
   },
 
   render: function() {
     this.setupGoogleAnalytics();
 
     var scriptTag = document.createElement('script');
-    scriptTag.addEventListener('load', this.handleLoadEvent.bind(this), false);
+    if (!scriptTag.addEventListener) {
+      scriptTag.attachEvent('onload', this.handleLoadEvent.bind(this));
+    } else {
+      scriptTag.addEventListener('load', this.handleLoadEvent.bind(this), false);
+    }
+
     scriptTag.setAttribute('async', true);
     scriptTag.setAttribute('src', '//www.google-analytics.com/analytics.js');
 

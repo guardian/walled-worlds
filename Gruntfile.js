@@ -20,6 +20,7 @@ module.exports = function(grunt) {
       'es5-shim': 'lib/es5-shim',
       'd3': 'lib/d3',
       'history': 'lib/history.iegte8',
+      'modernizr': 'lib/modernizr',
       'togeojson': 'lib/togeojson',
       'svgView': (useLiveData) ? 'app/views/googleSVGView' : 'app/views/staticSVGView',
       // Dev gets data directly from Google spreadsheet, prod bakes it in
@@ -42,13 +43,14 @@ module.exports = function(grunt) {
           'classlist': { 'exports:': 'classlist' },
           'es5-shim': { 'exports:': 'es5-shim' },
           'd3': { 'exports:': 'DD3' , 'deps': [ 'es5-shim' ] },
-          'togeojson': { 'exports:': 'toGeoJSON' }
+          'togeojson': { 'exports:': 'toGeoJSON' },
+          'modernizr': { 'exports': 'modernizr'}
         },
 
         name: "app/app",
 
         //namespace: '<%= pkg.namespace %>',
-        include: ['almond', 'history', 'es5-shim', 'templates', 'classlist', 'requestAnimPolyfill'],
+        include: ['almond', 'modernizr', 'history', 'es5-shim', 'templates', 'classlist', 'requestAnimPolyfill'],
         findNestedDependencies: true,
         inlineText: true,
         stubModules: ['text'],
@@ -238,7 +240,7 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace", "connect", "watch"]);
-  grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:prod", "sass"]);
+  grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:prod", "sass", "replace"]);
   grunt.registerTask("deploy", ["build", "s3:production"]);
   grunt.registerTask("test-deploy", ["fetch-data", "fetch-svg", "build", "s3:test"]);
 

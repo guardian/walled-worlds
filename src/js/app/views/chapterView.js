@@ -62,6 +62,10 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     }
 
     function _buildVideoAsset(id) {
+      if (Modernizr.video === false) {
+        return false;
+      }
+
       var data = _getAssetData(id, DataModel.get('videos'));
       var html = mustache.render(templates.chapter_asset_video, data);
       var domFrag = Utils.buildDOM(html);
@@ -69,7 +73,6 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       if (data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
         _addWaypoint(domFrag.firstChild, id);
       }
-
 
       domFrag.querySelector('video').addEventListener('play', function(e) {
         var videos = document.getElementsByTagName('video');

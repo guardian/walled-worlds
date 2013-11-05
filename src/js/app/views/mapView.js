@@ -63,10 +63,15 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
         return el;
       }
 
-      el = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
-      if (Config.wide) {
-        _setupSVG();
-        _setupCounter();
+      if (Modernizr.svg) {
+        el = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
+        if (Config.wide) {
+          _setupSVG();
+          _setupCounter();
+        }
+      } else {
+        // Image fallback
+        el = document.createElement('img');
       }
 
       return el;
