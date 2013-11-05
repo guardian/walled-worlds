@@ -164,7 +164,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
 
     function _correctBackgroundPosition() {
       var boundingBox = el.getBoundingClientRect();
-      if (!_isHidden) {
+      if (!_isHidden && el.classList.contains('fixed-background')) {
         if ('backgroundPosition' in el.style) {
           el.style.backgroundPosition = boundingBox.left + 'px 50px';
         } else {

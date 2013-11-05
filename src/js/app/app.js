@@ -32,11 +32,15 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       buildChapters();
       requestAnimationFrame(_anim);
 
-      if (window.location.hash) {
-        NavigationView.scrollToChapter(window.location.hash);
-      }
-
       el.appendChild(analyticsView.render().el);
+
+      // TODO: replace with content ready event
+      setTimeout(function() {
+        if (window.location.hash) {
+          NavigationView.scrollToChapter(location.hash);
+        }
+      }, 300);
+
     }
 
     function _anim() {
