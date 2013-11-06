@@ -1,8 +1,5 @@
 module.exports = function(grunt) {
   var pkg = grunt.file.readJSON('package.json');
-  var isProd = grunt.option('prod') || false;
-  var useGoogleSpreadsheet = false;
-  var versionedUrl = (isProd) ? pkg.remoteUrl + pkg.s3Bucket + '/' + pkg.s3Folder + '/' + pkg.version : '/' + pkg.version ;
 
   function getRequirePaths(useLiveData) {
     return {
@@ -89,15 +86,15 @@ module.exports = function(grunt) {
     watch: {
       js: {
         files: ["src/js/**/*.js"],
-        tasks: ["requirejs:dev", "replace"]
+        tasks: ["requirejs:dev", "replace:dev"]
       },
       templates: {
         files: ["src/templates/*.mustache"],
-        tasks: ["mustache", "requirejs:dev", "replace"]
+        tasks: ["mustache", "requirejs:dev", "replace:dev"]
       },
       css: {
         files: ["src/css/*"],
-        tasks: ["sass","replace"]
+        tasks: ["sass","replace:dev"]
       },
       html: {
         files: ["src/*.html"],
@@ -109,7 +106,7 @@ module.exports = function(grunt) {
       },
       svg: {
         files: ["src/svg/**"],
-        tasks: ["mustache", "requirejs:dev", "replace"]
+        tasks: ["mustache", "requirejs:dev", "replace:dev"]
       }
     },
 
@@ -231,12 +228,21 @@ module.exports = function(grunt) {
     },
 
     replace: {
-      versioning: {
+      dev: {
         src: ['dest/boot.js', 'dest/<%= pkg.version %>/main.js', 'dest/<%= pkg.version %>/main.css'],
         overwrite: true, // overwrite matched source files
         replacements: [{
           from: '{{ versionedProjectPath }}',
-          to: versionedUrl
+          to: '/' + pkg.version
+        }]
+      },
+
+      prod: {
+        src: ['dest/boot.js', 'dest/<%= pkg.version %>/main.js', 'dest/<%= pkg.version %>/main.css'],
+        overwrite: true, // overwrite matched source files
+        replacements: [{
+          from: '{{ versionedProjectPath }}',
+          to: pkg.remoteUrl + pkg.s3Bucket + '/' + pkg.s3Folder + '/' + pkg.version
         }]
       }
     }
@@ -255,8 +261,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-s3');
 
 
-  grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace", "connect", "watch"]);
-  grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace"]);
+  grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace:dev", "connect", "watch"]);
+  grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace:prod"]);
   grunt.registerTask("deploy", ["build", "s3:production"]);
   grunt.registerTask("test-deploy", ["fetch-data", "fetch-svg", "build", "s3:test"]);
 
