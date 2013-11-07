@@ -15,10 +15,10 @@
     text-align: right;
   }
 
-  &.fixed-background {
-      background-attachment: fixed;
-      background-position: 0 3.4rem;
-  }
+//  &.fixed-background {
+//      background-attachment: fixed;
+//      background-position: 0 3.4rem;
+//  }
 
   .chapter_title {
     font-size: 4.4em;
@@ -117,10 +117,14 @@
   .chapter_image,
   .chapter_video {
     width: 100%;
-    max-width: 496px;
+    max-width: 500px;
     border: 2px solid #333;
     outline: none;
     position: relative;
+    display: block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
   }
 
   .gradient-image {
@@ -159,8 +163,8 @@
   }
 
   .chapter_copy figure {
-    max-width: none;
-    margin-right: 5px;
+    max-width: 500px;
+    margin: 1em auto;
   }
 }
 
@@ -175,6 +179,9 @@
 
 
   &.fixed-background {
+    background-attachment: fixed;
+    background-position: 0 3.4rem;
+
     .background_credit {
       bottom: 0;
       left: 0;

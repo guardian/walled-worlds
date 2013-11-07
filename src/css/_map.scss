@@ -4,14 +4,20 @@
   top: 0;
 }
 
+
 &.responsive {
+  .fixed-background .gi-chapter-map,
   .gi-chapter-map {
-    display: none;
+//    display: none;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
   }
 }
 
 .fixed-background .gi-chapter-map {
   top: 3.4rem;
+  position: fixed;
 }
 
 .gi-chapter-map svg path {

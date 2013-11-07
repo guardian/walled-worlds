@@ -1,6 +1,10 @@
-<figure class="chapter_figure" id="{{ assetid }}">
+<figure class="chapter_figure {{# class }} {{ class }} {{/class}}" id="{{ assetid }}">
     <img class="chapter_image" src="{{{ src }}}" alt="{{ alttext }}" />
+
+  {{# caption }}
     <figcaption>
       {{{ caption }}}
     </figcaption>
+  {{/caption}}
+
 </figure>

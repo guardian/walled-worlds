@@ -22,7 +22,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       var html = mustache.render(templates.chapter_asset_copy, templateData);
       var domFrag = Utils.buildDOM(html);
 
-      if (data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
+      if (data && data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
         _addWaypoint(domFrag.firstChild, id);
       }
 
@@ -34,7 +34,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       var html = mustache.render(templates.chapter_asset_image, data);
       var domFrag = Utils.buildDOM(html);
 
-      if (data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
+      if (data && data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
         _addWaypoint(domFrag.firstChild, id);
       }
 
@@ -70,7 +70,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       var html = mustache.render(templates.chapter_asset_video, data);
       var domFrag = Utils.buildDOM(html);
 
-      if (data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
+      if (data && data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
         _addWaypoint(domFrag.firstChild, id);
       }
 
@@ -135,11 +135,13 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       {
         if (!el.classList.contains('fixed-background')) {
           _isHidden = false;
-          el.classList.add('fixed-background');
-          _correctBackgroundPosition();
+          if (Config.wide) {
+            el.classList.add('fixed-background');
+            _correctBackgroundPosition();
+          }
 
           if (mapElm) {
-            mapElm.style.position = 'fixed';
+            //mapElm.style.position = 'fixed';
             mapView.animate();
           }
 
@@ -149,10 +151,13 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       } else {
         if (!_isHidden) {
           PubSub.publish('chapterDeactivate', { id: model.chapterid });
-          el.classList.remove('fixed-background');
-          el.style.backgroundPosition = '0 0';
+          if (Config.wide) {
+            el.classList.remove('fixed-background');
+            el.style.backgroundPosition = '0 0';
+          }
           if (mapElm) {
-            mapElm.setAttribute('style', '');
+            //mapElm.setAttribute('style', '');
+
           }
           _isHidden = true;
         }
@@ -184,7 +189,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function _addMap() {
       if (mapElm !== false && model.map && typeof model.map === 'string' && model.map.trim().length > 0) {
         mapElm = mapView.render();
-        el.appendChild(mapElm);
+        el.insertBefore(mapElm, el.querySelector('.chapter_copy'));
       }
     }
 
@@ -218,15 +223,19 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function _setBackground() {
       if (model.background && model.background.length > 0) {
         var data = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
-        if (data !== undefined && data.src) {
-          el.style.backgroundImage = 'url('+ data.src + ')';
+        var targetEl = (Config.wide) ? el : el.querySelector('.gi-chapter-map');
+
+        if (targetEl === null || data === undefined) { return; }
+
+        if (data.src) {
+          targetEl.style.backgroundImage = 'url('+ data.src + ')';
         }
 
-        if (data !== undefined  && data.backgroundcolour !== undefined && data.backgroundcolour.trim().length > 0) {
-          el.style.backgroundColor = data.backgroundcolour;
+        if (data.backgroundcolour !== undefined && data.backgroundcolour.trim().length > 0) {
+          targetEl.style.backgroundColor = data.backgroundcolour;
         }
 
-        if (data !== undefined  && data.credit !== undefined && data.credit.trim().length > 0) {
+        if (data.credit !== undefined && data.credit.trim().length > 0) {
           photoCreditElm = el.querySelector('.background_credit');
           photoCreditElm.innerHTML = 'Photography &copy; ' + data.credit;
         }
@@ -235,10 +244,10 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
 
     function render() {
       el = Utils.buildDOM(mustache.render(templates.chapter, model)).firstChild;
-      _setBackground();
       _buildAssets();
       _addMap();
       _addGradient();
+      _setBackground();
 
       Utils.on(window, 'resize', _correctBackgroundPosition);
       return this;
