@@ -10,6 +10,8 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     var photoCreditElm;
     var _isHidden = false;
     var waypoints = [];
+    var imgs = {};
+    var backgroundImg;
 
     marked.setOptions({ smartypants: true });
 
@@ -31,8 +33,19 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
 
     function _buildImageAsset(id) {
       var data = _getAssetData(id, DataModel.get('images'));
+
+      if (data && data.hasOwnProperty('height') && !isNaN(data.height)) {
+        imgs[data.assetid]= {};
+        imgs[data.assetid].aspectRatio = parseInt(data.height, 10) / 496;
+        imgs[data.assetid].height = data.height;
+        var newHeight = parseInt((Config.width - 20) * imgs[data.assetid].aspectRatio, 10);
+        data.scaledHeight = (newHeight < imgs[data.assetid].height) ? newHeight : imgs[data.assetid].height;
+      }
+
       var html = mustache.render(templates.chapter_asset_image, data);
       var domFrag = Utils.buildDOM(html);
+
+      imgs[data.assetid].el = domFrag.querySelector('img');
 
       if (data && data.hasOwnProperty('marker') && data.marker.trim().toLocaleLowerCase() === 'true') {
         _addWaypoint(domFrag.firstChild, id);
@@ -176,8 +189,10 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
           el.style.backgroundPositionX = boundingBox.left + 'px';
           el.style.backgroundPositionY = '100px';
         }
-        if (mapElm) {
+        if (mapElm && Config.wide) {
           mapElm.style.left = boundingBox.left + 'px';
+        } else if(mapElm && mapElm.style) {
+            mapElm.style.left = '0';
         }
 
         if (photoCreditElm && Config.wide) {
@@ -223,11 +238,14 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function _setBackground() {
       if (model.background && model.background.length > 0) {
         var data = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
+
         var targetEl = (Config.wide) ? el : el.querySelector('.gi-chapter-map');
+        console.log(Config.wide, targetEl);
 
         if (targetEl === null || data === undefined) { return; }
 
         if (data.src) {
+          backgroundImg = data.src;
           targetEl.style.backgroundImage = 'url('+ data.src + ')';
         }
 
@@ -242,6 +260,30 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       }
     }
 
+    function _correctImageHeight() {
+      for (var key in imgs) {
+        var img = imgs[key];
+        img.el.height = parseInt(img.aspectRatio * img.el.clientWidth, 10);
+      }
+    }
+
+    function updateView() {
+
+      if (backgroundImg) {
+        if (Config.wide) {
+          console.log(backgroundImg);
+          el.style.backgroundImage = 'url(' + backgroundImg + ')';
+          el.querySelector('.gi-chapter-map').style.backgroundImage = 'none';
+        } else {
+          el.querySelector('.gi-chapter-map').style.backgroundImage = 'url(' + backgroundImg + ')';
+          el.style.backgroundImage = 'none';
+        }
+
+        _correctBackgroundPosition();
+      }
+      _correctImageHeight();
+    }
+
     function render() {
       el = Utils.buildDOM(mustache.render(templates.chapter, model)).firstChild;
       _buildAssets();
@@ -249,7 +291,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       _addGradient();
       _setBackground();
 
-      Utils.on(window, 'resize', _correctBackgroundPosition);
+      Utils.on(window, 'resize', updateView);
       return this;
     }
 

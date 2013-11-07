@@ -11,6 +11,8 @@
     position: relative;
     height: 400px;
     overflow: hidden;
+    margin-left: -10px;
+    margin-right: -10px;
   }
 
   .chapter-map-counter {
@@ -18,7 +20,7 @@
   }
 }
 
-.fixed-background .gi-chapter-map {
+&.wide .fixed-background .gi-chapter-map {
   top: 3.4rem;
   position: fixed;
 }
