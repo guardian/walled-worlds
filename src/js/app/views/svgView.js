@@ -61,7 +61,11 @@ define(['svgView', 'app/models/config', 'PubSub'],
       markers = el.querySelectorAll('.svg_wall .marker_group');
       for (var i = 0; i < markers.length; i++) {
         var markerID = markers[i].id.replace('marker_', '');
-        pubSubTokens[markerID] = PubSub.subscribe(markerID, _triggerMarker.bind(markers[i]));
+        if (Config.wide) {
+          pubSubTokens[markerID] = PubSub.subscribe(markerID, _triggerMarker.bind(markers[i]));
+        } else {
+          markers[i].setAttribute('class', markers[i].getAttribute('class') + ' show-marker');
+        }
       }
     }
 

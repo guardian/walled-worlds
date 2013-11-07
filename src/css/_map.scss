@@ -8,10 +8,13 @@
 &.responsive {
   .fixed-background .gi-chapter-map,
   .gi-chapter-map {
-//    display: none;
     position: relative;
     height: 400px;
     overflow: hidden;
+  }
+
+  .chapter-map-counter {
+    font-size: 1.7em;
   }
 }
 
