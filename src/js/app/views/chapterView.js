@@ -297,7 +297,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       _setBackground();
       _handleScroll();
 
-      Utils.on(window, 'resize', updateView);
+      //Utils.on(window, 'resize', updateView);
       return this;
     }
 

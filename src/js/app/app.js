@@ -99,6 +99,10 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
         Config.wide = false;
       }
 
+      chaptersViews.forEach(function(chapter) {
+        chapter.updateView();
+      });
+
       // Fix for when responsive wiggling class isn't removed
       var chapters = document.querySelectorAll('.gi-chapters .chapter');
       for (var i = 0; i < chapters.length; i++) {

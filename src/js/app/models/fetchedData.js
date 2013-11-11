@@ -63,7 +63,7 @@ define([],function() { return {
           "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od5/public/values"
         },
         "updated": {
-          "$t": "2013-11-11T12:48:30.059Z"
+          "$t": "2013-11-11T16:47:46.111Z"
         },
         "category": [
           {
@@ -114,7 +114,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od5/public/values/cpzh4"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -164,7 +164,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od5/public/values/cre1l"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -214,7 +214,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od5/public/values/chk2m"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -264,7 +264,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od5/public/values/ciyn3"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -441,7 +441,7 @@ define([],function() { return {
         "backgroundcolour": "#000000",
         "src": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/6/1383760345672/israelfinal.jpg",
         "gradientcolour": "#000000",
-        "gradientopacity": "0.9",
+        "gradientopacity": "0.4",
         "gradientwidth": "600",
         "gradientstart": "0.6",
         "credit": "NASA",
@@ -468,6 +468,17 @@ define([],function() { return {
         "gradientstart": "",
         "credit": "",
         "rowNumber": 13
+      },
+      {
+        "assetid": "background_israel",
+        "backgroundcolour": "#000000",
+        "src": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/11/1384179408799/westbank.jpg",
+        "gradientcolour": "#000000",
+        "gradientopacity": "0.3",
+        "gradientwidth": "600",
+        "gradientstart": "0.6",
+        "credit": "ESA",
+        "rowNumber": 14
       }
     ],
     "raw": {
@@ -481,7 +492,7 @@ define([],function() { return {
           "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values"
         },
         "updated": {
-          "$t": "2013-11-11T12:48:30.059Z"
+          "$t": "2013-11-11T16:47:46.111Z"
         },
         "category": [
           {
@@ -521,7 +532,7 @@ define([],function() { return {
           }
         ],
         "openSearch$totalResults": {
-          "$t": "13"
+          "$t": "14"
         },
         "openSearch$startIndex": {
           "$t": "1"
@@ -532,7 +543,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/cokwr"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -585,7 +596,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/cpzh4"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -638,7 +649,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/cre1l"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -691,7 +702,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/chk2m"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -744,7 +755,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/ciyn3"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -797,7 +808,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/ckd7g"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -850,7 +861,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/clrrx"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -903,7 +914,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/cyevm"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -956,7 +967,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/cztg3"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -1009,7 +1020,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/d180g"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -1062,7 +1073,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/d2mkx"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -1076,7 +1087,7 @@ define([],function() { return {
             },
             "content": {
               "type": "text",
-              "$t": "backgroundcolour: #000000, src: http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/6/1383760345672/israelfinal.jpg, gradientcolour: #000000, gradientopacity: 0.9, gradientwidth: 600, gradientstart: 0.6, credit: NASA"
+              "$t": "backgroundcolour: #000000, src: http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/6/1383760345672/israelfinal.jpg, gradientcolour: #000000, gradientopacity: 0.4, gradientwidth: 600, gradientstart: 0.6, credit: NASA"
             },
             "link": [
               {
@@ -1098,7 +1109,7 @@ define([],function() { return {
               "$t": "#000000"
             },
             "gsx$gradientopacity": {
-              "$t": "0.9"
+              "$t": "0.4"
             },
             "gsx$gradientwidth": {
               "$t": "600"
@@ -1115,7 +1126,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/cssly"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -1168,7 +1179,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/cu76f"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -1215,6 +1226,59 @@ define([],function() { return {
             "gsx$credit": {
               "$t": ""
             }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/cvlqs"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "background_israel"
+            },
+            "content": {
+              "type": "text",
+              "$t": "backgroundcolour: #000000, src: http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/11/1384179408799/westbank.jpg, gradientcolour: #000000, gradientopacity: 0.3, gradientwidth: 600, gradientstart: 0.6, credit: ESA"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/oda/public/values/cvlqs"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "background_israel"
+            },
+            "gsx$backgroundcolour": {
+              "$t": "#000000"
+            },
+            "gsx$src": {
+              "$t": "http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/11/1384179408799/westbank.jpg"
+            },
+            "gsx$gradientcolour": {
+              "$t": "#000000"
+            },
+            "gsx$gradientopacity": {
+              "$t": "0.3"
+            },
+            "gsx$gradientwidth": {
+              "$t": "600"
+            },
+            "gsx$gradientstart": {
+              "$t": "0.6"
+            },
+            "gsx$credit": {
+              "$t": "ESA"
+            }
           }
         ]
       }
@@ -1239,25 +1303,41 @@ define([],function() { return {
     "name": "chapters",
     "elements": [
       {
-        "chapterid": "intro",
-        "title": "Mere mortar",
-        "assets": "copy_intro",
-        "location": "Introduction",
-        "country": "",
-        "length": "",
-        "height": "",
-        "firstbuilt": "",
+        "chapterid": "mexico",
+        "title": "Operation Gatekeeper",
+        "assets": "image_mexicolocator,copy_005,image_005,copy_0050,video_mexico1,copy_00500,copy_0051,image_0052,copy_00511,image_0050,copy_005111,copy_0052,copy_0053,image_0053,copy_0054,copy_0055,image_0051",
+        "location": "US-Mexico border",
+        "country": "US",
+        "length": "700",
+        "height": "5.5",
+        "firstbuilt": "2006",
         "age": "",
         "deaths": "",
-        "material": "",
-        "background": "background_generic",
-        "map": "",
+        "material": "steel, concrete, wire mesh",
+        "background": "background_america",
+        "map": "map_mexico",
         "rowNumber": 1
+      },
+      {
+        "chapterid": "sahara",
+        "title": "The divided desert",
+        "assets": "image_saharalocator,copy_003,image_0030,copy_0030,image_0033,copy_0031,image_0032,copy_00311,image_0031,copy_0032",
+        "location": "Moroccan-occupied Western Sahara",
+        "country": "Morocco",
+        "length": "1700",
+        "height": "2",
+        "firstbuilt": "1980",
+        "age": "",
+        "deaths": "",
+        "material": "mostly sand, also landmines and barbed wire",
+        "background": "background_sahara",
+        "map": "map_sahara",
+        "rowNumber": 2
       },
       {
         "chapterid": "homs",
         "title": "The newest wall",
-        "assets": "image_homslocator,copy_homs1,image_homs1,copy_homs2",
+        "assets": "image_homslocator,copy_homs1,image_homs1,copy_homs2,copy_homs_add",
         "location": "Homs, Syria",
         "country": "Syria",
         "length": "3",
@@ -1268,7 +1348,39 @@ define([],function() { return {
         "material": "concrete",
         "background": "background_homs",
         "map": "map_homs",
-        "rowNumber": 2
+        "rowNumber": 3
+      },
+      {
+        "chapterid": "bangladesh",
+        "title": "The barriers of Bengal",
+        "assets": "image_bangladeshlocator,copy_006,image_006,copy_0060,copy_felani,copy_lamin",
+        "location": "India-Bangladesh border",
+        "country": "India",
+        "length": "2500",
+        "height": "3",
+        "firstbuilt": "1986",
+        "age": "",
+        "deaths": "",
+        "material": "barbed wire, concrete",
+        "background": "background_bangladesh",
+        "map": "map_bangla",
+        "rowNumber": 4
+      },
+      {
+        "chapterid": "saopaulo",
+        "title": "Alphaville",
+        "assets": "image_brazillocator,copy_008,image_0080,copy_008a,copy_0080,copy_0081,image_0081,copy_0082,image_008,copy_0083",
+        "location": "São Paulo, Brazil",
+        "country": "Brazil",
+        "length": "2.5",
+        "height": "4",
+        "firstbuilt": "1978",
+        "age": "",
+        "deaths": "",
+        "material": "concrete",
+        "background": "background_alphaville",
+        "map": "map_brazil",
+        "rowNumber": 5
       },
       {
         "chapterid": "westbank",
@@ -1284,54 +1396,6 @@ define([],function() { return {
         "material": "concrete, steel, razor wire",
         "background": "background_westbank",
         "map": "map_israel",
-        "rowNumber": 3
-      },
-      {
-        "chapterid": "melilla",
-        "title": "Spain’s north African exclaves",
-        "assets": "image_northafricalocator,copy_melilla1,image_0092,copy_melilla1a,copy_melilla2,image_0091,copy_melilla20,copy_melilla2a,image_0094,copy_melilla2aa,copy_melilla2b,image_0090,copy_melilla2bb,image_0095,copy_melilla2bbb,image_0093,copy_melilla2bbbb,copy_melilla2c,image_009",
-        "location": "Melilla and Ceuta, separate towns in north Africa",
-        "country": "Spain",
-        "length": "6",
-        "height": "6",
-        "firstbuilt": "1993",
-        "age": "",
-        "deaths": "",
-        "material": "barbed wire, motion sensors",
-        "background": "background_melilla",
-        "map": "map_melilla",
-        "rowNumber": 4
-      },
-      {
-        "chapterid": "belfast",
-        "title": "99 walls",
-        "assets": "image_belfastlocator,copy_001,image_001,copy_0011,copy_belfastz1,image_0010,copy_belfastz11,copy_belfastz3,image_0011,copy_belfastz4,copy_irelandadd,copy_belfastz5,image_0012,copy_belfastz6",
-        "location": "Belfast and Derry",
-        "country": "N Ireland",
-        "length": "30",
-        "height": "5.5",
-        "firstbuilt": "1969",
-        "age": "",
-        "deaths": "",
-        "material": "concrete, barbed wire, iron and steel",
-        "background": "backgound_belfast",
-        "map": "map_belfast",
-        "rowNumber": 5
-      },
-      {
-        "chapterid": "sahara",
-        "title": "The divided desert",
-        "assets": "image_saharalocator,copy_003,image_0030,copy_0030,image_0033,copy_0031,image_0032,copy_00311,image_0031,copy_0032",
-        "location": "Moroccan-occupied Western Sahara",
-        "country": "Sahara",
-        "length": "1700",
-        "height": "2",
-        "firstbuilt": "1980",
-        "age": "",
-        "deaths": "",
-        "material": "mostly sand, also landmines and barbed wire",
-        "background": "background_sahara",
-        "map": "map_sahara",
         "rowNumber": 6
       },
       {
@@ -1351,36 +1415,20 @@ define([],function() { return {
         "rowNumber": 7
       },
       {
-        "chapterid": "mexico",
-        "title": "Operation Gatekeeper",
-        "assets": "image_mexicolocator,copy_005,image_005,copy_0050,video_mexico1,copy_00500,copy_0051,image_0052,copy_00511,image_0050,copy_005111,copy_0052,copy_0053,image_0053,copy_0054,copy_0055,image_0051",
-        "location": "US-Mexico border",
-        "country": "US",
-        "length": "700",
+        "chapterid": "belfast",
+        "title": "99 walls",
+        "assets": "image_belfastlocator,copy_001,image_001,copy_0011,copy_belfastz1,image_0010,copy_belfastz11,copy_belfastz3,image_0011,copy_belfastz4,copy_irelandadd,copy_belfastz5,image_0012,copy_belfastz6",
+        "location": "Belfast and Derry",
+        "country": "N Ireland",
+        "length": "30",
         "height": "5.5",
-        "firstbuilt": "2006",
+        "firstbuilt": "1969",
         "age": "",
         "deaths": "",
-        "material": "steel, concrete, wire mesh",
-        "background": "background_america",
-        "map": "map_mexico",
+        "material": "concrete, barbed wire, iron and steel",
+        "background": "backgound_belfast",
+        "map": "map_belfast",
         "rowNumber": 8
-      },
-      {
-        "chapterid": "bangladesh",
-        "title": "The barriers of Bengal",
-        "assets": "image_bangladeshlocator,copy_006,image_006,copy_0060,copy_0061,copy_0062",
-        "location": "India-Bangladesh border",
-        "country": "India",
-        "length": "2500",
-        "height": "3",
-        "firstbuilt": "1986",
-        "age": "",
-        "deaths": "",
-        "material": "barbed wire, concrete",
-        "background": "background_bangladesh",
-        "map": "map_bangla",
-        "rowNumber": 9
       },
       {
         "chapterid": "korea",
@@ -1396,30 +1444,30 @@ define([],function() { return {
         "material": "wire fence, barbed wire",
         "background": "background_korea",
         "map": "map_korea",
-        "rowNumber": 10
+        "rowNumber": 9
       },
       {
-        "chapterid": "saopaulo",
-        "title": "Alphaville",
-        "assets": "image_brazillocator,copy_008,image_0080,copy_008a,copy_0080,copy_0081,image_0081,copy_0082,image_008,copy_0083",
-        "location": "São Paulo, Brazil",
-        "country": "Brazil",
-        "length": "2.5",
-        "height": "4",
-        "firstbuilt": "1978",
+        "chapterid": "melilla",
+        "title": "Spain’s north African exclaves",
+        "assets": "image_northafricalocator,copy_melilla1,image_0092,copy_melilla1a,copy_melilla2,image_0091,copy_melilla20,copy_melilla2a,image_0094,copy_melilla2aa,copy_melilla2b,image_0090,copy_melilla2bb,image_0095,copy_melilla2bbb,image_0093,copy_melilla2bbbb,copy_melilla2c,image_009",
+        "location": "Melilla and Ceuta, separate towns in north Africa",
+        "country": "Spain",
+        "length": "6",
+        "height": "6",
+        "firstbuilt": "1993",
         "age": "",
         "deaths": "",
-        "material": "concrete",
-        "background": "background_alphaville",
-        "map": "map_brazil",
-        "rowNumber": 11
+        "material": "barbed wire, motion sensors",
+        "background": "background_melilla",
+        "map": "map_melilla",
+        "rowNumber": 10
       },
       {
         "chapterid": "outro",
         "title": "Extra mural",
         "assets": "copy_outro,image_101,copy_outro0,image_100,copy_outro1,image_102,copy_outro2,copy_credits",
-        "location": "Conclusion",
-        "country": "",
+        "location": "",
+        "country": "End note",
         "length": "",
         "height": "",
         "firstbuilt": "",
@@ -1428,7 +1476,7 @@ define([],function() { return {
         "material": "",
         "background": "background_outro",
         "map": "",
-        "rowNumber": 12
+        "rowNumber": 11
       }
     ],
     "raw": {
@@ -1442,7 +1490,7 @@ define([],function() { return {
           "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values"
         },
         "updated": {
-          "$t": "2013-11-11T12:48:30.059Z"
+          "$t": "2013-11-11T16:47:46.111Z"
         },
         "category": [
           {
@@ -1482,7 +1530,7 @@ define([],function() { return {
           }
         ],
         "openSearch$totalResults": {
-          "$t": "12"
+          "$t": "11"
         },
         "openSearch$startIndex": {
           "$t": "1"
@@ -1490,10 +1538,10 @@ define([],function() { return {
         "entry": [
           {
             "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bbf0c"
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bqv8z"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -1503,42 +1551,42 @@ define([],function() { return {
             ],
             "title": {
               "type": "text",
-              "$t": "intro"
+              "$t": "mexico"
             },
             "content": {
               "type": "text",
-              "$t": "title: Mere mortar, assets: copy_intro, location: Introduction, background: background_generic"
+              "$t": "title: Operation Gatekeeper, assets: image_mexicolocator,copy_005,image_005,copy_0050,video_mexico1,copy_00500,copy_0051,image_0052,copy_00511,image_0050,copy_005111,copy_0052,copy_0053,image_0053,copy_0054,copy_0055,image_0051, location: US-Mexico border, country: US, length: 700, height: 5.5, firstbuilt: 2006, material: steel, concrete, wire mesh, background: background_america, map: map_mexico"
             },
             "link": [
               {
                 "rel": "self",
                 "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bbf0c"
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bqv8z"
               }
             ],
             "gsx$chapterid": {
-              "$t": "intro"
+              "$t": "mexico"
             },
             "gsx$title": {
-              "$t": "Mere mortar"
+              "$t": "Operation Gatekeeper"
             },
             "gsx$assets": {
-              "$t": "copy_intro"
+              "$t": "image_mexicolocator,copy_005,image_005,copy_0050,video_mexico1,copy_00500,copy_0051,image_0052,copy_00511,image_0050,copy_005111,copy_0052,copy_0053,image_0053,copy_0054,copy_0055,image_0051"
             },
             "gsx$location": {
-              "$t": "Introduction"
+              "$t": "US-Mexico border"
             },
             "gsx$country": {
-              "$t": ""
+              "$t": "US"
             },
             "gsx$length": {
-              "$t": ""
+              "$t": "700"
             },
             "gsx$height": {
-              "$t": ""
+              "$t": "5.5"
             },
             "gsx$firstbuilt": {
-              "$t": ""
+              "$t": "2006"
             },
             "gsx$age": {
               "$t": ""
@@ -1547,13 +1595,81 @@ define([],function() { return {
               "$t": ""
             },
             "gsx$material": {
-              "$t": ""
+              "$t": "steel, concrete, wire mesh"
             },
             "gsx$background": {
-              "$t": "background_generic"
+              "$t": "background_america"
             },
             "gsx$map": {
+              "$t": "map_mexico"
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/btodt"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "sahara"
+            },
+            "content": {
+              "type": "text",
+              "$t": "title: The divided desert, assets: image_saharalocator,copy_003,image_0030,copy_0030,image_0033,copy_0031,image_0032,copy_00311,image_0031,copy_0032, location: Moroccan-occupied Western Sahara, country: Morocco, length: 1700, height: 2, firstbuilt: 1980, material: mostly sand, also landmines and barbed wire, background: background_sahara, map: map_sahara"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/btodt"
+              }
+            ],
+            "gsx$chapterid": {
+              "$t": "sahara"
+            },
+            "gsx$title": {
+              "$t": "The divided desert"
+            },
+            "gsx$assets": {
+              "$t": "image_saharalocator,copy_003,image_0030,copy_0030,image_0033,copy_0031,image_0032,copy_00311,image_0031,copy_0032"
+            },
+            "gsx$location": {
+              "$t": "Moroccan-occupied Western Sahara"
+            },
+            "gsx$country": {
+              "$t": "Morocco"
+            },
+            "gsx$length": {
+              "$t": "1700"
+            },
+            "gsx$height": {
+              "$t": "2"
+            },
+            "gsx$firstbuilt": {
+              "$t": "1980"
+            },
+            "gsx$age": {
               "$t": ""
+            },
+            "gsx$deaths": {
+              "$t": ""
+            },
+            "gsx$material": {
+              "$t": "mostly sand, also landmines and barbed wire"
+            },
+            "gsx$background": {
+              "$t": "background_sahara"
+            },
+            "gsx$map": {
+              "$t": "map_sahara"
             }
           },
           {
@@ -1561,7 +1677,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/cokwr"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -1575,7 +1691,7 @@ define([],function() { return {
             },
             "content": {
               "type": "text",
-              "$t": "title: The newest wall, assets: image_homslocator,copy_homs1,image_homs1,copy_homs2, location: Homs, Syria, country: Syria, length: 3, height: 6, firstbuilt: 2012, material: concrete, background: background_homs, map: map_homs"
+              "$t": "title: The newest wall, assets: image_homslocator,copy_homs1,image_homs1,copy_homs2,copy_homs_add, location: Homs, Syria, country: Syria, length: 3, height: 6, firstbuilt: 2012, material: concrete, background: background_homs, map: map_homs"
             },
             "link": [
               {
@@ -1591,7 +1707,7 @@ define([],function() { return {
               "$t": "The newest wall"
             },
             "gsx$assets": {
-              "$t": "image_homslocator,copy_homs1,image_homs1,copy_homs2"
+              "$t": "image_homslocator,copy_homs1,image_homs1,copy_homs2,copy_homs_add"
             },
             "gsx$location": {
               "$t": "Homs, Syria"
@@ -1626,10 +1742,146 @@ define([],function() { return {
           },
           {
             "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bl8zb"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "bangladesh"
+            },
+            "content": {
+              "type": "text",
+              "$t": "title: The barriers of Bengal, assets: image_bangladeshlocator,copy_006,image_006,copy_0060,copy_felani,copy_lamin, location: India-Bangladesh border, country: India, length: 2500, height: 3, firstbuilt: 1986, material: barbed wire, concrete, background: background_bangladesh, map: map_bangla"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bl8zb"
+              }
+            ],
+            "gsx$chapterid": {
+              "$t": "bangladesh"
+            },
+            "gsx$title": {
+              "$t": "The barriers of Bengal"
+            },
+            "gsx$assets": {
+              "$t": "image_bangladeshlocator,copy_006,image_006,copy_0060,copy_felani,copy_lamin"
+            },
+            "gsx$location": {
+              "$t": "India-Bangladesh border"
+            },
+            "gsx$country": {
+              "$t": "India"
+            },
+            "gsx$length": {
+              "$t": "2500"
+            },
+            "gsx$height": {
+              "$t": "3"
+            },
+            "gsx$firstbuilt": {
+              "$t": "1986"
+            },
+            "gsx$age": {
+              "$t": ""
+            },
+            "gsx$deaths": {
+              "$t": ""
+            },
+            "gsx$material": {
+              "$t": "barbed wire, concrete"
+            },
+            "gsx$background": {
+              "$t": "background_bangladesh"
+            },
+            "gsx$map": {
+              "$t": "map_bangla"
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bjueu"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "saopaulo"
+            },
+            "content": {
+              "type": "text",
+              "$t": "title: Alphaville, assets: image_brazillocator,copy_008,image_0080,copy_008a,copy_0080,copy_0081,image_0081,copy_0082,image_008,copy_0083, location: São Paulo, Brazil, country: Brazil, length: 2.5, height: 4, firstbuilt: 1978, material: concrete, background: background_alphaville, map: map_brazil"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bjueu"
+              }
+            ],
+            "gsx$chapterid": {
+              "$t": "saopaulo"
+            },
+            "gsx$title": {
+              "$t": "Alphaville"
+            },
+            "gsx$assets": {
+              "$t": "image_brazillocator,copy_008,image_0080,copy_008a,copy_0080,copy_0081,image_0081,copy_0082,image_008,copy_0083"
+            },
+            "gsx$location": {
+              "$t": "São Paulo, Brazil"
+            },
+            "gsx$country": {
+              "$t": "Brazil"
+            },
+            "gsx$length": {
+              "$t": "2.5"
+            },
+            "gsx$height": {
+              "$t": "4"
+            },
+            "gsx$firstbuilt": {
+              "$t": "1978"
+            },
+            "gsx$age": {
+              "$t": ""
+            },
+            "gsx$deaths": {
+              "$t": ""
+            },
+            "gsx$material": {
+              "$t": "concrete"
+            },
+            "gsx$background": {
+              "$t": "background_alphaville"
+            },
+            "gsx$map": {
+              "$t": "map_brazil"
+            }
+          },
+          {
+            "id": {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/cpzh4"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -1697,7 +1949,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bctkt"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -1707,11 +1959,11 @@ define([],function() { return {
             ],
             "title": {
               "type": "text",
-              "$t": "melilla"
+              "$t": "greece"
             },
             "content": {
               "type": "text",
-              "$t": "title: Spain’s north African exclaves, assets: image_northafricalocator,copy_melilla1,image_0092,copy_melilla1a,copy_melilla2,image_0091,copy_melilla20,copy_melilla2a,image_0094,copy_melilla2aa,copy_melilla2b,image_0090,copy_melilla2bb,image_0095,copy_melilla2bbb,image_0093,copy_melilla2bbbb,copy_melilla2c,image_009, location: Melilla and Ceuta, separate towns in north Africa, country: Spain, length: 6, height: 6, firstbuilt: 1993, material: barbed wire, motion sensors, background: background_melilla, map: map_melilla"
+              "$t": "title: Europe’s new border, assets: image_edirnelocator,copy_004,copy_0040,image_0040,copy_00400,copy_0041,image_004, location: Greek-Turkish border near the Evros river, country: Greece, length: 6.6, height: 4, firstbuilt: 2012, material: barbed wire, background: background_greece, map: map_edirne"
             },
             "link": [
               {
@@ -1721,28 +1973,28 @@ define([],function() { return {
               }
             ],
             "gsx$chapterid": {
-              "$t": "melilla"
+              "$t": "greece"
             },
             "gsx$title": {
-              "$t": "Spain’s north African exclaves"
+              "$t": "Europe’s new border"
             },
             "gsx$assets": {
-              "$t": "image_northafricalocator,copy_melilla1,image_0092,copy_melilla1a,copy_melilla2,image_0091,copy_melilla20,copy_melilla2a,image_0094,copy_melilla2aa,copy_melilla2b,image_0090,copy_melilla2bb,image_0095,copy_melilla2bbb,image_0093,copy_melilla2bbbb,copy_melilla2c,image_009"
+              "$t": "image_edirnelocator,copy_004,copy_0040,image_0040,copy_00400,copy_0041,image_004"
             },
             "gsx$location": {
-              "$t": "Melilla and Ceuta, separate towns in north Africa"
+              "$t": "Greek-Turkish border near the Evros river"
             },
             "gsx$country": {
-              "$t": "Spain"
+              "$t": "Greece"
             },
             "gsx$length": {
-              "$t": "6"
+              "$t": "6.6"
             },
             "gsx$height": {
-              "$t": "6"
+              "$t": "4"
             },
             "gsx$firstbuilt": {
-              "$t": "1993"
+              "$t": "2012"
             },
             "gsx$age": {
               "$t": ""
@@ -1751,13 +2003,13 @@ define([],function() { return {
               "$t": ""
             },
             "gsx$material": {
-              "$t": "barbed wire, motion sensors"
+              "$t": "barbed wire"
             },
             "gsx$background": {
-              "$t": "background_melilla"
+              "$t": "background_greece"
             },
             "gsx$map": {
-              "$t": "map_melilla"
+              "$t": "map_edirne"
             }
           },
           {
@@ -1765,7 +2017,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bpgoi"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -1830,282 +2082,10 @@ define([],function() { return {
           },
           {
             "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/cre1l"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "sahara"
-            },
-            "content": {
-              "type": "text",
-              "$t": "title: The divided desert, assets: image_saharalocator,copy_003,image_0030,copy_0030,image_0033,copy_0031,image_0032,copy_00311,image_0031,copy_0032, location: Moroccan-occupied Western Sahara, country: Sahara, length: 1700, height: 2, firstbuilt: 1980, material: mostly sand, also landmines and barbed wire, background: background_sahara, map: map_sahara"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/cre1l"
-              }
-            ],
-            "gsx$chapterid": {
-              "$t": "sahara"
-            },
-            "gsx$title": {
-              "$t": "The divided desert"
-            },
-            "gsx$assets": {
-              "$t": "image_saharalocator,copy_003,image_0030,copy_0030,image_0033,copy_0031,image_0032,copy_00311,image_0031,copy_0032"
-            },
-            "gsx$location": {
-              "$t": "Moroccan-occupied Western Sahara"
-            },
-            "gsx$country": {
-              "$t": "Sahara"
-            },
-            "gsx$length": {
-              "$t": "1700"
-            },
-            "gsx$height": {
-              "$t": "2"
-            },
-            "gsx$firstbuilt": {
-              "$t": "1980"
-            },
-            "gsx$age": {
-              "$t": ""
-            },
-            "gsx$deaths": {
-              "$t": ""
-            },
-            "gsx$material": {
-              "$t": "mostly sand, also landmines and barbed wire"
-            },
-            "gsx$background": {
-              "$t": "background_sahara"
-            },
-            "gsx$map": {
-              "$t": "map_sahara"
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/chk2m"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "greece"
-            },
-            "content": {
-              "type": "text",
-              "$t": "title: Europe’s new border, assets: image_edirnelocator,copy_004,copy_0040,image_0040,copy_00400,copy_0041,image_004, location: Greek-Turkish border near the Evros river, country: Greece, length: 6.6, height: 4, firstbuilt: 2012, material: barbed wire, background: background_greece, map: map_edirne"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/chk2m"
-              }
-            ],
-            "gsx$chapterid": {
-              "$t": "greece"
-            },
-            "gsx$title": {
-              "$t": "Europe’s new border"
-            },
-            "gsx$assets": {
-              "$t": "image_edirnelocator,copy_004,copy_0040,image_0040,copy_00400,copy_0041,image_004"
-            },
-            "gsx$location": {
-              "$t": "Greek-Turkish border near the Evros river"
-            },
-            "gsx$country": {
-              "$t": "Greece"
-            },
-            "gsx$length": {
-              "$t": "6.6"
-            },
-            "gsx$height": {
-              "$t": "4"
-            },
-            "gsx$firstbuilt": {
-              "$t": "2012"
-            },
-            "gsx$age": {
-              "$t": ""
-            },
-            "gsx$deaths": {
-              "$t": ""
-            },
-            "gsx$material": {
-              "$t": "barbed wire"
-            },
-            "gsx$background": {
-              "$t": "background_greece"
-            },
-            "gsx$map": {
-              "$t": "map_edirne"
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/ciyn3"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "mexico"
-            },
-            "content": {
-              "type": "text",
-              "$t": "title: Operation Gatekeeper, assets: image_mexicolocator,copy_005,image_005,copy_0050,video_mexico1,copy_00500,copy_0051,image_0052,copy_00511,image_0050,copy_005111,copy_0052,copy_0053,image_0053,copy_0054,copy_0055,image_0051, location: US-Mexico border, country: US, length: 700, height: 5.5, firstbuilt: 2006, material: steel, concrete, wire mesh, background: background_america, map: map_mexico"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/ciyn3"
-              }
-            ],
-            "gsx$chapterid": {
-              "$t": "mexico"
-            },
-            "gsx$title": {
-              "$t": "Operation Gatekeeper"
-            },
-            "gsx$assets": {
-              "$t": "image_mexicolocator,copy_005,image_005,copy_0050,video_mexico1,copy_00500,copy_0051,image_0052,copy_00511,image_0050,copy_005111,copy_0052,copy_0053,image_0053,copy_0054,copy_0055,image_0051"
-            },
-            "gsx$location": {
-              "$t": "US-Mexico border"
-            },
-            "gsx$country": {
-              "$t": "US"
-            },
-            "gsx$length": {
-              "$t": "700"
-            },
-            "gsx$height": {
-              "$t": "5.5"
-            },
-            "gsx$firstbuilt": {
-              "$t": "2006"
-            },
-            "gsx$age": {
-              "$t": ""
-            },
-            "gsx$deaths": {
-              "$t": ""
-            },
-            "gsx$material": {
-              "$t": "steel, concrete, wire mesh"
-            },
-            "gsx$background": {
-              "$t": "background_america"
-            },
-            "gsx$map": {
-              "$t": "map_mexico"
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/ckd7g"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "bangladesh"
-            },
-            "content": {
-              "type": "text",
-              "$t": "title: The barriers of Bengal, assets: image_bangladeshlocator,copy_006,image_006,copy_0060,copy_0061,copy_0062, location: India-Bangladesh border, country: India, length: 2500, height: 3, firstbuilt: 1986, material: barbed wire, concrete, background: background_bangladesh, map: map_bangla"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/ckd7g"
-              }
-            ],
-            "gsx$chapterid": {
-              "$t": "bangladesh"
-            },
-            "gsx$title": {
-              "$t": "The barriers of Bengal"
-            },
-            "gsx$assets": {
-              "$t": "image_bangladeshlocator,copy_006,image_006,copy_0060,copy_0061,copy_0062"
-            },
-            "gsx$location": {
-              "$t": "India-Bangladesh border"
-            },
-            "gsx$country": {
-              "$t": "India"
-            },
-            "gsx$length": {
-              "$t": "2500"
-            },
-            "gsx$height": {
-              "$t": "3"
-            },
-            "gsx$firstbuilt": {
-              "$t": "1986"
-            },
-            "gsx$age": {
-              "$t": ""
-            },
-            "gsx$deaths": {
-              "$t": ""
-            },
-            "gsx$material": {
-              "$t": "barbed wire, concrete"
-            },
-            "gsx$background": {
-              "$t": "background_bangladesh"
-            },
-            "gsx$map": {
-              "$t": "map_bangla"
-            }
-          },
-          {
-            "id": {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/clrrx"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -2170,10 +2150,10 @@ define([],function() { return {
           },
           {
             "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/b8lvi"
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bs9tc"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -2183,42 +2163,42 @@ define([],function() { return {
             ],
             "title": {
               "type": "text",
-              "$t": "saopaulo"
+              "$t": "melilla"
             },
             "content": {
               "type": "text",
-              "$t": "title: Alphaville, assets: image_brazillocator,copy_008,image_0080,copy_008a,copy_0080,copy_0081,image_0081,copy_0082,image_008,copy_0083, location: São Paulo, Brazil, country: Brazil, length: 2.5, height: 4, firstbuilt: 1978, material: concrete, background: background_alphaville, map: map_brazil"
+              "$t": "title: Spain’s north African exclaves, assets: image_northafricalocator,copy_melilla1,image_0092,copy_melilla1a,copy_melilla2,image_0091,copy_melilla20,copy_melilla2a,image_0094,copy_melilla2aa,copy_melilla2b,image_0090,copy_melilla2bb,image_0095,copy_melilla2bbb,image_0093,copy_melilla2bbbb,copy_melilla2c,image_009, location: Melilla and Ceuta, separate towns in north Africa, country: Spain, length: 6, height: 6, firstbuilt: 1993, material: barbed wire, motion sensors, background: background_melilla, map: map_melilla"
             },
             "link": [
               {
                 "rel": "self",
                 "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/b8lvi"
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/bs9tc"
               }
             ],
             "gsx$chapterid": {
-              "$t": "saopaulo"
+              "$t": "melilla"
             },
             "gsx$title": {
-              "$t": "Alphaville"
+              "$t": "Spain’s north African exclaves"
             },
             "gsx$assets": {
-              "$t": "image_brazillocator,copy_008,image_0080,copy_008a,copy_0080,copy_0081,image_0081,copy_0082,image_008,copy_0083"
+              "$t": "image_northafricalocator,copy_melilla1,image_0092,copy_melilla1a,copy_melilla2,image_0091,copy_melilla20,copy_melilla2a,image_0094,copy_melilla2aa,copy_melilla2b,image_0090,copy_melilla2bb,image_0095,copy_melilla2bbb,image_0093,copy_melilla2bbbb,copy_melilla2c,image_009"
             },
             "gsx$location": {
-              "$t": "São Paulo, Brazil"
+              "$t": "Melilla and Ceuta, separate towns in north Africa"
             },
             "gsx$country": {
-              "$t": "Brazil"
+              "$t": "Spain"
             },
             "gsx$length": {
-              "$t": "2.5"
+              "$t": "6"
             },
             "gsx$height": {
-              "$t": "4"
+              "$t": "6"
             },
             "gsx$firstbuilt": {
-              "$t": "1978"
+              "$t": "1993"
             },
             "gsx$age": {
               "$t": ""
@@ -2227,13 +2207,13 @@ define([],function() { return {
               "$t": ""
             },
             "gsx$material": {
-              "$t": "concrete"
+              "$t": "barbed wire, motion sensors"
             },
             "gsx$background": {
-              "$t": "background_alphaville"
+              "$t": "background_melilla"
             },
             "gsx$map": {
-              "$t": "map_brazil"
+              "$t": "map_melilla"
             }
           },
           {
@@ -2241,7 +2221,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od6/public/values/cyevm"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -2255,7 +2235,7 @@ define([],function() { return {
             },
             "content": {
               "type": "text",
-              "$t": "title: Extra mural, assets: copy_outro,image_101,copy_outro0,image_100,copy_outro1,image_102,copy_outro2,copy_credits, location: Conclusion, background: background_outro"
+              "$t": "title: Extra mural, assets: copy_outro,image_101,copy_outro0,image_100,copy_outro1,image_102,copy_outro2,copy_credits, country: End note, background: background_outro"
             },
             "link": [
               {
@@ -2274,10 +2254,10 @@ define([],function() { return {
               "$t": "copy_outro,image_101,copy_outro0,image_100,copy_outro1,image_102,copy_outro2,copy_credits"
             },
             "gsx$location": {
-              "$t": "Conclusion"
+              "$t": ""
             },
             "gsx$country": {
-              "$t": ""
+              "$t": "End note"
             },
             "gsx$length": {
               "$t": ""
@@ -2302,913 +2282,6 @@ define([],function() { return {
             },
             "gsx$map": {
               "$t": ""
-            }
-          }
-        ]
-      }
-    }
-  },
-  "maps": {
-    "column_names": [
-      "assetid",
-      "mapurl",
-      "zoomlevel",
-      "center",
-      "offsetx",
-      "offsety",
-      "projection",
-      "height"
-    ],
-    "name": "maps",
-    "elements": [
-      {
-        "assetid": "map_01",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zTpKh93u3nmI.kn5ClQNz9iAk",
-        "zoomlevel": "2500",
-        "center": "-1.3, 50.5",
-        "offsetx": "150",
-        "offsety": "20",
-        "projection": "equirectangular",
-        "height": "",
-        "rowNumber": 1
-      },
-      {
-        "assetid": "map_02",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kGQ9XowET4Qk",
-        "zoomlevel": "4000",
-        "center": "-13.06, 24.62",
-        "offsetx": "",
-        "offsety": "",
-        "projection": "equirectangular",
-        "height": "",
-        "rowNumber": 2
-      },
-      {
-        "assetid": "map_melilla",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kL5OHAGjFQEE",
-        "zoomlevel": "305000",
-        "center": "-2.956111, 35.279722",
-        "offsetx": "-80",
-        "offsety": "0",
-        "projection": "equirectangular",
-        "height": "500",
-        "rowNumber": 3
-      },
-      {
-        "assetid": "map_bangla",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k4k93hescFR0",
-        "zoomlevel": "3750",
-        "center": "90.3,23.7",
-        "offsetx": "20",
-        "offsety": "-172.5",
-        "projection": "equirectangular",
-        "height": "",
-        "rowNumber": 4
-      },
-      {
-        "assetid": "map_korea",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kEuQp5-CXji0",
-        "zoomlevel": "6250",
-        "center": "126.5, 36.5",
-        "offsetx": "-30",
-        "offsety": "30",
-        "projection": "equirectangular",
-        "height": "",
-        "rowNumber": 5
-      },
-      {
-        "assetid": "map_edirne",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.khoZN_ixsa2M",
-        "zoomlevel": "142000",
-        "center": "26.566,41.576",
-        "offsetx": "22",
-        "offsety": "125",
-        "projection": "equirectangular",
-        "height": "500",
-        "rowNumber": 6
-      },
-      {
-        "assetid": "map_sahara",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kbnbqy4JrkVw",
-        "zoomlevel": "2150",
-        "center": "-11.3001, 18.5",
-        "offsetx": "42.5",
-        "offsety": "",
-        "projection": "equirectangular",
-        "height": "",
-        "rowNumber": 7
-      },
-      {
-        "assetid": "map_belfast",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc",
-        "zoomlevel": "280000",
-        "center": "-5.93,54.597",
-        "offsetx": "45",
-        "offsety": "-165",
-        "projection": "mercator",
-        "height": "",
-        "rowNumber": 8
-      },
-      {
-        "assetid": "map_mexico",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kZuInPqBp06A",
-        "zoomlevel": "1050",
-        "center": "-99.13,5",
-        "offsetx": "135",
-        "offsety": "145",
-        "projection": "equirectangular",
-        "height": "318",
-        "rowNumber": 9
-      },
-      {
-        "assetid": "map_israel",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kXViO5c9pstA",
-        "zoomlevel": "24250",
-        "center": "35,33",
-        "offsetx": "-75",
-        "offsety": "-525",
-        "projection": "equirectangular",
-        "height": "600",
-        "rowNumber": 10
-      },
-      {
-        "assetid": "map_brazil",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kU_16p4Z3KG0",
-        "zoomlevel": "160000",
-        "center": "-46.6333,-23.5500",
-        "offsetx": "600",
-        "offsety": "-5",
-        "projection": "equirectangular",
-        "height": "",
-        "rowNumber": 11
-      },
-      {
-        "assetid": "map_belfast2",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc",
-        "zoomlevel": "5000",
-        "center": "-5.93,54.597",
-        "offsetx": "",
-        "offsety": "",
-        "projection": "",
-        "height": "373",
-        "rowNumber": 12
-      },
-      {
-        "assetid": "map_homs",
-        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k3h4ZsKcd7ls",
-        "zoomlevel": "320000",
-        "center": "36.7094,34.7308",
-        "offsetx": "0",
-        "offsety": "-110",
-        "projection": "mercator",
-        "height": "500",
-        "rowNumber": 13
-      }
-    ],
-    "raw": {
-      "version": "1.0",
-      "encoding": "UTF-8",
-      "feed": {
-        "xmlns": "http://www.w3.org/2005/Atom",
-        "xmlns$openSearch": "http://a9.com/-/spec/opensearchrss/1.0/",
-        "xmlns$gsx": "http://schemas.google.com/spreadsheets/2006/extended",
-        "id": {
-          "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values"
-        },
-        "updated": {
-          "$t": "2013-11-11T12:48:30.059Z"
-        },
-        "category": [
-          {
-            "scheme": "http://schemas.google.com/spreadsheets/2006",
-            "term": "http://schemas.google.com/spreadsheets/2006#list"
-          }
-        ],
-        "title": {
-          "type": "text",
-          "$t": "maps"
-        },
-        "link": [
-          {
-            "rel": "alternate",
-            "type": "text/html",
-            "href": "https://spreadsheets.google.com/pub?key=0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc"
-          },
-          {
-            "rel": "http://schemas.google.com/g/2005#feed",
-            "type": "application/atom+xml",
-            "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values"
-          },
-          {
-            "rel": "self",
-            "type": "application/atom+xml",
-            "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values?alt=json&sq="
-          }
-        ],
-        "author": [
-          {
-            "name": {
-              "$t": "sean.clarke"
-            },
-            "email": {
-              "$t": "sean.clarke@guardian.co.uk"
-            }
-          }
-        ],
-        "openSearch$totalResults": {
-          "$t": "13"
-        },
-        "openSearch$startIndex": {
-          "$t": "1"
-        },
-        "entry": [
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cokwr"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_01"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zTpKh93u3nmI.kn5ClQNz9iAk, zoomlevel: 2500, center: -1.3, 50.5, offsetx: 150, offsety: 20, projection: equirectangular"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cokwr"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_01"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zTpKh93u3nmI.kn5ClQNz9iAk"
-            },
-            "gsx$zoomlevel": {
-              "$t": "2500"
-            },
-            "gsx$center": {
-              "$t": "-1.3, 50.5"
-            },
-            "gsx$offsetx": {
-              "$t": "150"
-            },
-            "gsx$offsety": {
-              "$t": "20"
-            },
-            "gsx$projection": {
-              "$t": "equirectangular"
-            },
-            "gsx$height": {
-              "$t": ""
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cpzh4"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_02"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kGQ9XowET4Qk, zoomlevel: 4000, center: -13.06, 24.62, projection: equirectangular"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cpzh4"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_02"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kGQ9XowET4Qk"
-            },
-            "gsx$zoomlevel": {
-              "$t": "4000"
-            },
-            "gsx$center": {
-              "$t": "-13.06, 24.62"
-            },
-            "gsx$offsetx": {
-              "$t": ""
-            },
-            "gsx$offsety": {
-              "$t": ""
-            },
-            "gsx$projection": {
-              "$t": "equirectangular"
-            },
-            "gsx$height": {
-              "$t": ""
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cre1l"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_melilla"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kL5OHAGjFQEE, zoomlevel: 305000, center: -2.956111, 35.279722, offsetx: -80, offsety: 0, projection: equirectangular, height: 500"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cre1l"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_melilla"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kL5OHAGjFQEE"
-            },
-            "gsx$zoomlevel": {
-              "$t": "305000"
-            },
-            "gsx$center": {
-              "$t": "-2.956111, 35.279722"
-            },
-            "gsx$offsetx": {
-              "$t": "-80"
-            },
-            "gsx$offsety": {
-              "$t": "0"
-            },
-            "gsx$projection": {
-              "$t": "equirectangular"
-            },
-            "gsx$height": {
-              "$t": "500"
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/chk2m"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_bangla"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k4k93hescFR0, zoomlevel: 3750, center: 90.3,23.7, offsetx: 20, offsety: -172.5, projection: equirectangular"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/chk2m"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_bangla"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k4k93hescFR0"
-            },
-            "gsx$zoomlevel": {
-              "$t": "3750"
-            },
-            "gsx$center": {
-              "$t": "90.3,23.7"
-            },
-            "gsx$offsetx": {
-              "$t": "20"
-            },
-            "gsx$offsety": {
-              "$t": "-172.5"
-            },
-            "gsx$projection": {
-              "$t": "equirectangular"
-            },
-            "gsx$height": {
-              "$t": ""
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/ciyn3"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_korea"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kEuQp5-CXji0, zoomlevel: 6250, center: 126.5, 36.5, offsetx: -30, offsety: 30, projection: equirectangular"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/ciyn3"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_korea"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kEuQp5-CXji0"
-            },
-            "gsx$zoomlevel": {
-              "$t": "6250"
-            },
-            "gsx$center": {
-              "$t": "126.5, 36.5"
-            },
-            "gsx$offsetx": {
-              "$t": "-30"
-            },
-            "gsx$offsety": {
-              "$t": "30"
-            },
-            "gsx$projection": {
-              "$t": "equirectangular"
-            },
-            "gsx$height": {
-              "$t": ""
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/ckd7g"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_edirne"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.khoZN_ixsa2M, zoomlevel: 142000, center: 26.566,41.576, offsetx: 22, offsety: 125, projection: equirectangular, height: 500"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/ckd7g"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_edirne"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.khoZN_ixsa2M"
-            },
-            "gsx$zoomlevel": {
-              "$t": "142000"
-            },
-            "gsx$center": {
-              "$t": "26.566,41.576"
-            },
-            "gsx$offsetx": {
-              "$t": "22"
-            },
-            "gsx$offsety": {
-              "$t": "125"
-            },
-            "gsx$projection": {
-              "$t": "equirectangular"
-            },
-            "gsx$height": {
-              "$t": "500"
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/clrrx"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_sahara"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kbnbqy4JrkVw, zoomlevel: 2150, center: -11.3001, 18.5, offsetx: 42.5, projection: equirectangular"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/clrrx"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_sahara"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kbnbqy4JrkVw"
-            },
-            "gsx$zoomlevel": {
-              "$t": "2150"
-            },
-            "gsx$center": {
-              "$t": "-11.3001, 18.5"
-            },
-            "gsx$offsetx": {
-              "$t": "42.5"
-            },
-            "gsx$offsety": {
-              "$t": ""
-            },
-            "gsx$projection": {
-              "$t": "equirectangular"
-            },
-            "gsx$height": {
-              "$t": ""
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cyevm"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_belfast"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc, zoomlevel: 280000, center: -5.93,54.597, offsetx: 45, offsety: -165, projection: mercator"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cyevm"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_belfast"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc"
-            },
-            "gsx$zoomlevel": {
-              "$t": "280000"
-            },
-            "gsx$center": {
-              "$t": "-5.93,54.597"
-            },
-            "gsx$offsetx": {
-              "$t": "45"
-            },
-            "gsx$offsety": {
-              "$t": "-165"
-            },
-            "gsx$projection": {
-              "$t": "mercator"
-            },
-            "gsx$height": {
-              "$t": ""
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cztg3"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_mexico"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kZuInPqBp06A, zoomlevel: 1050, center: -99.13,5, offsetx: 135, offsety: 145, projection: equirectangular, height: 318"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cztg3"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_mexico"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kZuInPqBp06A"
-            },
-            "gsx$zoomlevel": {
-              "$t": "1050"
-            },
-            "gsx$center": {
-              "$t": "-99.13,5"
-            },
-            "gsx$offsetx": {
-              "$t": "135"
-            },
-            "gsx$offsety": {
-              "$t": "145"
-            },
-            "gsx$projection": {
-              "$t": "equirectangular"
-            },
-            "gsx$height": {
-              "$t": "318"
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/d180g"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_israel"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kXViO5c9pstA, zoomlevel: 24250, center: 35,33, offsetx: -75, offsety: -525, projection: equirectangular, height: 600"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/d180g"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_israel"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kXViO5c9pstA"
-            },
-            "gsx$zoomlevel": {
-              "$t": "24250"
-            },
-            "gsx$center": {
-              "$t": "35,33"
-            },
-            "gsx$offsetx": {
-              "$t": "-75"
-            },
-            "gsx$offsety": {
-              "$t": "-525"
-            },
-            "gsx$projection": {
-              "$t": "equirectangular"
-            },
-            "gsx$height": {
-              "$t": "600"
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/d2mkx"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_brazil"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kU_16p4Z3KG0, zoomlevel: 160000, center: -46.6333,-23.5500, offsetx: 600, offsety: -5, projection: equirectangular"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/d2mkx"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_brazil"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kU_16p4Z3KG0"
-            },
-            "gsx$zoomlevel": {
-              "$t": "160000"
-            },
-            "gsx$center": {
-              "$t": "-46.6333,-23.5500"
-            },
-            "gsx$offsetx": {
-              "$t": "600"
-            },
-            "gsx$offsety": {
-              "$t": "-5"
-            },
-            "gsx$projection": {
-              "$t": "equirectangular"
-            },
-            "gsx$height": {
-              "$t": ""
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cssly"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_belfast2"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc, zoomlevel: 5000, center: -5.93,54.597, height: 373"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cssly"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_belfast2"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc"
-            },
-            "gsx$zoomlevel": {
-              "$t": "5000"
-            },
-            "gsx$center": {
-              "$t": "-5.93,54.597"
-            },
-            "gsx$offsetx": {
-              "$t": ""
-            },
-            "gsx$offsety": {
-              "$t": ""
-            },
-            "gsx$projection": {
-              "$t": ""
-            },
-            "gsx$height": {
-              "$t": "373"
-            }
-          },
-          {
-            "id": {
-              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cu76f"
-            },
-            "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
-            },
-            "category": [
-              {
-                "scheme": "http://schemas.google.com/spreadsheets/2006",
-                "term": "http://schemas.google.com/spreadsheets/2006#list"
-              }
-            ],
-            "title": {
-              "type": "text",
-              "$t": "map_homs"
-            },
-            "content": {
-              "type": "text",
-              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k3h4ZsKcd7ls, zoomlevel: 320000, center: 36.7094,34.7308, offsetx: 0, offsety: -110, projection: mercator, height: 500"
-            },
-            "link": [
-              {
-                "rel": "self",
-                "type": "application/atom+xml",
-                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cu76f"
-              }
-            ],
-            "gsx$assetid": {
-              "$t": "map_homs"
-            },
-            "gsx$mapurl": {
-              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k3h4ZsKcd7ls"
-            },
-            "gsx$zoomlevel": {
-              "$t": "320000"
-            },
-            "gsx$center": {
-              "$t": "36.7094,34.7308"
-            },
-            "gsx$offsetx": {
-              "$t": "0"
-            },
-            "gsx$offsety": {
-              "$t": "-110"
-            },
-            "gsx$projection": {
-              "$t": "mercator"
-            },
-            "gsx$height": {
-              "$t": "500"
             }
           }
         ]
@@ -3654,7 +2727,7 @@ define([],function() { return {
         "marker": "",
         "credits": "haroldmoan/GuardianWitness",
         "class": "",
-        "height": "",
+        "height": "320",
         "rowNumber": 39
       },
       {
@@ -3933,7 +3006,7 @@ define([],function() { return {
           "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values"
         },
         "updated": {
-          "$t": "2013-11-11T12:48:30.059Z"
+          "$t": "2013-11-11T16:47:46.111Z"
         },
         "category": [
           {
@@ -3984,7 +3057,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/cokwr"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4037,7 +3110,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/cpzh4"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4090,7 +3163,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/c6bhi"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4143,7 +3216,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/hodi3"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4196,7 +3269,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bqv8z"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4249,7 +3322,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bpgoi"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4302,7 +3375,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bctkt"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4355,7 +3428,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bbf0c"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4408,7 +3481,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/ba0fz"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4461,7 +3534,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/b8lvi"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4514,7 +3587,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bs9tc"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4567,7 +3640,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bl8zb"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4620,7 +3693,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bjueu"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4673,7 +3746,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/btodt"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4726,7 +3799,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/c7q1z"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4779,7 +3852,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/caj6t"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4832,7 +3905,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/hps2g"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4885,7 +3958,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bmnjo"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4938,7 +4011,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bo245"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -4991,7 +4064,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/c0p7u"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5044,7 +4117,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/hlkd9"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5097,7 +4170,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/hk5ss"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5150,7 +4223,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/c23sb"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5203,7 +4276,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bv2y6"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5256,7 +4329,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/c4wx5"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5309,7 +4382,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/c3ico"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5362,7 +4435,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bzanh"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5415,7 +4488,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bxw30"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5468,7 +4541,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/bwhin"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5521,7 +4594,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/cbxr6"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5574,7 +4647,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/ceqw0"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5627,7 +4700,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/cdcbn"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5680,7 +4753,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/cg5gh"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5733,7 +4806,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/c94mc"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5786,7 +4859,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/hr6mx"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5839,7 +4912,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/hy7gy"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5892,7 +4965,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/hmyxm"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5945,7 +5018,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/hhcny"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -5998,7 +5071,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/hir8f"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6012,7 +5085,7 @@ define([],function() { return {
             },
             "content": {
               "type": "text",
-              "$t": "src: http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/4/1383566530358/WallblockingaroadintoTahrir.jpg, alttext: Wall blocking a road into Tahrir square, Cairo, caption: An illusion of security? A wall blocks a road into Tahrir square, Cairo.<br>Photo: haroldmoan/GuardianWitness, credits: haroldmoan/GuardianWitness"
+              "$t": "src: http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2013/11/4/1383566530358/WallblockingaroadintoTahrir.jpg, alttext: Wall blocking a road into Tahrir square, Cairo, caption: An illusion of security? A wall blocks a road into Tahrir square, Cairo.<br>Photo: haroldmoan/GuardianWitness, credits: haroldmoan/GuardianWitness, height: 320"
             },
             "link": [
               {
@@ -6043,7 +5116,7 @@ define([],function() { return {
               "$t": ""
             },
             "gsx$height": {
-              "$t": ""
+              "$t": "320"
             }
           },
           {
@@ -6051,7 +5124,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/d9ney"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6104,7 +5177,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/db1zf"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6157,7 +5230,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/dcgjs"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6210,7 +5283,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/d5fpr"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6263,7 +5336,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/dmair"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6316,7 +5389,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/dp3nl"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6369,7 +5442,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/dgo93"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6422,7 +5495,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/dw4je"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6475,7 +5548,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/dxj3v"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6528,7 +5601,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/dyxo8"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6581,7 +5654,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/e0c8p"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6634,7 +5707,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/dqi9q"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6687,7 +5760,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/drwu7"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6740,7 +5813,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/dtbek"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6793,7 +5866,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/e7d2q"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6846,7 +5919,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/ea67k"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6899,7 +5972,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/e1qt2"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -6952,7 +6025,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/e4jxw"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -7005,7 +6078,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/eilm2"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -7058,7 +6131,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/ek06j"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -7111,7 +6184,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/eleqw"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -7164,7 +6237,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/emtbd"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -7217,7 +6290,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/eczce"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -7270,7 +6343,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od4/public/values/eedwv"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -7316,6 +6389,913 @@ define([],function() { return {
             },
             "gsx$height": {
               "$t": "180"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "maps": {
+    "column_names": [
+      "assetid",
+      "mapurl",
+      "zoomlevel",
+      "center",
+      "offsetx",
+      "offsety",
+      "projection",
+      "height"
+    ],
+    "name": "maps",
+    "elements": [
+      {
+        "assetid": "map_01",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zTpKh93u3nmI.kn5ClQNz9iAk",
+        "zoomlevel": "2500",
+        "center": "-1.3, 50.5",
+        "offsetx": "150",
+        "offsety": "20",
+        "projection": "equirectangular",
+        "height": "",
+        "rowNumber": 1
+      },
+      {
+        "assetid": "map_02",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kGQ9XowET4Qk",
+        "zoomlevel": "4000",
+        "center": "-13.06, 24.62",
+        "offsetx": "",
+        "offsety": "",
+        "projection": "equirectangular",
+        "height": "",
+        "rowNumber": 2
+      },
+      {
+        "assetid": "map_melilla",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kL5OHAGjFQEE",
+        "zoomlevel": "262000",
+        "center": "-2.956111, 35.279722",
+        "offsetx": "-80",
+        "offsety": "9",
+        "projection": "mercator",
+        "height": "500",
+        "rowNumber": 3
+      },
+      {
+        "assetid": "map_bangla",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k4k93hescFR0",
+        "zoomlevel": "3750",
+        "center": "90.3,23.7",
+        "offsetx": "20",
+        "offsety": "-172.5",
+        "projection": "equirectangular",
+        "height": "",
+        "rowNumber": 4
+      },
+      {
+        "assetid": "map_korea",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kEuQp5-CXji0",
+        "zoomlevel": "5400",
+        "center": "126.5, 36.5",
+        "offsetx": "0",
+        "offsety": "0",
+        "projection": "equirectangular",
+        "height": "",
+        "rowNumber": 5
+      },
+      {
+        "assetid": "map_edirne",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.khoZN_ixsa2M",
+        "zoomlevel": "128000",
+        "center": "26.566,41.576",
+        "offsetx": "22",
+        "offsety": "146",
+        "projection": "mercator",
+        "height": "500",
+        "rowNumber": 6
+      },
+      {
+        "assetid": "map_sahara",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kbnbqy4JrkVw",
+        "zoomlevel": "2150",
+        "center": "-11.3001, 18.5",
+        "offsetx": "42.5",
+        "offsety": "",
+        "projection": "equirectangular",
+        "height": "",
+        "rowNumber": 7
+      },
+      {
+        "assetid": "map_belfast",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc",
+        "zoomlevel": "280000",
+        "center": "-5.93,54.597",
+        "offsetx": "45",
+        "offsety": "-165",
+        "projection": "mercator",
+        "height": "",
+        "rowNumber": 8
+      },
+      {
+        "assetid": "map_mexico",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kZuInPqBp06A",
+        "zoomlevel": "1050",
+        "center": "-99.13,5",
+        "offsetx": "135",
+        "offsety": "145",
+        "projection": "equirectangular",
+        "height": "318",
+        "rowNumber": 9
+      },
+      {
+        "assetid": "map_israel",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kXViO5c9pstA",
+        "zoomlevel": "24750",
+        "center": "35,33",
+        "offsetx": "-90",
+        "offsety": "-525",
+        "projection": "equirectangular",
+        "height": "600",
+        "rowNumber": 10
+      },
+      {
+        "assetid": "map_brazil",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kU_16p4Z3KG0",
+        "zoomlevel": "160000",
+        "center": "-46.6333,-23.5500",
+        "offsetx": "600",
+        "offsety": "-5",
+        "projection": "equirectangular",
+        "height": "",
+        "rowNumber": 11
+      },
+      {
+        "assetid": "map_belfast2",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc",
+        "zoomlevel": "5000",
+        "center": "-5.93,54.597",
+        "offsetx": "",
+        "offsety": "",
+        "projection": "",
+        "height": "373",
+        "rowNumber": 12
+      },
+      {
+        "assetid": "map_homs",
+        "mapurl": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k3h4ZsKcd7ls",
+        "zoomlevel": "320000",
+        "center": "36.7094,34.7308",
+        "offsetx": "0",
+        "offsety": "-110",
+        "projection": "mercator",
+        "height": "500",
+        "rowNumber": 13
+      }
+    ],
+    "raw": {
+      "version": "1.0",
+      "encoding": "UTF-8",
+      "feed": {
+        "xmlns": "http://www.w3.org/2005/Atom",
+        "xmlns$openSearch": "http://a9.com/-/spec/opensearchrss/1.0/",
+        "xmlns$gsx": "http://schemas.google.com/spreadsheets/2006/extended",
+        "id": {
+          "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values"
+        },
+        "updated": {
+          "$t": "2013-11-11T16:47:46.111Z"
+        },
+        "category": [
+          {
+            "scheme": "http://schemas.google.com/spreadsheets/2006",
+            "term": "http://schemas.google.com/spreadsheets/2006#list"
+          }
+        ],
+        "title": {
+          "type": "text",
+          "$t": "maps"
+        },
+        "link": [
+          {
+            "rel": "alternate",
+            "type": "text/html",
+            "href": "https://spreadsheets.google.com/pub?key=0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc"
+          },
+          {
+            "rel": "http://schemas.google.com/g/2005#feed",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values"
+          },
+          {
+            "rel": "self",
+            "type": "application/atom+xml",
+            "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values?alt=json&sq="
+          }
+        ],
+        "author": [
+          {
+            "name": {
+              "$t": "sean.clarke"
+            },
+            "email": {
+              "$t": "sean.clarke@guardian.co.uk"
+            }
+          }
+        ],
+        "openSearch$totalResults": {
+          "$t": "13"
+        },
+        "openSearch$startIndex": {
+          "$t": "1"
+        },
+        "entry": [
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cokwr"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_01"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zTpKh93u3nmI.kn5ClQNz9iAk, zoomlevel: 2500, center: -1.3, 50.5, offsetx: 150, offsety: 20, projection: equirectangular"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cokwr"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_01"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zTpKh93u3nmI.kn5ClQNz9iAk"
+            },
+            "gsx$zoomlevel": {
+              "$t": "2500"
+            },
+            "gsx$center": {
+              "$t": "-1.3, 50.5"
+            },
+            "gsx$offsetx": {
+              "$t": "150"
+            },
+            "gsx$offsety": {
+              "$t": "20"
+            },
+            "gsx$projection": {
+              "$t": "equirectangular"
+            },
+            "gsx$height": {
+              "$t": ""
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cpzh4"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_02"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kGQ9XowET4Qk, zoomlevel: 4000, center: -13.06, 24.62, projection: equirectangular"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cpzh4"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_02"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kGQ9XowET4Qk"
+            },
+            "gsx$zoomlevel": {
+              "$t": "4000"
+            },
+            "gsx$center": {
+              "$t": "-13.06, 24.62"
+            },
+            "gsx$offsetx": {
+              "$t": ""
+            },
+            "gsx$offsety": {
+              "$t": ""
+            },
+            "gsx$projection": {
+              "$t": "equirectangular"
+            },
+            "gsx$height": {
+              "$t": ""
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cre1l"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_melilla"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kL5OHAGjFQEE, zoomlevel: 262000, center: -2.956111, 35.279722, offsetx: -80, offsety: 9, projection: mercator, height: 500"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cre1l"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_melilla"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kL5OHAGjFQEE"
+            },
+            "gsx$zoomlevel": {
+              "$t": "262000"
+            },
+            "gsx$center": {
+              "$t": "-2.956111, 35.279722"
+            },
+            "gsx$offsetx": {
+              "$t": "-80"
+            },
+            "gsx$offsety": {
+              "$t": "9"
+            },
+            "gsx$projection": {
+              "$t": "mercator"
+            },
+            "gsx$height": {
+              "$t": "500"
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/chk2m"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_bangla"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k4k93hescFR0, zoomlevel: 3750, center: 90.3,23.7, offsetx: 20, offsety: -172.5, projection: equirectangular"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/chk2m"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_bangla"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k4k93hescFR0"
+            },
+            "gsx$zoomlevel": {
+              "$t": "3750"
+            },
+            "gsx$center": {
+              "$t": "90.3,23.7"
+            },
+            "gsx$offsetx": {
+              "$t": "20"
+            },
+            "gsx$offsety": {
+              "$t": "-172.5"
+            },
+            "gsx$projection": {
+              "$t": "equirectangular"
+            },
+            "gsx$height": {
+              "$t": ""
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/ciyn3"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_korea"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kEuQp5-CXji0, zoomlevel: 5400, center: 126.5, 36.5, offsetx: 0, offsety: 0, projection: equirectangular"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/ciyn3"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_korea"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kEuQp5-CXji0"
+            },
+            "gsx$zoomlevel": {
+              "$t": "5400"
+            },
+            "gsx$center": {
+              "$t": "126.5, 36.5"
+            },
+            "gsx$offsetx": {
+              "$t": "0"
+            },
+            "gsx$offsety": {
+              "$t": "0"
+            },
+            "gsx$projection": {
+              "$t": "equirectangular"
+            },
+            "gsx$height": {
+              "$t": ""
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/ckd7g"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_edirne"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.khoZN_ixsa2M, zoomlevel: 128000, center: 26.566,41.576, offsetx: 22, offsety: 146, projection: mercator, height: 500"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/ckd7g"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_edirne"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.khoZN_ixsa2M"
+            },
+            "gsx$zoomlevel": {
+              "$t": "128000"
+            },
+            "gsx$center": {
+              "$t": "26.566,41.576"
+            },
+            "gsx$offsetx": {
+              "$t": "22"
+            },
+            "gsx$offsety": {
+              "$t": "146"
+            },
+            "gsx$projection": {
+              "$t": "mercator"
+            },
+            "gsx$height": {
+              "$t": "500"
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/clrrx"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_sahara"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kbnbqy4JrkVw, zoomlevel: 2150, center: -11.3001, 18.5, offsetx: 42.5, projection: equirectangular"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/clrrx"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_sahara"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kbnbqy4JrkVw"
+            },
+            "gsx$zoomlevel": {
+              "$t": "2150"
+            },
+            "gsx$center": {
+              "$t": "-11.3001, 18.5"
+            },
+            "gsx$offsetx": {
+              "$t": "42.5"
+            },
+            "gsx$offsety": {
+              "$t": ""
+            },
+            "gsx$projection": {
+              "$t": "equirectangular"
+            },
+            "gsx$height": {
+              "$t": ""
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cyevm"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_belfast"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc, zoomlevel: 280000, center: -5.93,54.597, offsetx: 45, offsety: -165, projection: mercator"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cyevm"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_belfast"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc"
+            },
+            "gsx$zoomlevel": {
+              "$t": "280000"
+            },
+            "gsx$center": {
+              "$t": "-5.93,54.597"
+            },
+            "gsx$offsetx": {
+              "$t": "45"
+            },
+            "gsx$offsety": {
+              "$t": "-165"
+            },
+            "gsx$projection": {
+              "$t": "mercator"
+            },
+            "gsx$height": {
+              "$t": ""
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cztg3"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_mexico"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kZuInPqBp06A, zoomlevel: 1050, center: -99.13,5, offsetx: 135, offsety: 145, projection: equirectangular, height: 318"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cztg3"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_mexico"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kZuInPqBp06A"
+            },
+            "gsx$zoomlevel": {
+              "$t": "1050"
+            },
+            "gsx$center": {
+              "$t": "-99.13,5"
+            },
+            "gsx$offsetx": {
+              "$t": "135"
+            },
+            "gsx$offsety": {
+              "$t": "145"
+            },
+            "gsx$projection": {
+              "$t": "equirectangular"
+            },
+            "gsx$height": {
+              "$t": "318"
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/d180g"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_israel"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kXViO5c9pstA, zoomlevel: 24750, center: 35,33, offsetx: -90, offsety: -525, projection: equirectangular, height: 600"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/d180g"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_israel"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kXViO5c9pstA"
+            },
+            "gsx$zoomlevel": {
+              "$t": "24750"
+            },
+            "gsx$center": {
+              "$t": "35,33"
+            },
+            "gsx$offsetx": {
+              "$t": "-90"
+            },
+            "gsx$offsety": {
+              "$t": "-525"
+            },
+            "gsx$projection": {
+              "$t": "equirectangular"
+            },
+            "gsx$height": {
+              "$t": "600"
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/d2mkx"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_brazil"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kU_16p4Z3KG0, zoomlevel: 160000, center: -46.6333,-23.5500, offsetx: 600, offsety: -5, projection: equirectangular"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/d2mkx"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_brazil"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.kU_16p4Z3KG0"
+            },
+            "gsx$zoomlevel": {
+              "$t": "160000"
+            },
+            "gsx$center": {
+              "$t": "-46.6333,-23.5500"
+            },
+            "gsx$offsetx": {
+              "$t": "600"
+            },
+            "gsx$offsety": {
+              "$t": "-5"
+            },
+            "gsx$projection": {
+              "$t": "equirectangular"
+            },
+            "gsx$height": {
+              "$t": ""
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cssly"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_belfast2"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc, zoomlevel: 5000, center: -5.93,54.597, height: 373"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cssly"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_belfast2"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zuSAAcrm2adY.kdWilwo4ksVc"
+            },
+            "gsx$zoomlevel": {
+              "$t": "5000"
+            },
+            "gsx$center": {
+              "$t": "-5.93,54.597"
+            },
+            "gsx$offsetx": {
+              "$t": ""
+            },
+            "gsx$offsety": {
+              "$t": ""
+            },
+            "gsx$projection": {
+              "$t": ""
+            },
+            "gsx$height": {
+              "$t": "373"
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cu76f"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "map_homs"
+            },
+            "content": {
+              "type": "text",
+              "$t": "mapurl: https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k3h4ZsKcd7ls, zoomlevel: 320000, center: 36.7094,34.7308, offsetx: 0, offsety: -110, projection: mercator, height: 500"
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/odb/public/values/cu76f"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "map_homs"
+            },
+            "gsx$mapurl": {
+              "$t": "https://mapsengine.google.com/map/edit?mid=zPmQMtXXj4HE.k3h4ZsKcd7ls"
+            },
+            "gsx$zoomlevel": {
+              "$t": "320000"
+            },
+            "gsx$center": {
+              "$t": "36.7094,34.7308"
+            },
+            "gsx$offsetx": {
+              "$t": "0"
+            },
+            "gsx$offsety": {
+              "$t": "-110"
+            },
+            "gsx$projection": {
+              "$t": "mercator"
+            },
+            "gsx$height": {
+              "$t": "500"
             }
           }
         ]
@@ -7541,13 +7521,13 @@ define([],function() { return {
         "rowNumber": 35
       },
       {
-        "assetid": "copy_0061",
+        "assetid": "copy_lamin",
         "content": "##Lamin\n\nLamin is from the Indian side of the divided village of Boropani and works as a coal miner. The 30-year-old is part of the minority Garo community who are indigenous to this part of the borderlands. Lamin, like many Garos, has family on both sides and often crosses back and forth.\n\n“There are some border guards that are reasonable and they will let you cross if you give them money, especially during Christmas or one of the other religious festivals,” he said. However Lamin’s usual experience is anything but convivial. “If the BSF (border security force) catch you crossing, they will first stamp on you with their boots, then beat you up and only then ask which country you are from. They get drunk and attack anyone. It doesn’t matter to them whether you may be Bengali or an Indian. The BSF don’t see anyone who lives in the border area as human.” \n\nHe adds “I do not have a problem with the Bengalis coming here to work and us going there to visit family or to shop in the bazaar. We are known to each other and have always done so. It is the border guards who create the problems, not the people.”\n",
         "marker": "TRUE",
         "rowNumber": 36
       },
       {
-        "assetid": "copy_0062",
+        "assetid": "copy_felani",
         "content": "##Felani Khatun\n\nIn 2011, the death of Felani Khatun propelled the issue of the fence to the fore. Born in India, the 15-year-old was travelling with her father to their ancestral home on the Bangladeshi side in order to get married a week later. She was dressed in her finery and wore wedding jewellery. Being poor, marginal people who have little or no paperwork, there is no question of Felani or her father crossing legally. Her father managed to jump across the fence, but the hem of Felani’s trousers became tangled up in the barbed wire. She screamed, drawing the attention of a BSF guard who then shot her dead.\n\nFelani’s body hung on the barrier for several hours in view of the villagers from Fel and Coochbehar on both sides of the border. Eventually it was dragged down by the BSF, her hands and feet tied to a bamboo pole and then carried away. A day later, Felani’s body was handed back to her family. Her jewellery was missing. Pictures of the teenager’s body dangling on the Bangladesh-India border became symbolic of wider issues of inequality and saw widespread condemnation of the BSF. As a result, last month a special court was set up for the first time to try the accused guard, however he was found not guilty of murder.",
         "marker": "TRUE",
         "rowNumber": 37
@@ -7809,6 +7789,12 @@ define([],function() { return {
         "content": "\nSnipers line the three-metre high wall, which was built a year ago from concrete. \n\nAl-Zahra district, meanwhile, is loyal to the regime. RPG and gunfire never stops, so the regime built a six-metre wall around it. \n\n##Abu Ahmed, Farouq brigade commander in Homs\n\n>The regime used concrete walls to separate Alawite districts off from those inhabited by Sunnis. At the beginning the regime was looking for something like a buffer zone between loyal and disloyal districts to provide security, by which Alawite people can get into our districts but we can't get out. \n\n>By the end of 2012, some fighters had infiltrated Bab Amru and tough battles broke out. The regime was afraid to lose Bab Amru again especially as it is adjacent to three Alawite districts.\n\n>In old Homs, a huge wall of concrete was built. If you go to the offices of the Political Security Branch in Homs, you will see something like a prison. The road is divided into two parts and there is a kilometre-long wall.\n\n>The regime now is more concerned about Alawite families than the army. No one can climb the wall, without coming under intense fire.\n\n>The regime is trying to provide as much security as it can to the Alawite population to make them feel that their districts are safe.\n\n",
         "marker": "",
         "rowNumber": 80
+      },
+      {
+        "assetid": "copy_homs_add",
+        "content": "##Captain Yazin Juma, Syrian army commander in Homs\n\n>I got an order to start digging a trench around Homs to stop rebel infiltration from the city centre to other areas. Within a few days, huge bulldozers arrived in Homs and the new plan was carried out immediately.\n\n>They also told us to build a high wall around Alawite districts in Homs, such as Al-Zahra, Akrama, Wadi Aldahab and Nuzha. The wall was to be made of concrete cement and provided with cameras.\n\nThe whole mission took Juma and his soldiers two months to accomplish.",
+        "marker": "",
+        "rowNumber": 81
       }
     ],
     "raw": {
@@ -7822,7 +7808,7 @@ define([],function() { return {
           "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values"
         },
         "updated": {
-          "$t": "2013-11-11T12:48:30.059Z"
+          "$t": "2013-11-11T16:47:46.111Z"
         },
         "category": [
           {
@@ -7862,7 +7848,7 @@ define([],function() { return {
           }
         ],
         "openSearch$totalResults": {
-          "$t": "80"
+          "$t": "81"
         },
         "openSearch$startIndex": {
           "$t": "1"
@@ -7873,7 +7859,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cokwr"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -7911,7 +7897,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/b8lvi"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -7949,7 +7935,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/ba0fz"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -7987,7 +7973,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cpzh4"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8025,7 +8011,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cdcbn"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8063,7 +8049,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/bpgoi"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8101,7 +8087,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/ceqw0"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8139,7 +8125,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/bqv8z"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8177,7 +8163,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cg5gh"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8215,7 +8201,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/bs9tc"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8253,7 +8239,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/c6bhi"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8291,7 +8277,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/btodt"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8329,7 +8315,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/c7q1z"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8367,7 +8353,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/bctkt"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8405,7 +8391,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cre1l"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8443,7 +8429,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/bjueu"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8481,7 +8467,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/bl8zb"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8519,7 +8505,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hr6mx"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8557,7 +8543,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/bmnjo"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8595,7 +8581,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/chk2m"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8633,7 +8619,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hodi3"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8671,7 +8657,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hwswl"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8709,7 +8695,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hlkd9"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8747,7 +8733,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/ciyn3"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8785,7 +8771,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/c4wx5"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8823,7 +8809,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/ic954"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8861,7 +8847,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/c3ico"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8899,7 +8885,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/i10ls"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8937,7 +8923,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hzm1f"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -8975,7 +8961,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/c23sb"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9013,7 +8999,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/c0p7u"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9051,7 +9037,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/bo245"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9089,7 +9075,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/bv2y6"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9127,7 +9113,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/ckd7g"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9165,7 +9151,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/bzanh"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9203,7 +9189,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/clrrx"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9213,7 +9199,7 @@ define([],function() { return {
             ],
             "title": {
               "type": "text",
-              "$t": "copy_0061"
+              "$t": "copy_lamin"
             },
             "content": {
               "type": "text",
@@ -9227,7 +9213,7 @@ define([],function() { return {
               }
             ],
             "gsx$assetid": {
-              "$t": "copy_0061"
+              "$t": "copy_lamin"
             },
             "gsx$content": {
               "$t": "##Lamin\n\nLamin is from the Indian side of the divided village of Boropani and works as a coal miner. The 30-year-old is part of the minority Garo community who are indigenous to this part of the borderlands. Lamin, like many Garos, has family on both sides and often crosses back and forth.\n\n“There are some border guards that are reasonable and they will let you cross if you give them money, especially during Christmas or one of the other religious festivals,” he said. However Lamin’s usual experience is anything but convivial. “If the BSF (border security force) catch you crossing, they will first stamp on you with their boots, then beat you up and only then ask which country you are from. They get drunk and attack anyone. It doesn’t matter to them whether you may be Bengali or an Indian. The BSF don’t see anyone who lives in the border area as human.” \n\nHe adds “I do not have a problem with the Bengalis coming here to work and us going there to visit family or to shop in the bazaar. We are known to each other and have always done so. It is the border guards who create the problems, not the people.”\n"
@@ -9241,7 +9227,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cyevm"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9251,7 +9237,7 @@ define([],function() { return {
             ],
             "title": {
               "type": "text",
-              "$t": "copy_0062"
+              "$t": "copy_felani"
             },
             "content": {
               "type": "text",
@@ -9265,7 +9251,7 @@ define([],function() { return {
               }
             ],
             "gsx$assetid": {
-              "$t": "copy_0062"
+              "$t": "copy_felani"
             },
             "gsx$content": {
               "$t": "##Felani Khatun\n\nIn 2011, the death of Felani Khatun propelled the issue of the fence to the fore. Born in India, the 15-year-old was travelling with her father to their ancestral home on the Bangladeshi side in order to get married a week later. She was dressed in her finery and wore wedding jewellery. Being poor, marginal people who have little or no paperwork, there is no question of Felani or her father crossing legally. Her father managed to jump across the fence, but the hem of Felani’s trousers became tangled up in the barbed wire. She screamed, drawing the attention of a BSF guard who then shot her dead.\n\nFelani’s body hung on the barrier for several hours in view of the villagers from Fel and Coochbehar on both sides of the border. Eventually it was dragged down by the BSF, her hands and feet tied to a bamboo pole and then carried away. A day later, Felani’s body was handed back to her family. Her jewellery was missing. Pictures of the teenager’s body dangling on the Bangladesh-India border became symbolic of wider issues of inequality and saw widespread condemnation of the BSF. As a result, last month a special court was set up for the first time to try the accused guard, however he was found not guilty of murder."
@@ -9279,7 +9265,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cztg3"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9317,7 +9303,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cbxr6"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9355,7 +9341,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/d180g"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9393,7 +9379,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/d2mkx"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9431,7 +9417,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cssly"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9469,7 +9455,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/iaukr"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9507,7 +9493,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cu76f"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9545,7 +9531,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cvlqs"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9583,7 +9569,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/cx0b9"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9621,7 +9607,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/d9ney"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9659,7 +9645,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/db1zf"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9697,7 +9683,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/dcgjs"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9735,7 +9721,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/ddv49"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9773,7 +9759,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/d415a"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9811,7 +9797,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/caj6t"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9849,7 +9835,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/d5fpr"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9887,7 +9873,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/d6ua4"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9925,7 +9911,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hmyxm"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -9963,7 +9949,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/d88ul"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10001,7 +9987,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hhcny"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10039,7 +10025,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/htzrr"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10077,7 +10063,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hy7gy"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10115,7 +10101,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/c94mc"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10153,7 +10139,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/dkvya"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10191,7 +10177,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/i2f69"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10229,7 +10215,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/dmair"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10267,7 +10253,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hps2g"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10305,7 +10291,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/df9om"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10343,7 +10329,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hsl7a"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10381,7 +10367,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/dgo93"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10419,7 +10405,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/di2tg"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10457,7 +10443,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hk5ss"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10495,7 +10481,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/djhdx"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10533,7 +10519,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/i9g0a"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10571,7 +10557,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/dw4je"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10609,7 +10595,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/hir8f"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10647,7 +10633,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/dxj3v"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10685,7 +10671,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/dyxo8"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10723,7 +10709,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/e0c8p"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10761,7 +10747,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/dqi9q"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10799,7 +10785,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/drwu7"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10837,7 +10823,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/dtbek"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10875,7 +10861,7 @@ define([],function() { return {
               "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/dupz1"
             },
             "updated": {
-              "$t": "2013-11-11T12:48:30.059Z"
+              "$t": "2013-11-11T16:47:46.111Z"
             },
             "category": [
               {
@@ -10903,6 +10889,44 @@ define([],function() { return {
             },
             "gsx$content": {
               "$t": "\nSnipers line the three-metre high wall, which was built a year ago from concrete. \n\nAl-Zahra district, meanwhile, is loyal to the regime. RPG and gunfire never stops, so the regime built a six-metre wall around it. \n\n##Abu Ahmed, Farouq brigade commander in Homs\n\n>The regime used concrete walls to separate Alawite districts off from those inhabited by Sunnis. At the beginning the regime was looking for something like a buffer zone between loyal and disloyal districts to provide security, by which Alawite people can get into our districts but we can't get out. \n\n>By the end of 2012, some fighters had infiltrated Bab Amru and tough battles broke out. The regime was afraid to lose Bab Amru again especially as it is adjacent to three Alawite districts.\n\n>In old Homs, a huge wall of concrete was built. If you go to the offices of the Political Security Branch in Homs, you will see something like a prison. The road is divided into two parts and there is a kilometre-long wall.\n\n>The regime now is more concerned about Alawite families than the army. No one can climb the wall, without coming under intense fire.\n\n>The regime is trying to provide as much security as it can to the Alawite population to make them feel that their districts are safe.\n\n"
+            },
+            "gsx$marker": {
+              "$t": ""
+            }
+          },
+          {
+            "id": {
+              "$t": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/e7d2q"
+            },
+            "updated": {
+              "$t": "2013-11-11T16:47:46.111Z"
+            },
+            "category": [
+              {
+                "scheme": "http://schemas.google.com/spreadsheets/2006",
+                "term": "http://schemas.google.com/spreadsheets/2006#list"
+              }
+            ],
+            "title": {
+              "type": "text",
+              "$t": "copy_homs_add"
+            },
+            "content": {
+              "type": "text",
+              "$t": "content: ##Captain Yazin Juma, Syrian army commander in Homs\n\n>I got an order to start digging a trench around Homs to stop rebel infiltration from the city centre to other areas. Within a few days, huge bulldozers arrived in Homs and the new plan was carried out immediately.\n\n>They also told us to build a high wall around Alawite districts in Homs, such as Al-Zahra, Akrama, Wadi Aldahab and Nuzha. The wall was to be made of concrete cement and provided with cameras.\n\nThe whole mission took Juma and his soldiers two months to accomplish."
+            },
+            "link": [
+              {
+                "rel": "self",
+                "type": "application/atom+xml",
+                "href": "https://spreadsheets.google.com/feeds/list/0AjNAJ9Njg5YTdGtEZVdreHpBN3ZFOFJVVDdLUXhEcmc/od7/public/values/e7d2q"
+              }
+            ],
+            "gsx$assetid": {
+              "$t": "copy_homs_add"
+            },
+            "gsx$content": {
+              "$t": "##Captain Yazin Juma, Syrian army commander in Homs\n\n>I got an order to start digging a trench around Homs to stop rebel infiltration from the city centre to other areas. Within a few days, huge bulldozers arrived in Homs and the new plan was carried out immediately.\n\n>They also told us to build a high wall around Alawite districts in Homs, such as Al-Zahra, Akrama, Wadi Aldahab and Nuzha. The wall was to be made of concrete cement and provided with cameras.\n\nThe whole mission took Juma and his soldiers two months to accomplish."
             },
             "gsx$marker": {
               "$t": ""
