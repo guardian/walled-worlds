@@ -14,6 +14,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       // Are we on a wide page?
       // <figure> elm has lots of margin which causes issues when calc width.
       el.style.margin = 0;
+      Config.width = el.offsetWidth;
 
       if (el.offsetWidth >= MIN_WIDTH) {
         el.classList.add('wide');
@@ -38,8 +39,9 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       setTimeout(function() {
         if (window.location.hash) {
           NavigationView.scrollToChapter(location.hash);
+          onScroll();
         }
-      }, 300);
+      }, 400);
 
     }
 
@@ -85,17 +87,36 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       ticking = false;
     }
 
+    function onResize() {
+
+      if (el.offsetWidth >= MIN_WIDTH) {
+        el.classList.add('wide');
+        el.classList.remove('responsive');
+        Config.wide = true;
+      } else {
+        el.classList.remove('wide');
+        el.classList.add('responsive');
+        Config.wide = false;
+      }
+
+      // Fix for when responsive wiggling class isn't removed
+      var chapters = document.querySelectorAll('.gi-chapters .chapter');
+      for (var i = 0; i < chapters.length; i++) {
+        chapters[i].classList.remove('fixed-background');
+      }
+
+      onScroll();
+    }
+
+
+
     function setup(element) {
       el = element;
       el.appendChild(LoadingView.render());
       addStyles();
       DataModel.fetch(setupPage);
-
-      if (!window.addEventListener) {
-        window.attachEvent('onscroll', onScroll);
-      } else {
-        window.addEventListener('scroll', onScroll, false);
-      }
+      Utils.on(window, 'scroll', onScroll);
+      Utils.on(window, 'resize', onResize);
 
     }
 

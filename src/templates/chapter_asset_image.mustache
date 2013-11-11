@@ -1,5 +1,15 @@
 <figure class="chapter_figure {{# class }} {{ class }} {{/class}}" id="{{ assetid }}">
-    <img class="chapter_image" src="{{{ src }}}" alt="{{ alttext }}" />
+    <img class="chapter_image"
+         src="{{{ src }}}"
+         alt="{{ alttext }}"
+        {{#scaledHeight}}
+          height="{{ scaledHeight }}"
+        {{/scaledHeight}}
+        {{#height}}
+           data-height="{{ height }}"
+          style="max-height: {{ height }}px;"
+        {{/height}}
+    />
 
   {{# caption }}
     <figcaption>

@@ -19,11 +19,12 @@
 
   /* Usually interactive container is a <figure> so we need to remove margin and padding. */
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   background: #333;
   color: #efefef;
   font-size: 10px;
   position: relative;
+  max-width: 940px;
 }
 
 #content .gi-interactive {
