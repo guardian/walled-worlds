@@ -218,7 +218,6 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
 
 //      if (Config.wide) {
         if (backgroundData) {
-          console.log(backgroundData);
           gradImg = Utils.getGradientImg(
             backgroundData.gradientwidth,
             backgroundData.gradientcolour,
@@ -244,14 +243,14 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       if (model.background && model.background.length > 0) {
         var data = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
 
-        var targetEl = (Config.wide) ? el : el.querySelector('.gi-chapter-map');
-
-        if (targetEl === null || data === undefined) { return; }
-
         if (data.src) {
           backgroundImg = data.src;
-          targetEl.style.backgroundImage = 'url('+ data.src + ')';
         }
+
+        var targetEl = (Config.wide) ? el : mapElm;
+        if (!targetEl || data === undefined) { return; }
+
+        targetEl.style.backgroundImage = 'url('+ data.src + ')';
 
         if (data.backgroundcolour !== undefined && data.backgroundcolour.trim().length > 0) {
           el.style.backgroundColor = data.backgroundcolour;
@@ -274,11 +273,14 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function updateView() {
       if (backgroundImg) {
         if (Config.wide) {
+          //console.log('backgroundImg', backgroundImg);
           el.style.backgroundImage = 'url(' + backgroundImg + ')';
-          el.querySelector('.gi-chapter-map').style.backgroundImage = 'none';
+          if(mapElm)
+            mapElm.style.backgroundImage = 'none';
         } else {
-          el.querySelector('.gi-chapter-map').style.backgroundImage = 'url(' + backgroundImg + ')';
           el.style.backgroundImage = 'none';
+          if (mapElm)
+            mapElm.style.backgroundImage = 'url(' + backgroundImg + ')';
         }
 
         _correctBackgroundPosition();
