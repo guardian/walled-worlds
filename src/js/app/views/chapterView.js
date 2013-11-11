@@ -154,7 +154,6 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
           }
 
           if (mapElm) {
-            //mapElm.style.position = 'fixed';
             mapView.animate();
           }
 
@@ -170,7 +169,8 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
           }
           if (mapElm) {
             //mapElm.setAttribute('style', '');
-
+            mapElm.style.left = '';
+            mapElm.style.top = '';
           }
           _isHidden = true;
         }
@@ -183,16 +183,20 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function _correctBackgroundPosition() {
       var boundingBox = el.getBoundingClientRect();
       if (!_isHidden && el.classList.contains('fixed-background')) {
+
+
         if ('backgroundPosition' in el.style) {
-          el.style.backgroundPosition = boundingBox.left + 'px 50px';
+          el.style.backgroundPosition = parseInt(boundingBox.left, 10) + 'px 55px';
         } else {
-          el.style.backgroundPositionX = boundingBox.left + 'px';
+          el.style.backgroundPositionX = parseInt(boundingBox.left, 10) + 'px';
           el.style.backgroundPositionY = '100px';
         }
+
+
         if (mapElm && Config.wide) {
           mapElm.style.left = boundingBox.left + 'px';
-        } else if(mapElm && mapElm.style) {
-            mapElm.style.left = '0';
+        } else if(mapElm) {
+          mapElm.style.left = '0';
         }
 
         if (photoCreditElm && Config.wide) {
@@ -212,7 +216,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       var gradImg;
       var backgroundData = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
 
-      if (Config.wide) {
+//      if (Config.wide) {
         if (backgroundData) {
           gradImg = Utils.getGradientImg(
             backgroundData.gradientwidth,
@@ -223,14 +227,14 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
         } else {
           gradImg = Utils.getGradientImg();
         }
-      } else {
-        if (backgroundData) {
-          gradImg = Utils.generateOverlay(backgroundData.gradientopacity);
-          gradImg.style.backgroundColor = backgroundData.gradientcolour;
-        } else {
-          gradImg = Utils.generateOverlay();
-        }
-      }
+//      } else {
+//        if (backgroundData) {
+//          gradImg = Utils.generateOverlay(backgroundData.gradientopacity);
+//          gradImg.style.backgroundColor = backgroundData.gradientcolour;
+//        } else {
+//          gradImg = Utils.generateOverlay();
+//        }
+//      }
 
       el.insertBefore(gradImg, el.firstChild);
     }
@@ -250,7 +254,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
         }
 
         if (data.backgroundcolour !== undefined && data.backgroundcolour.trim().length > 0) {
-          targetEl.style.backgroundColor = data.backgroundcolour;
+          el.style.backgroundColor = data.backgroundcolour;
         }
 
         if (data.credit !== undefined && data.credit.trim().length > 0) {
@@ -268,7 +272,6 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     }
 
     function updateView() {
-
       if (backgroundImg) {
         if (Config.wide) {
           console.log(backgroundImg);
@@ -280,6 +283,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
         }
 
         _correctBackgroundPosition();
+        _handleScroll();
       }
       _correctImageHeight();
     }
@@ -303,7 +307,8 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     return {
       getEl: getEl,
       render: render,
-      checkIfActive: _handleScroll
+      checkIfActive: _handleScroll,
+      updateView: updateView
     };
   };
 });

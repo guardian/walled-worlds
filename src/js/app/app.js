@@ -39,8 +39,9 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       setTimeout(function() {
         if (window.location.hash) {
           NavigationView.scrollToChapter(location.hash);
+          onScroll();
         }
-      }, 300);
+      }, 400);
 
     }
 
@@ -87,6 +88,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
     }
 
     function onResize() {
+
       if (el.offsetWidth >= MIN_WIDTH) {
         el.classList.add('wide');
         el.classList.remove('responsive');

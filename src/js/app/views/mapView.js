@@ -76,7 +76,6 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
       }
 
 
-
       return el;
     }
 
