@@ -97,6 +97,8 @@ define([], function() {
     canvas.height = gradWidth;
     var ctx = canvas.getContext('2d');
 
+    console.log(gradOpacity, 'rgba(' + gradColor + gradOpacity +')');
+
     var linGrad = ctx.createLinearGradient(0, 0, gradWidth, 0);
     linGrad.addColorStop(0, 'rgba(' + gradColor + ' 0)');
     linGrad.addColorStop(gradStartPos, 'rgba(' + gradColor + gradOpacity +')');

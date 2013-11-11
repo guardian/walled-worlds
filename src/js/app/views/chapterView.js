@@ -218,6 +218,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
 
 //      if (Config.wide) {
         if (backgroundData) {
+          console.log(backgroundData);
           gradImg = Utils.getGradientImg(
             backgroundData.gradientwidth,
             backgroundData.gradientcolour,
@@ -244,7 +245,6 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
         var data = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
 
         var targetEl = (Config.wide) ? el : el.querySelector('.gi-chapter-map');
-        console.log(Config.wide, targetEl);
 
         if (targetEl === null || data === undefined) { return; }
 
@@ -274,7 +274,6 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function updateView() {
       if (backgroundImg) {
         if (Config.wide) {
-          console.log(backgroundImg);
           el.style.backgroundImage = 'url(' + backgroundImg + ')';
           el.querySelector('.gi-chapter-map').style.backgroundImage = 'none';
         } else {
@@ -294,6 +293,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       _addMap();
       _addGradient();
       _setBackground();
+      _handleScroll();
 
       Utils.on(window, 'resize', updateView);
       return this;
