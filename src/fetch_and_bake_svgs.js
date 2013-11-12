@@ -146,6 +146,7 @@
       .enter()
       .append("path")
       .attr("class", 'wall_path')
+      .attr("style", "fill: none; stroke: white; stroke-width: 2px")
       .attr("d", path);
 
 
@@ -165,6 +166,7 @@
       .attr('id', function(d) { return 'marker_' + d.properties.name; })
       .append("svg:text")
       .attr("text-anchor", "middle")
+      .attr("style", "fill: white; text-transform: uppercase;")
       .attr("class", function(d) {if (d.properties.description === "1") {return "label_text major";} else {return "label_text minor";}})
       .attr("id", function(d) { return 'label-' + d.properties.name; })
       .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
@@ -189,12 +191,14 @@
       .attr("text-anchor", "middle")
       .attr("class", "marker_text")
       .attr("id", function(d) { return 'marker-' + d.properties.name; })
+      .attr("style", "fill: white;")
       .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; });
 
     markers.selectAll(".marker_group")
       .data(markerData)
       .append("path")
       .attr('class', 'marker_path')
+      .attr("style", "fill: white;")
       .attr('transform', function(d) {var x = projection(d.geometry.coordinates)[0] - 16; var y = projection(d.geometry.coordinates)[1] - 33; return "translate(" + x + "," + y + ") scale(0.10)";})
       .attr("d", markerPath);
 
@@ -202,7 +206,19 @@
 
     amdSVGS[mapData.assetid] = el.innerHTML;
     console.log("Saved: " +  mapData.assetid + ' svg');
-    startDrawing();
+
+    fs.writeFile('tmp/'+ mapData.assetid +'.svg', el.innerHTML,  function(err) {
+      if(err) {
+        console.log(err);
+      } else {
+        console.log("saved SVG");
+        startDrawing();
+      }
+    });
+
+
+
+
 
   }
 

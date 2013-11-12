@@ -48,13 +48,21 @@
             };
         </script>
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/curl/0.7.3/curl-for-jQuery/curl.js"></script>
+        <!--<script src="//cdnjs.cloudflare.com/ajax/libs/curl/0.7.3/curl-for-jQuery/curl.js"></script>-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.9/require.min.js"></script>
+
         <!-- Expects requirejs to be present in the R2 page -->
         <script>
-            require(['boot.js']).then(function(app) {
+//            require(['boot.js']).then(function(app) {
+//                var el = document.querySelector('.gi-interactive');
+//                app.boot(el, window, {}, {});
+//            });
+
+            require(['boot.js'], function(app) {
                 var el = document.querySelector('.gi-interactive');
                 app.boot(el, window, {}, {});
             });
+
         </script>
     </body>
 </html>

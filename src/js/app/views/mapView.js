@@ -37,8 +37,9 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
     function _setupSVG() {
       if (model.map && model.map.length > 0) {
         data = _getAssetData(model.map.trim(), DataModel.get('maps'));
+        if (!data) { return; }
 
-        if (data) {
+        if (Modernizr.svg) {
           svgView = new SvgView(ANIM_LENGTH, ANIM_DELAY);
 
           if (!Config.wide && data.hasOwnProperty('height') && !isNaN(data.height)) {
@@ -52,14 +53,24 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
           });
 
           svgView.init(model.map.trim(), data);
+        } else {
+          var img = document.createElement('img');
+          img.setAttribute('src', Config.assetPath +  '/imgs/' + data.assetid +'.png');
+          el.querySelector('.chapter-svg-map').appendChild(img);
         }
+
       }
     }
 
     function _setupCounter() {
       var counterElm = el.querySelector('.chapter-map-counter-count');
 
-      counterTween = new TWEEN.Tween( { x: 0} )
+      if (!Modernizr.svg) {
+        counterElm.innerText = distance;
+        return;
+      }
+
+      counterTween = new TWEEN.Tween( { x: 0 } )
         .to( { x: distance }, ANIM_LENGTH)
         .onUpdate( function () {
           counterElm.innerText = parseInt(this.x, 10);
@@ -82,14 +93,9 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
         return el;
       }
 
-      if (Modernizr.svg) {
-        el = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
-        _setupSVG();
-        _setupCounter();
-      } else {
-        el = document.createElement('img');
-      }
-
+      el = Utils.buildDOM(mustache.render(templates.chapter_map)).firstChild;
+      _setupSVG();
+      _setupCounter();
 
       return el;
     }

@@ -262,7 +262,7 @@ module.exports = function(grunt) {
 
 
   grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace:dev", "connect", "watch"]);
-  grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace:prod"]);
+  grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:prod", "sass", "replace:prod"]);
   grunt.registerTask("deploy", ["build", "s3:production"]);
   grunt.registerTask("test-deploy", ["fetch-data", "fetch-svg", "build", "s3:test"]);
 
