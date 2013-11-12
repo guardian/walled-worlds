@@ -273,7 +273,6 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function updateView() {
       if (backgroundImg) {
         if (Config.wide) {
-          //console.log('backgroundImg', backgroundImg);
           el.style.backgroundImage = 'url(' + backgroundImg + ')';
           if(mapElm)
             mapElm.style.backgroundImage = 'none';
@@ -296,8 +295,6 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       _addGradient();
       _setBackground();
       _handleScroll();
-
-      //Utils.on(window, 'resize', updateView);
       return this;
     }
 

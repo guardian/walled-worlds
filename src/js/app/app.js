@@ -31,8 +31,6 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       el.appendChild(chaptersWrapper);
 
       buildChapters();
-      requestAnimationFrame(_anim);
-
       el.appendChild(analyticsView.render().el);
 
       // TODO: replace with content ready event
@@ -43,11 +41,6 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
         }
       }, 400);
 
-    }
-
-    function _anim() {
-      TWEEN.update();
-      requestAnimationFrame(_anim);
     }
 
     function addStyles() {

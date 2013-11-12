@@ -9,6 +9,8 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
     var ANIM_LENGTH = 5*1000;
     var hasAnimated = false;
     var ANIM_DELAY = 250;
+    var continueAnim = true;
+    var requestAnimFrameId;
     var counterTween;
     var svgView;
 
@@ -20,6 +22,16 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
       svgView.anim(ANIM_LENGTH);
       counterTween.start();
       hasAnimated = true;
+      requestAnimationFrame(_tick);
+    }
+
+    function _tick() {
+      if (continueAnim) {
+        TWEEN.update();
+        requestAnimFrameId = requestAnimationFrame(_tick);
+      } else {
+        cancelAnimationFrame(requestAnimFrameId);
+      }
     }
 
     function _setupSVG() {
@@ -52,6 +64,9 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
         .onUpdate( function () {
           counterElm.innerText = parseInt(this.x, 10);
         })
+        .onComplete(function() {
+          continueAnim = false;
+        }.bind(this))
         .delay(ANIM_DELAY);
     }
 
