@@ -34,7 +34,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function _buildImageAsset(id) {
       var data = _getAssetData(id, DataModel.get('images'));
 
-      if (data && data.hasOwnProperty('height') && !isNaN(data.height)) {
+      if (data && data.hasOwnProperty('height') && !isNaN(parseInt(data.height, 10))) {
         imgs[data.assetid]= {};
         imgs[data.assetid].aspectRatio = parseInt(data.height, 10) / 496;
         imgs[data.assetid].height = data.height;
@@ -138,17 +138,20 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     }
 
     function _handleScroll() {
-      // Check waypoints
+      //Check waypoints
       waypoints.forEach(function(waypoint) { waypoint(); });
 
       // Check chapter position
       var boundingBox = el.getBoundingClientRect();
+
       if (boundingBox.top - NavigationView.getHeight() < 0 &&
         boundingBox.bottom > NavigationView.getHeight())
       {
         if (!el.classList.contains('fixed-background')) {
           _isHidden = false;
-          if (Config.wide) {
+          el.classList.add('active');
+
+          if (Config.wide && !Modernizr.touch) {
             el.classList.add('fixed-background');
             _correctBackgroundPosition();
           }
@@ -163,15 +166,19 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       } else {
         if (!_isHidden) {
           PubSub.publish('chapterDeactivate', { id: model.chapterid });
-          if (Config.wide) {
+          el.classList.remove('active');
+
+          if (Config.wide && !Modernizr.touch) {
             el.classList.remove('fixed-background');
             el.style.backgroundPosition = '0 0';
           }
-          if (mapElm) {
+//
+          if (mapElm && !Modernizr.touch) {
             //mapElm.setAttribute('style', '');
             mapElm.style.left = '';
             mapElm.style.top = '';
           }
+
           _isHidden = true;
         }
       }
@@ -191,6 +198,12 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
           el.style.backgroundPositionX = parseInt(boundingBox.left, 10) + 'px';
           el.style.backgroundPositionY = '100px';
         }
+
+
+        //bgElm.style.backgroundPosition = parseInt(boundingBox.left, 10) + 'px 55px';
+//        bgElm.style.left = parseInt(boundingBox.left, 10) + 'px';
+//        bgElm.style.right = '55px';
+//        bgElm.style.width = Config.width + 'px';
 
 
         if (mapElm && Config.wide) {
@@ -243,11 +256,17 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       if (model.background && model.background.length > 0) {
         var data = _getAssetData(model.background.trim(), DataModel.get('backgrounds'));
 
+//        bgElm = document.createElement('div');
+//        bgElm.classList.add('background_map');
+//        el.insertBefore(bgElm, el.firstChild);
+
         if (data.src) {
           backgroundImg = data.src;
         }
 
         var targetEl = (Config.wide) ? el : mapElm;
+//        var targetEl = (Config.wide) ? bgElm : mapElm;
+
         if (!targetEl || data === undefined) { return; }
 
         targetEl.style.backgroundImage = 'url('+ data.src + ')';
@@ -294,6 +313,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       _addMap();
       _addGradient();
       _setBackground();
+      _correctBackgroundPosition();
       _handleScroll();
       return this;
     }

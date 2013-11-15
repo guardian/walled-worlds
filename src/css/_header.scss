@@ -34,6 +34,14 @@
   float: left;
   font-family: "WebEgyptian-Regular", Georgia;
   -webkit-font-smoothing: antialiased;
+
+  @media (max-width: 41.25em) {
+    font-size: 20px;
+  }
+  @media (max-width: 30em) {
+    font-size: 17px;
+  }
+
 }
 
 .gi-top {

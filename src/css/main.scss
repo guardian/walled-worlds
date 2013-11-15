@@ -28,11 +28,16 @@
 
   @media (max-width: 1024px) {
     &.responsive {
-      max-width: 700px;
+      //max-width: 700px;
     }
+  }
+
+  &.interactive {
+    margin: 0 auto;
   }
 }
 
 #content .gi-interactive {
   @import "chapter";
 }
+

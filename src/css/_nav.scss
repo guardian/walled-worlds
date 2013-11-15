@@ -27,7 +27,7 @@
   color: #fff;
   text-decoration: none;
   display: inline-block;
-  font-size: 12px;
+  font-size: 11px;
   float: left;
   min-height: 60px;
   display: none;
@@ -81,7 +81,7 @@
   .gi-nav-link {
     line-height: 18px;
     height: 100px;
-    min-width: 133px;
+    min-width: 110px;
 
     &.active {
       background: transparent;
@@ -126,7 +126,7 @@
 
 
   .nav_count {
-    min-width: 45px;
+    min-width: 40px;
   }
 
   .next {

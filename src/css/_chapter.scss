@@ -6,6 +6,10 @@
   background-repeat: no-repeat;
   background-color: #222;
 
+  &.active {
+    background-position: 0 55px;
+  }
+
   .background_credit {
     margin: 10px;
     color: rgba(255, 255, 255, 0.4);
@@ -15,10 +19,10 @@
     text-align: left;
   }
 
-//  &.fixed-background {
-//      background-attachment: fixed;
-//      background-position: 0 3.4rem;
-//  }
+  &.fixed-background {
+      background-attachment: fixed;
+      background-position: 0 3.4rem;
+  }
 
   .chapter_title {
     font-size: 4.4em;
@@ -169,8 +173,25 @@
   }
 }
 
+
+.background_map {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
 &.fixed .chapters {
   margin-top: 3.4rem;
+
+}
+
+&.wide .background_map {
+  display: none;
+}
+
+&.wide .fixed-background .background_map {
+  display: block;
 }
 
 &.wide .chapter {
@@ -182,6 +203,10 @@
   &.fixed-background {
     background-attachment: fixed;
     background-position: 0 3.4rem;
+
+    .background_map {
+      position: fixed;
+    }
 
     .background_credit {
       bottom: 0;

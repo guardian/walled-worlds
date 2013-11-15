@@ -5,19 +5,21 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
   var chapterNavElms = {};
   var chapterData;
   var activeChapter;
+  var height;
+  var fixed = false;
 
 
-  function _isFixed() {
-    var bounds = el.parentNode.getBoundingClientRect();
-
-    if (bounds.top < 0) {
-      if (!el.parentNode.classList.contains('fixed')) {
+  function isFixed() {
+    if (el.parentNode.getBoundingClientRect().top < 0) {
+      if (!fixed) {
         _setNavWidth();
         el.parentNode.classList.add('fixed');
+        fixed = true;
       }
-    } else {
+    } else if (fixed) {
       el.parentNode.classList.remove('fixed');
       el.removeAttribute('style');
+      fixed = false;
     }
   }
 
@@ -83,7 +85,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
     PubSub.subscribe('chapterActive', _activateNavigation);
     PubSub.subscribe('chapterDeactivate', _deactivateNavigation);
 
-    Utils.on(window, 'scroll', _isFixed);
+    //Utils.on(window, 'scroll', _isFixed);
     Utils.on(window, 'resize', _setNavWidth);
 
     return el;
@@ -110,13 +112,14 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
   }
 
   function getHeight() {
-    return el.clientHeight;
+    return (height) ? height : (height = el.clientHeight);
   }
 
   return {
     scrollToChapter: scrollToChapter,
     getHeight: getHeight,
-    render: render
+    render: render,
+    isFixed: isFixed
   };
 });
 

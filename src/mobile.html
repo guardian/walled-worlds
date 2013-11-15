@@ -295,7 +295,10 @@
 
         document.getElementsByTagName("head")[0].appendChild(script);
     })(guardian.isModernBrowser);
+
+
 </script>
+
 
 
 
@@ -690,13 +693,15 @@
                             </div>
 
                             <div class="article__container">
-                                <figure class="gi-interactive"></figure>
+                                <figure class="interactive"></figure>
 
                                 <!-- Expects requirejs to be present in the R2 page -->
                                 <script>
+                                    console.log('in here');
                                     window.onload = function() {
                                         require([document.location.origin+'//boot.js']).then(function(app) {
-                                            var el = document.querySelector('.gi-interactive');
+                                            var el = document.querySelector('.interactive');
+                                            console.log('inside curl', el);
                                             app.boot(el, window, {}, {});
                                         });
                                     }

@@ -10,6 +10,8 @@ define([], function() {
      *
      **/
     boot: function (el, context, config) {
+      el.setAttribute('class', el.className + ' gi-interactive');
+
       var cfg = {
         context: 'interactive',
         baseUrl: '{{ versionedProjectPath }}'

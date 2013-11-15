@@ -7,14 +7,17 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
     var assetUrl = '{{ versionedProjectPath }}';
     var chaptersWrapper;
     var chaptersViews = [];
-    var MIN_WIDTH = 940;
+    var MIN_WIDTH = 835;
     var ticking = false;
 
     function setupPage() {
       // Are we on a wide page?
       // <figure> elm has lots of margin which causes issues when calc width.
       el.style.margin = 0;
+
+      makeWideScreen();
       Config.width = el.offsetWidth;
+      Config.top = el.getBoundingClientRect().top;
 
       if (el.offsetWidth >= MIN_WIDTH) {
         el.classList.add('wide');
@@ -24,22 +27,29 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
         Config.wide = false;
       }
 
-      el.removeAttribute('style');
-      el.appendChild(NavigationView.render());
+      //el.removeAttribute('style');
 
+      el.appendChild(NavigationView.render());
       chaptersWrapper = Utils.buildDOM(templates.structure).firstChild;
       el.appendChild(chaptersWrapper);
 
       buildChapters();
+
       el.appendChild(analyticsView.render().el);
+
 
       // TODO: replace with content ready event
       setTimeout(function() {
         if (window.location.hash) {
           NavigationView.scrollToChapter(location.hash);
           onScroll();
+
         }
+        onResize();
+        console.log('setimeout setup');
       }, 400);
+
+      console.log('end of setup');
 
     }
 
@@ -73,14 +83,20 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
     }
 
     function updateChapters() {
+      Config.scrollY = window.scrollY;
+
       chaptersViews.forEach(function( chapter ){
         chapter.checkIfActive();
       });
+
+      NavigationView.isFixed();
 
       ticking = false;
     }
 
     function onResize() {
+
+      makeWideScreen()
 
       if (el.offsetWidth >= MIN_WIDTH) {
         el.classList.add('wide');
@@ -97,12 +113,35 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       });
 
       // Fix for when responsive wiggling class isn't removed
-      var chapters = document.querySelectorAll('.gi-chapters .chapter');
-      for (var i = 0; i < chapters.length; i++) {
-        chapters[i].classList.remove('fixed-background');
+      if (!Modernizr.touch) {
+        var chapters = document.querySelectorAll('.gi-chapters .chapter');
+        for (var i = 0; i < chapters.length; i++) {
+          chapters[i].classList.remove('fixed-background');
+        }
       }
 
       onScroll();
+    }
+
+    function makeWideScreen() {
+      if (document.body.clientWidth < 940) {
+        el.style.marginLeft = (el.parentElement.getBoundingClientRect().left * -1) + 'px';
+        el.style.marginRight = ((document.body.clientWidth -el.parentElement.getBoundingClientRect().right) * -1) + 'px';
+        el.style.width = 'auto';
+
+        chaptersViews.forEach(function(chapter) {
+          chapter.getEl().querySelector('.chapter_copy').style.width = '';
+        });
+
+
+      } else {
+        //el.style.margin = '0 auto';
+        el.removeAttribute('style');
+
+        chaptersViews.forEach(function(chapter) {
+          chapter.getEl().querySelector('.chapter_copy').style.width = '500px';
+        });
+      }
     }
 
 
@@ -114,7 +153,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       DataModel.fetch(setupPage);
       Utils.on(window, 'scroll', onScroll);
       Utils.on(window, 'resize', onResize);
-
+      document.addEventListener("orientationchange", onResize);
     }
 
     return {

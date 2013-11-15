@@ -4,6 +4,10 @@
   top: 0;
 }
 
+&.wide .active .gi-chapter-map {
+  top: 55px;
+}
+
 
 &.responsive {
   .fixed-background .gi-chapter-map,
