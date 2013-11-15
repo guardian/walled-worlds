@@ -112,7 +112,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
   }
 
   function getHeight() {
-    return (height) ? height : (height = el.clientHeight);
+    return el.clientHeight;
   }
 
   return {
