@@ -2,10 +2,10 @@
   "name": "walled-worlds",
   "namespace": "giWalledWorlds",
   "version": "1.0.0",
-  "s3Bucket": "gdn-stage",
-  "s3Region": "eu-west-1",
-  "s3Folder": "world-walls",
-  "remoteUrl": "http://s3-eu-west-1.amazonaws.com/",
+  "s3Bucket": "gdn-cdn",
+  "s3Region": "us-east-1",
+  "s3Folder": "next-gen/world/ng-interactive/2013/nov/walls",
+  "remoteUrl": "http://interactive.guim.co.uk/",
   "repository": {
     "type": "git",
     "url": "git@github.com:GuardianInteractive/walled-worlds.git"

@@ -151,7 +151,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
           _isHidden = false;
           el.classList.add('active');
 
-          if (Config.wide && !Modernizr.touch) {
+          if (Config.wide && !(Utils.isMobile || Utils.isIPad ||Utils.isIOS)) {
             el.classList.add('fixed-background');
             _correctBackgroundPosition();
           }
@@ -168,12 +168,12 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
           PubSub.publish('chapterDeactivate', { id: model.chapterid });
           el.classList.remove('active');
 
-          if (Config.wide && !Modernizr.touch) {
+          if (Config.wide && !Utils.isMobile) {
             el.classList.remove('fixed-background');
             el.style.backgroundPosition = '0 0';
           }
 //
-          if (mapElm && !Modernizr.touch) {
+          if (mapElm && !Utils.isMobile) {
             //mapElm.setAttribute('style', '');
             mapElm.style.left = '';
             mapElm.style.top = '';

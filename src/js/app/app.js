@@ -46,11 +46,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
 
         }
         onResize();
-        console.log('setimeout setup');
       }, 400);
-
-      console.log('end of setup');
-
     }
 
     function addStyles() {
@@ -96,7 +92,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
 
     function onResize() {
 
-      makeWideScreen()
+      makeWideScreen();
 
       if (el.offsetWidth >= MIN_WIDTH) {
         el.classList.add('wide');
@@ -113,7 +109,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       });
 
       // Fix for when responsive wiggling class isn't removed
-      if (!Modernizr.touch) {
+      if (!Utils.isMobile) {
         var chapters = document.querySelectorAll('.gi-chapters .chapter');
         for (var i = 0; i < chapters.length; i++) {
           chapters[i].classList.remove('fixed-background');
@@ -153,7 +149,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       DataModel.fetch(setupPage);
       Utils.on(window, 'scroll', onScroll);
       Utils.on(window, 'resize', onResize);
-      document.addEventListener("orientationchange", onResize);
+      Utils.on(window, 'orientationchange', onResize);
     }
 
     return {

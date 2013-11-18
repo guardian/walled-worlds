@@ -73,10 +73,10 @@ module.exports = function(grunt) {
       },
       prod: {
         options: {
-          optimize: 'uglify',
+          optimize: 'none', //'uglify',
           // Set asset path based on environment
           onBuildWrite: function (moduleName, path, contents) {
-            var assetUrl = pkg.remoteUrl + pkg.s3Bucket + '/' + pkg.s3Folder;
+            var assetUrl = pkg.remoteUrl + '/' + pkg.s3Folder;
             return contents.replace(/\{\{ assetUrl }}/g, assetUrl);
           }
         }
@@ -178,8 +178,8 @@ module.exports = function(grunt) {
 
     s3: {
       options: {
-        region: '<%= pkg.s3Region %>',
-        bucket: 'gdn-stage',
+        //region: 'us-east-1',
+        bucket: 'gdn-cdn',
         access: 'public-read',
         headers: {
           "Cache-Control": "max-age=10, public",
@@ -242,7 +242,7 @@ module.exports = function(grunt) {
         overwrite: true, // overwrite matched source files
         replacements: [{
           from: '{{ versionedProjectPath }}',
-          to: pkg.remoteUrl + pkg.s3Bucket + '/' + pkg.s3Folder + '/' + pkg.version
+          to: pkg.remoteUrl + pkg.s3Folder + '/' + pkg.version
         }]
       }
     }
@@ -264,7 +264,8 @@ module.exports = function(grunt) {
   grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace:dev", "connect", "watch"]);
   grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:prod", "sass", "replace:prod"]);
   grunt.registerTask("deploy", ["build", "s3:production"]);
-  grunt.registerTask("test-deploy", ["fetch-data", "fetch-svg", "build", "s3:test"]);
+  grunt.registerTask("test-deploy", ["build", "s3:test"]);
+  grunt.registerTask("fetch", ["fetch-data", "fetch-svg"]);
 
 
   grunt.registerTask("fetch-svg", [], function() {

@@ -118,6 +118,11 @@
     }
   }
 
+  .nocaption img {
+    border-left: none;
+    border-right: none;
+  }
+
   .chapter_image,
   .chapter_video {
     width: 100%;
