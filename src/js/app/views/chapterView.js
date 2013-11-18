@@ -168,12 +168,12 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
           PubSub.publish('chapterDeactivate', { id: model.chapterid });
           el.classList.remove('active');
 
-          if (Config.wide && !Utils.isMobile) {
+          if (Config.wide && !(Utils.isMobile || Utils.isIPad ||Utils.isIOS)) {
             el.classList.remove('fixed-background');
             el.style.backgroundPosition = '0 0';
           }
 //
-          if (mapElm && !Utils.isMobile) {
+          if (mapElm && !(Utils.isMobile || Utils.isIPad ||Utils.isIOS)) {
             //mapElm.setAttribute('style', '');
             mapElm.style.left = '';
             mapElm.style.top = '';

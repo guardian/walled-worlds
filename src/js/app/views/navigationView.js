@@ -7,6 +7,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
   var activeChapter;
   var height;
   var fixed = false;
+  var timeoutID;
 
 
   function isFixed() {
@@ -30,7 +31,18 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
 
   function _activateNavigation(msg, data) {
     chapterNavElms[data.id].classList.add('active');
-    history.pushState(null, null, "#" + data.id);
+
+    if (timeoutID) {
+      clearTimeout(timeoutID);
+    }
+
+    timeoutID = setTimeout(function() {
+      console.log(timeoutID, data.id);
+      clearTimeout(timeoutID);
+      timeoutID = null;
+      history.pushState(null, null, "#" + data.id);
+    }.bind(this), 900);
+
     activeChapter = data.id;
   }
 
@@ -47,9 +59,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
       chapter.totalChapters = chapters.length;
       var el = Utils.buildDOM(mustache.render(templates.navigation_link, chapter)).firstChild;
       wrapperElm.appendChild(el);
-      if (Config.wide) {
-        Utils.on(el, 'click', _navigationClickHandler.bind(chapter));
-      }
+      Utils.on(el, 'click', _navigationClickHandler.bind(chapter));
       chapterNavElms[chapter.chapterid] = el;
     });
 
@@ -64,7 +74,6 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
 
   function scrollToChapter(chapter) {
     if (/^#[a-z][a-z0-9]+$/gi.test(chapter)) {
-      //window.scrollTo(0, parseInt(document.querySelector(".chapter" + chapter).offsetTop, 10) + 10);
       document.querySelector(".chapter" + chapter).scrollIntoView(true);
     }
   }
@@ -92,11 +101,12 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
   }
 
   function nextChapter() {
+
     chapterData.forEach(function(chapter, index) {
       if (chapter.chapterid === activeChapter &&
         index + 1 < chapterData.length)
       {
-        document.location.hash = '#' + chapterData[index + 1].chapterid;
+        scrollToChapter('#' + chapterData[index + 1].chapterid);
       }
     });
   }
@@ -106,7 +116,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
       if (chapter.chapterid === activeChapter &&
         index - 1 >= 0 )
       {
-        document.location.hash = '#' + chapterData[index - 1].chapterid;
+        scrollToChapter('#' + chapterData[index - 1].chapterid);
       }
     });
   }
