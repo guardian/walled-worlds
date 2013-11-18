@@ -285,7 +285,9 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function _correctImageHeight() {
       for (var key in imgs) {
         var img = imgs[key];
-        img.el.height = parseInt(img.aspectRatio * img.el.clientWidth, 10);
+        if (img.aspectRatio && img.el.clientWidth > 0 && img.aspectRatio * img.el.clientWidth > 0 && img.el.height) {
+          img.el.height = parseInt(img.aspectRatio * img.el.clientWidth, 10);
+        }
       }
     }
 

@@ -46,7 +46,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
 
         }
         onResize();
-      }, 400);
+      }, 400)
     }
 
     function addStyles() {
@@ -90,7 +90,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       ticking = false;
     }
 
-    function onResize() {
+    var onResize = Utils.debounce(function() {
 
       makeWideScreen();
 
@@ -117,7 +117,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       }
 
       onScroll();
-    }
+    }.bind(this), 200, true);
 
     function makeWideScreen() {
       if (document.body.clientWidth < 940) {

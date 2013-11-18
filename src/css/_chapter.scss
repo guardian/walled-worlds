@@ -94,6 +94,9 @@
     padding: 8px;
     border-top: 1px dotted #fff;
     border-bottom: 1px dotted #fff;
+    margin-top: 0;
+    color: #fff;
+    min-height: initial;
   }
 
   .chapter_copy {
@@ -118,9 +121,16 @@
     }
   }
 
-  .nocaption img {
+  .chapter_copy .nocaption {
+    margin-bottom: 0;
+  }
+
+  .nocaption .chapter_image {
+    border-top: 2px solid rgba(255,255,255,0.5);
+    border-bottom: none;
     border-left: none;
     border-right: none;
+    background: none;
   }
 
   .chapter_image,

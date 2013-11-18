@@ -141,6 +141,22 @@ define([], function() {
     __analytics('send', 'event', action, label, value);
   }
 
+  // Underscore debounce https://github.com/jashkenas/underscore/blob/master/underscore.js#L701
+  function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  }
+
 
   return {
     waypoint: waypoint,
@@ -151,7 +167,8 @@ define([], function() {
     trackEvent: trackEvent,
     isMobile: isMobile,
     isIOS: isIOS,
-    isIPad: isIPad
+    isIPad: isIPad,
+    debounce: debounce
   };
 
 });
