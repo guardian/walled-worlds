@@ -37,7 +37,6 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
     }
 
     timeoutID = setTimeout(function() {
-      console.log(timeoutID, data.id);
       clearTimeout(timeoutID);
       timeoutID = null;
       history.pushState(null, null, "#" + data.id);

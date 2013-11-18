@@ -698,8 +698,10 @@
                                 <!-- Expects requirejs to be present in the R2 page -->
                                 <script>
                                     console.log('in here');
+                                    var urlPath = document.location.href;
+                                    var path= urlPath.substr(0, urlPath.lastIndexOf('/'));
                                     window.onload = function() {
-                                        require([document.location.origin+'/boot.js']).then(function(app) {
+                                        require([path +'/boot.js']).then(function(app) {
                                             var el = document.querySelector('.interactive');
                                             console.log('inside curl', el);
                                             app.boot(el, window, {}, {});

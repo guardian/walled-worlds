@@ -17,6 +17,10 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
 
     function _buildCopyAsset(id) {
       var data = _getAssetData(id, DataModel.get('copy'));
+      if (typeof data === 'undefined') {
+        return;
+      }
+
       var templateData = {
         assetid: data.assetid,
         content: marked(data.content)
