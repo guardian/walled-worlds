@@ -55,7 +55,37 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
         _addWaypoint(domFrag.firstChild, id);
       }
 
+      // Check of world map image
+      if (data && data.hasOwnProperty('class') && data.class.toLowerCase().indexOf('worldmap') !== -1) {
+        Utils.on(imgs[data.assetid].el, 'click', handleMapClick);
+      }
+
       return domFrag;
+    }
+
+    function handleMapClick(event) {
+      var x = event.layerX || event.offsetX;
+      var y = event.layerY || event.offsetY;
+      var scale = event.target.clientHeight / event.target.dataset.height;
+
+      var hitBoxes = [
+        {coords: [26, 44, 46, 64], href: '#a'},
+        {coords: [134, 161, 154, 181], href: '#b'}
+      ];
+
+      hitBoxes.forEach(checkHitBox);
+
+      function checkHitBox(hitBox) {
+        if (x > hitBox.coords[0]*scale  &&
+            x < hitBox.coords[2]*scale &&
+            y > hitBox.coords[1]*scale &&
+            y < hitBox.coords[3]*scale
+          ) {
+          document.location.hash = hitBox.href;
+        }
+      }
+
+
     }
 
     function _addWaypoint(el,ID) {

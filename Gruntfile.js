@@ -74,6 +74,7 @@ module.exports = function(grunt) {
       prod: {
         options: {
           optimize: 'none', //'uglify',
+          paths: getRequirePaths(true),
           // Set asset path based on environment
           onBuildWrite: function (moduleName, path, contents) {
             var assetUrl = pkg.remoteUrl + '/' + pkg.s3Folder;
