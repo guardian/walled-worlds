@@ -17,6 +17,8 @@ define([], function() {
         baseUrl: '{{ versionedProjectPath }}'
       };
 
+      this.addStyles();
+
       if ( typeof require() === 'function' ) {
         var req2 = require.config(cfg);
         req2(['main'], function(Main) {
@@ -28,7 +30,16 @@ define([], function() {
           Main.setup(el);
         });
       }
+    },
+
+    addStyles: function() {
+      var styleElm = document.createElement('link');
+      styleElm.setAttribute('rel', 'stylesheet');
+      styleElm.setAttribute('type', 'text/css');
+      styleElm.setAttribute('href', '{{ versionedProjectPath }}/main.css');
+      document.querySelector('head').appendChild(styleElm);
     }
+
   };
 
 });

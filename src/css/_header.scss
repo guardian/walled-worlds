@@ -35,6 +35,10 @@
   font-family: "WebEgyptian-Regular", Georgia;
   -webkit-font-smoothing: antialiased;
 
+  position: absolute;
+  left: 0;
+  top: 0;
+
   @media (max-width: 41.25em) {
     font-size: 20px;
   }

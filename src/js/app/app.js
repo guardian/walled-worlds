@@ -116,8 +116,10 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
         }
       }
 
+      NavigationView.setNavWidth();
+
       onScroll();
-    }.bind(this), 200, true);
+    }.bind(this), 200, false);
 
     function makeWideScreen() {
       if (document.body.clientWidth < 940) {
@@ -145,7 +147,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
     function setup(element) {
       el = element;
       el.appendChild(LoadingView.render());
-      addStyles();
+      //addStyles();
       DataModel.fetch(setupPage);
       Utils.on(window, 'scroll', onScroll);
       Utils.on(window, 'resize', onResize);

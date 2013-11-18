@@ -13,7 +13,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
   function isFixed() {
     if (el.parentNode.getBoundingClientRect().top < 0) {
       if (!fixed) {
-        _setNavWidth();
+        setNavWidth();
         el.parentNode.classList.add('fixed');
         fixed = true;
       }
@@ -24,7 +24,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
     }
   }
 
-  function _setNavWidth() {
+  function setNavWidth() {
     var width = el.parentNode.clientWidth;
     el.setAttribute('style', 'width: ' + width + 'px');
   }
@@ -94,7 +94,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
     PubSub.subscribe('chapterDeactivate', _deactivateNavigation);
 
     //Utils.on(window, 'scroll', _isFixed);
-    Utils.on(window, 'resize', _setNavWidth);
+    //Utils.on(window, 'resize', _setNavWidth);
 
     return el;
   }
@@ -128,6 +128,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
     scrollToChapter: scrollToChapter,
     getHeight: getHeight,
     render: render,
+    setNavWidth: setNavWidth,
     isFixed: isFixed
   };
 });
