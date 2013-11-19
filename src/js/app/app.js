@@ -9,6 +9,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
     var chaptersViews = [];
     var MIN_WIDTH = 835;
     var ticking = false;
+    var windowWidth = 0;
 
     function setupPage() {
       // Are we on a wide page?
@@ -91,6 +92,10 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
     }
 
     var onResize = Utils.debounce(function() {
+      // Prevent IE8's event resize loop
+      if (windowWidth === document.body.clientWidth) {
+        return;
+      }
 
       makeWideScreen();
 
@@ -115,10 +120,9 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
           chapters[i].classList.remove('fixed-background');
         }
       }
-
       NavigationView.setNavWidth();
-
       onScroll();
+      windowWidth = document.body.clientWidth;
     }.bind(this), 200, false);
 
     function makeWideScreen() {
@@ -151,7 +155,7 @@ define(['mustache', 'templates', 'app/models/config', 'app/utils/utils', 'app/vi
       DataModel.fetch(setupPage);
       Utils.on(window, 'scroll', onScroll);
       Utils.on(window, 'resize', onResize);
-      Utils.on(window, 'orientationchange', onResize);
+      //Utils.on(window, 'orientationchange', onResize);
     }
 
     return {

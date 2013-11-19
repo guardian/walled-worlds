@@ -56,7 +56,7 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
       }
 
       // Check of world map image
-      if (data && data.hasOwnProperty('class') && data.class.toLowerCase().indexOf('worldmap') !== -1) {
+      if (data && data['class'] && typeof data['class'] === 'string' && data['class'].toLowerCase().indexOf('worldmap') !== -1) {
         Utils.on(imgs[data.assetid].el, 'click', handleMapClick);
       }
 
@@ -66,14 +66,23 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
     function handleMapClick(event) {
       var x = event.layerX || event.offsetX;
       var y = event.layerY || event.offsetY;
-      var scale = event.target.clientHeight / event.target.dataset.height;
+      var target = event.target || event.srcElement;
+      var originalHeight = (target.dataset) ? target.dataset.height : target.getAttribute('data-height');
+      var scale = target.clientHeight / originalHeight;
 
       var hitBoxes = [
-        {coords: [26, 44, 46, 64], href: '#a'},
-        {coords: [134, 161, 154, 181], href: '#b'}
+        {coords: [26, 44, 46, 64], href: '#mexico'},
+        {coords: [134, 161, 154, 181], href: '#saopaulo'},
+        {coords: [209, 2, 229, 22], href: '#belfast'},
+        {coords: [211, 41, 231, 61], href: '#melilla'},
+        {coords: [196, 63, 216, 83], href: '#sahara'},
+        {coords: [264, 28, 284, 48], href: '#greece'},
+        {coords: [286, 37, 306, 57], href: '#homs'},
+        {coords: [382, 66, 402, 86], href: '#bangladesh'},
+        {coords: [437, 33, 457, 53], href: '#korea'}
       ];
 
-      hitBoxes.forEach(checkHitBox);
+      hitBoxes.some(checkHitBox);
 
       function checkHitBox(hitBox) {
         if (x > hitBox.coords[0]*scale  &&
@@ -82,10 +91,11 @@ define(['mustache', 'app/views/mapView', 'app/views/navigationView', 'app/models
             y < hitBox.coords[3]*scale
           ) {
           document.location.hash = hitBox.href;
+          return true;
         }
+
+        return false;
       }
-
-
     }
 
     function _addWaypoint(el,ID) {

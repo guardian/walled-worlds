@@ -77,6 +77,12 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
     }
   }
 
+  function handleTitleClick() {
+    event.preventDefault ? event.preventDefault() : event.returnValue = false;
+    var target = document.querySelector('.chapter');
+    target.scrollIntoView(true);
+  }
+
   function render() {
     chapterData = DataModel.get('chapters');
 
@@ -89,6 +95,8 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
 
     Utils.on(el.querySelector('.next'), 'click', nextChapter);
     Utils.on(el.querySelector('.previous'), 'click', previousChapter);
+    Utils.on(el.querySelector('.gi-header-text'), 'click', handleTitleClick);
+
 
     PubSub.subscribe('chapterActive', _activateNavigation);
     PubSub.subscribe('chapterDeactivate', _deactivateNavigation);

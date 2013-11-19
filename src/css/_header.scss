@@ -31,7 +31,6 @@
   font-size: 23px;
   color: #fff;
   display: inline-block;
-  float: left;
   font-family: "WebEgyptian-Regular", Georgia;
   -webkit-font-smoothing: antialiased;
 
@@ -61,9 +60,13 @@
 
 
 .gi-header-text {
-  float: left;
+  display: block;
   color: #fff;
   text-decoration: none;
+
+  min-width: 150px;
+  width: 300px;
+  z-index: 2;
 }
 
 .gi-header-text:hover{
