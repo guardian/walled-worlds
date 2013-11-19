@@ -37,7 +37,7 @@
 
 
   &:first-child {
-    display: block;
+    display: none !important;
   }
 
   &.active {

@@ -262,7 +262,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-s3');
 
 
-  grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs:devs", "sass", "replace:dev", "connect", "watch"]);
+  grunt.registerTask("default", ["clean", "copy", "mustache", "requirejs:dev", "sass", "replace:dev", "connect", "watch"]);
   grunt.registerTask("build", ["clean", "copy", "mustache", "requirejs:prod", "sass", "replace:prod"]);
   grunt.registerTask("deploy", ["build", "s3:production"]);
   grunt.registerTask("test-deploy", ["build", "s3:test"]);
