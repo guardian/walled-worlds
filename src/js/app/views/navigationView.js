@@ -15,7 +15,9 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
       return;
     }
 
-    if (el.parentNode.getBoundingClientRect().top < 0) {
+    if (el.parentNode.getBoundingClientRect().top < 0 &&
+        el.parentNode.getBoundingClientRect().bottom > 0
+    ) {
       if (!fixed) {
         setNavWidth();
         el.parentNode.classList.add('fixed');
