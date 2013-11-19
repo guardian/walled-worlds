@@ -11,6 +11,10 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
 
 
   function isFixed() {
+    if (!el) {
+      return;
+    }
+
     if (el.parentNode.getBoundingClientRect().top < 0) {
       if (!fixed) {
         setNavWidth();
@@ -65,7 +69,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
     return wrapperElm;
   }
 
-  function _navigationClickHandler(e) {
+  function _navigationClickHandler(event) {
     event.preventDefault ? event.preventDefault() : event.returnValue = false;
     scrollToChapter('#' + this.chapterid);
     Utils.trackEvent('click', 'nav_link');
@@ -77,7 +81,7 @@ define(['templates', 'mustache', 'app/models/config', 'app/utils/utils', 'app/mo
     }
   }
 
-  function handleTitleClick() {
+  function handleTitleClick(event) {
     event.preventDefault ? event.preventDefault() : event.returnValue = false;
     var target = document.querySelector('.chapter');
     target.scrollIntoView(true);

@@ -73,7 +73,7 @@ define(['mustache', 'app/models/svgs', 'app/views/svgView', 'app/models/config',
       counterTween = new TWEEN.Tween( { x: 0 } )
         .to( { x: distance }, ANIM_LENGTH)
         .onUpdate( function () {
-          counterElm.innerText = parseInt(this.x, 10);
+          counterElm.innerHTML = parseInt(this.x, 10);
         })
         .onComplete(function() {
           continueAnim = false;

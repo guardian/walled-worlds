@@ -125,6 +125,10 @@
     margin-bottom: 0;
   }
 
+  .chapter_copy .worldmap.nocaption img {
+    border:none;
+  }
+
   .nocaption .chapter_image {
     border-top: 2px solid rgba(255,255,255,0.5);
     border-bottom: none;
@@ -229,4 +233,10 @@
       position: fixed;
     }
   }
+}
+
+
+.chapter#intro a {
+  color: #fff;
+  text-decoration: underline;
 }

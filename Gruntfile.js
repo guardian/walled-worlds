@@ -73,7 +73,7 @@ module.exports = function(grunt) {
       },
       prod: {
         options: {
-          optimize: 'none', //'uglify',
+          optimize: 'uglify',
           //paths: getRequirePaths(true),
           // Set asset path based on environment
           onBuildWrite: function (moduleName, path, contents) {
